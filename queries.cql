@@ -28,4 +28,3 @@ RETURN path, weight
 OPTIONAL MATCH (start:BJJ { name: 'Início' }),(end:BJJ { name: 'Finalizado' }), p = shortestPath((start)-[r:TO*]-(end))
 WHERE all(x IN r WHERE x.p = 'passador' OR NOT EXISTS(x.p))
 RETURN p;
-
