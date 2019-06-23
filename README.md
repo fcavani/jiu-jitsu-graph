@@ -12,6 +12,7 @@ mkdir {$HOME}/neo4j/plugins
 docker pull neo4j:latest
 cd {$HOME}/neo4j/plugins
 wget https://github.com/neo4j-contrib/neo4j-apoc-procedures/releases/download/3.5.0.4/apoc-3.5.0.4-all.jar
+wget https://github.com/neo4j-contrib/neo4j-graph-algorithms/releases/download/3.5.4.0/graph-algorithms-algo-3.5.4.0.jar
 
 # Running Neo4J
 

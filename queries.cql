@@ -28,3 +28,18 @@ RETURN path, weight
 OPTIONAL MATCH (start:BJJ { name: 'Início' }),(end:BJJ { name: 'Finalizado' }), p = shortestPath((start)-[r:TO*]-(end))
 WHERE all(x IN r WHERE x.p = 'passador' OR NOT EXISTS(x.p))
 RETURN p;
+
+MATCH (start:BJJ{name:'Início'}), (end:BJJ{name:'Finalizado'})
+CALL algo.shortestPath.stream(start, end, 'score', {
+    relationshipQuery:'MATCH(n:BJJ)-[r:TO]->(m) RETURN id(n) as source, id(m) as target, r.score as weight',
+    defaultValue:0.0})
+YIELD nodeId, cost
+RETURN algo.asNode(nodeId).name AS name, cost;
+
+MATCH (start:BJJ{name:'Início'}), (end:BJJ{name:'Finalizado'})
+CALL algo.shortestPath(start, end, 'score',{
+nodeQuery:'MATCH(n:start) RETURN id(n) as id',
+relationshipQuery:'MATCH(n:start)-[r:TO]->(m:end) RETURN id(n) as source, id(m) as target, r.score * -1 as weight',
+graph:'cypher'})
+YIELD writeMillis,loadMillis,nodeCount, totalCost
+RETURN writeMillis,loadMillis,nodeCount,totalCost
