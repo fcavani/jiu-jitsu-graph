@@ -7,7 +7,8 @@ mkdir -p {$HOME}/neo4j/data
 mkdir {$HOME}/neo4j/logs
 mkdir {$HOME}/neo4j/import
 mkdir {$HOME}/neo4j/plugins
-
+mkdir {$HOME}/neo4j/plugins/conf
+(copy conf to conf dir)
 
 docker pull neo4j:latest
 cd {$HOME}/neo4j/plugins
@@ -24,6 +25,7 @@ docker run \
     -v $HOME/neo4j/logs:/logs \
     -v $HOME/neo4j/import:/var/lib/neo4j/import \
     -v $HOME/neo4j/plugins:/plugins \
+    -v $HOME/neo4j/conf:/var/lib/neo4j/conf \
     --env NEO4J_AUTH=neo4j/test123 \
     -e NEO4J_apoc_export_file_enabled=true \
     -e NEO4J_apoc_import_file_enabled=true \
