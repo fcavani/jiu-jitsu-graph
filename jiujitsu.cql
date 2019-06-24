@@ -586,17 +586,9 @@ CREATE (mg)-[:TO {score: 2, p: 'guardeiro'}]->(r);
 OPTIONAL MATCH (r:RASPAGEM {name:"Raspagem 1 da meia guarda"}), (kg:CONTROLELATERAL {name: "100kg"})
 CREATE (r)-[:TO {p: 'passador'}]->(kg);
 
-:commit
-
-:begin
-MATCH ()-[t:TO]->()
-SET t.score = t.score;
-
-OPTIONAL MATCH (start:BJJ { name: 'Início' }),(end:BJJ { name: 'Finalizado' }), p = shortestPath((start)-[:TO*]-(end))
-RETURN p;
-
-MATCH (start:BJJ {name: 'Início'}), (end:BJJ {name: 'Finalizado'})
-CALL apoc.algo.dijkstra(start, end, 'TO', 'score') YIELD path, weight
-RETURN path, weight
+MATCH (f)-[t:TO]->()
+WHERE exists(t.score) AND t.score > 0
+SET t.neg_score = -1 * t.score
+//RETURN f.name, t.score, t.neg_score
 
 :commit
