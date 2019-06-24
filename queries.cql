@@ -29,23 +29,37 @@ OPTIONAL MATCH (start:BJJ { name: 'Início' }),(end:BJJ { name: 'Finalizado' }),
 WHERE all(x IN r WHERE x.p = 'passador' OR NOT EXISTS(x.p))
 RETURN p;
 
+// Find the sub graph with passador only.
+
 MATCH path = (to1 {name: 'Início'})-[*]->(to2:BJJ)
 WITH *, relationships(path) AS TO
 WHERE all(r in TO WHERE r.p = 'passador')
 RETURN path
+
+// Find the sub graph with passador only.
 
 MATCH path = (to1 {name: 'Início'})-[*]->(to2:BJJ)
 WITH *, relationships(path) AS TO
 WHERE all(r in TO WHERE r.p = 'guardeiro')
 RETURN path
 
+// Find the longest path with more pontuation until finalized.
+
+MATCH (start:BJJ {name: 'Início'}), (end:BJJ {name: 'Finalizado'})
+CALL apoc.algo.dijkstra(start, end, 'TO', 'neg_score') YIELD path, weight
+RETURN path, weight
+
+
+// Fail with heap space
 
 MATCH (start:BJJ{name:'Início'}), (end:BJJ{name:'Finalizado'})
-CALL algo.shortestPath.stream(start, end, 'score', {
-    relationshipQuery:'MATCH(n:BJJ)-[r:TO]->(m) RETURN id(n) as source, id(m) as target, r.score as weight',
+CALL algo.shortestPath.stream(start, end, 'neg_score', {
+    relationshipQuery:'MATCH(n:BJJ)-[r:TO]->(m) RETURN id(n) as source, id(m) as target, r.neg_score as weight',
     defaultValue:0.0})
 YIELD nodeId, cost
 RETURN algo.asNode(nodeId).name AS name, cost;
+
+// Don't work
 
 MATCH (start:BJJ{name:'Início'}), (end:BJJ{name:'Finalizado'})
 CALL algo.shortestPath(start, end, 'score',{
