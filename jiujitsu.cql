@@ -362,16 +362,13 @@ OPTIONAL MATCH (c:CONTROLELATERAL {name:"Controle lateral"}), (q:CONTROLELATERAL
 CREATE (c)-[:IS]->(q);
 
 OPTIONAL MATCH (c:CONTROLELATERAL {name:"100kg"}), (q:QUEDA {name:"Baiana"})
-CREATE (q)-[to:TO {p: 'passador'}]->(c);
+CREATE (q)-[to:TO {score: 5, p: 'passador', info_pt: 'Abraça as pernas e sobe fazendo peso até chegar no 100kg'}]->(c);
 
 OPTIONAL MATCH (c:CONTROLELATERAL {name:"Controle lateral"}), (q:CONTROLELATERAL {name:"Hon kesa gatame"})
 CREATE (c)-[:IS]->(q);
 
 OPTIONAL MATCH (c:CONTROLELATERAL {name:"100kg"}), (q:CONTROLELATERAL {name:"Hon kesa gatame"})
-CREATE (q)-[to:TO {p: 'passador'}]->(c);
-
-OPTIONAL MATCH (c:CONTROLELATERAL {name:"100kg"}), (q:CONTROLELATERAL {name:"Hon kesa gatame"})
-CREATE (c)-[to:TO {p: 'passador'}]->(q);
+CREATE (q)-[to:TO {score: 5, p: 'passador', info_pt: ''}]->(c);
 
 OPTIONAL MATCH (c:FIN {name:"Arm-lock reto"}), (q:CONTROLELATERAL {name:"Hon kesa gatame"})
 CREATE (q)-[to:TO {p: 'passador'}]->(c);
