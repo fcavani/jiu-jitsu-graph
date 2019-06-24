@@ -29,6 +29,17 @@ OPTIONAL MATCH (start:BJJ { name: 'Início' }),(end:BJJ { name: 'Finalizado' }),
 WHERE all(x IN r WHERE x.p = 'passador' OR NOT EXISTS(x.p))
 RETURN p;
 
+MATCH path = (to1 {name: 'Início'})-[*]->(to2:BJJ)
+WITH *, relationships(path) AS TO
+WHERE all(r in TO WHERE r.p = 'passador')
+RETURN path
+
+MATCH path = (to1 {name: 'Início'})-[*]->(to2:BJJ)
+WITH *, relationships(path) AS TO
+WHERE all(r in TO WHERE r.p = 'guardeiro')
+RETURN path
+
+
 MATCH (start:BJJ{name:'Início'}), (end:BJJ{name:'Finalizado'})
 CALL algo.shortestPath.stream(start, end, 'score', {
     relationshipQuery:'MATCH(n:BJJ)-[r:TO]->(m) RETURN id(n) as source, id(m) as target, r.score as weight',
