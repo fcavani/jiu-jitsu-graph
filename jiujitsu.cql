@@ -6,6 +6,12 @@
 // You should have received a copy of the license along with this
 // work. If not, see <http://creativecommons.org/licenses/by-nc/4.0/>.
 
+// Observações:
+//
+// Isto é apenas um curiosidade, uma visão de um iniciante na arte,
+// logo falha e incompleta.
+// Isto não substitui a prática de Jiu-jitsu em uma academia adequada.
+
 :begin
 
 MATCH (n)
