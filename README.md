@@ -4,10 +4,10 @@ Jiu-jitsu positions, sequences, punctuation and descriptions in neo4j graph data
 # Install Neo4J
 
 mkdir -p {$HOME}/neo4j/data
-mkdir {$HOME}/neo4j/logs
-mkdir {$HOME}/neo4j/import
-mkdir {$HOME}/neo4j/plugins
-mkdir {$HOME}/neo4j/plugins/conf
+mkdir ${HOME}/neo4j/logs
+mkdir ${HOME}/neo4j/import
+mkdir ${HOME}/neo4j/plugins
+mkdir ${HOME}/neo4j/plugins/conf
 (copy conf to conf dir)
 
 docker pull neo4j:latest
@@ -34,6 +34,6 @@ docker run \
 
 # Import graph db
 
+cp jiujitsu.cql ${HOME}/neo4j/import/
 docker exec -it myneo4j bash
-cp jiujitsu.cql {$HOME}/neo4j/import/
-cat import/jiu-jitsu.cql | cypher-shell -u neo4j -p test123
+cat import/jiujitsu.cql | cypher-shell -u neo4j -p test123
