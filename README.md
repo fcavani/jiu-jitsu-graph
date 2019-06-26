@@ -3,15 +3,15 @@ Jiu-jitsu positions, sequences, punctuation and descriptions in neo4j graph data
 
 # Install Neo4J
 
-mkdir -p {$HOME}/neo4j/data
+mkdir -p ${HOME}/neo4j/data
 mkdir ${HOME}/neo4j/logs
 mkdir ${HOME}/neo4j/import
+mkdir ${HOME}/neo4j/conf
 mkdir ${HOME}/neo4j/plugins
-mkdir ${HOME}/neo4j/plugins/conf
 (copy conf to conf dir)
 
-docker pull neo4j:latest
-cd {$HOME}/neo4j/plugins
+docker pull neo4j
+cd ${HOME}/neo4j/plugins
 wget https://github.com/neo4j-contrib/neo4j-apoc-procedures/releases/download/3.5.0.4/apoc-3.5.0.4-all.jar
 wget https://github.com/neo4j-contrib/neo4j-graph-algorithms/releases/download/3.5.4.0/graph-algorithms-algo-3.5.4.0.jar
 

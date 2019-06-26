@@ -18,8 +18,8 @@ RETURN s, next, bjj, info;
 OPTIONAL MATCH (start:BJJ { name: 'Início' }),(end:BJJ { name: 'Finalizado' }), p = shortestPath((start)-[:TO*]-(end))
 RETURN p;
 
-MATCH ((s:BJJ)-[:TO]->(next))
-RETURN s, next
+MATCH ((s:BJJ)-[t:TO]->(next))
+RETURN s, t, next
 
 MATCH (start:BJJ {name: 'Início'}), (end:BJJ {name: 'Finalizado'})
 CALL apoc.algo.dijkstra(start, end, 'TO', 'score') YIELD path, weight
@@ -35,8 +35,6 @@ MATCH path = (to1 {name: 'Início'})-[*]->(to2:BJJ)
 WITH *, relationships(path) AS TO
 WHERE all(r in TO WHERE r.p = 'passador')
 RETURN path
-
-// Find the sub graph with passador only.
 
 MATCH path = (to1 {name: 'Início'})-[*]->(to2:BJJ)
 WITH *, relationships(path) AS TO
