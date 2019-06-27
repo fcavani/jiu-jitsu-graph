@@ -23,9 +23,9 @@ docker run \
     -d \
     -v $HOME/neo4j/data:/data \
     -v $HOME/neo4j/logs:/logs \
-    -v $HOME/neo4j/import:/var/lib/neo4j/import \
+    -v $HOME/neo4j/import:/import \
     -v $HOME/neo4j/plugins:/plugins \
-    -v $HOME/neo4j/conf:/var/lib/neo4j/conf \
+    -v $HOME/neo4j/conf:/conf \
     --env NEO4J_AUTH=neo4j/test123 \
     -e NEO4J_apoc_export_file_enabled=true \
     -e NEO4J_apoc_import_file_enabled=true \
@@ -36,4 +36,4 @@ docker run \
 
 cp jiujitsu.cql ${HOME}/neo4j/import/
 docker exec -it myneo4j bash
-cat import/jiujitsu.cql | cypher-shell -u neo4j -p test123
+cat /import/jiujitsu.cql | cypher-shell -u neo4j -p test123 --format verbose
