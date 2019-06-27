@@ -21,9 +21,6 @@ RETURN p;
 MATCH ((s:BJJ)-[t:TO]->(next))
 RETURN s, t, next
 
-MATCH (start:BJJ {name: 'Início'}), (end:BJJ {name: 'Finalizado'})
-CALL apoc.algo.dijkstra(start, end, 'TO', 'score') YIELD path, weight
-RETURN path, weight
 
 OPTIONAL MATCH (start:BJJ { name: 'Início' }),(end:BJJ { name: 'Finalizado' }), p = shortestPath((start)-[r:TO*]-(end))
 WHERE all(x IN r WHERE x.p = 'passador' OR NOT EXISTS(x.p))
@@ -44,6 +41,10 @@ RETURN path
 // Find the longest path with more pontuation until finalized.
 
 MATCH (start:BJJ {name: 'Início'}), (end:BJJ {name: 'Finalizado'})
+CALL apoc.algo.dijkstra(start, end, 'TO', 'neg_score') YIELD path, weight
+RETURN path, weight
+
+MATCH (start:BJJ {name: 'Início'}), (end:BJJ)
 CALL apoc.algo.dijkstra(start, end, 'TO', 'neg_score') YIELD path, weight
 RETURN path, weight
 
