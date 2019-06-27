@@ -665,7 +665,7 @@ OPTIONAL MATCH (r:RASPAGEM {name:"Raspagem 1 da meia guarda"}), (kg:CONTROLELATE
 CREATE (r)-[:TO {score: 2, p: 'passador', info_pt: 'pesando!!!'}]->(kg);
 
 OPTIONAL MATCH (gf:GUARDA {name:"Guarda fechada"}), (kg:CONTROLELATERAL {name: "100kg"})
-CREATE (gf)-[:TO {score: 30, p: 'passador', info_pt: ''}]->(kg);
+CREATE (gf)-[:TO {score: 3, p: 'passador', info_pt: ''}]->(kg);
 
 OPTIONAL MATCH (gf:GUARDA {name:"Meia guarda"}), (kg:CONTROLELATERAL {name: "100kg"})
 CREATE (gf)-[:TO {score: 0, p: 'passador', info_pt: ''}]->(kg);
