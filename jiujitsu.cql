@@ -675,7 +675,11 @@ CREATE (gf)-[:TO {score: 0, p: 'passador', info_pt: ''}]->(kg);
 :begin
 
 MATCH ()-[t:TO]->()
-WHERE exists(t.score) AND t.score >= 0
+WHERE exists(t.score) AND t.score > 0
 SET t.neg_score = -1 * t.score;
+
+MATCH ()-[t:TO]->()
+WHERE NOT exists(t.score) OR t.score = 0
+SET t.neg_score = 1;
 
 :commit
