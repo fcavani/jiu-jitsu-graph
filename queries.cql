@@ -44,7 +44,7 @@ MATCH (start:BJJ {name: 'Início'}), (end:BJJ {name: 'Finalizado'})
 CALL apoc.algo.dijkstra(start, end, 'TO', 'neg_score') YIELD path, weight
 RETURN path, weight
 
-MATCH (start:BJJ {name: 'Início'}), (end:BJJ)
+MATCH (start:BJJ {name: 'Início'})-[TO {p: 'passador'}]-> (end:BJJ)
 CALL apoc.algo.dijkstra(start, end, 'TO', 'neg_score') YIELD path, weight
 RETURN path, weight
 
