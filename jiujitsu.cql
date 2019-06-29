@@ -1,5 +1,3 @@
-:begin
-
 // Jiu-jitsu graph (c) by Felipe Cavani <fcavani@gmail.com>
 //
 // Jiu-jitsu graph is licensed under a
@@ -16,11 +14,14 @@
 
 // Clean up data base
 
-MATCH (n)
-OPTIONAL MATCH (n)-[r]-()
+:begin
+
+// MATCH (n)
+MATCH (n)-[r]->()
 DELETE n, r;
 
 :commit
+
 :begin
 
 // Create
@@ -350,6 +351,162 @@ CREATE (r:RASPAGEM:BJJ {name:"Raspagem da meia guarda com lapela"}),
 
 // Relations
 
+// IS
+
+OPTIONAL MATCH (ma:MA {name:'Brazilian Jiu-Jitsu'}), (q:QUEDA {name:"Queda"})
+CREATE (q)-[:IS]->(ma);
+
+OPTIONAL MATCH (ma:MA {name:'Brazilian Jiu-Jitsu'}), (c:CONTROLELATERAL {name:"Controle lateral"})
+CREATE (c)-[:IS]->(ma);
+
+OPTIONAL MATCH (ma:MA {name:'Brazilian Jiu-Jitsu'}), (f:FIN {name:"Finalização"})
+CREATE (f)-[:IS]->(ma);
+
+OPTIONAL MATCH (ma:MA {name:'Brazilian Jiu-Jitsu'}), (rasp:RASPAGEM {name:"Raspagem"})
+CREATE (rasp)-[:IS]->(ma);
+
+OPTIONAL MATCH (ma:MA {name:'Brazilian Jiu-Jitsu'}), (pass:PASSAGEMDEGUARDA {name:"Passagem de guarda"})
+CREATE (pass)-[:IS]->(ma);
+
+OPTIONAL MATCH (ma:MA {name:'Brazilian Jiu-Jitsu'}), (g:GUARDA {name:"Guarda"})
+CREATE (g)-[:IS]->(ma);
+
+
+OPTIONAL MATCH (queda:QUEDA {name:"Queda"}), (q:QUEDA {name:"O-goshi"})
+CREATE (q)-[:IS]->(queda);
+
+OPTIONAL MATCH (queda:QUEDA {name:"Queda"}), (q:QUEDA {name:"Osotogari"})
+CREATE (q)-[:IS]->(queda);
+
+OPTIONAL MATCH (queda:QUEDA {name:"Queda"}), (q:QUEDA {name:"Soto-O-Gari"})
+CREATE (q)-[:IS]->(queda);
+
+OPTIONAL MATCH (queda:QUEDA {name:"Queda"}), (q:QUEDA {name:"Seoinage"})
+CREATE (q)-[:IS]->(queda);
+
+OPTIONAL MATCH (queda:QUEDA {name:"Queda"}), (q:QUEDA {name:"Ippon Seoinage"})
+CREATE (q)-[:IS]->(queda);
+
+OPTIONAL MATCH (queda:QUEDA {name:"Queda"}), (q:QUEDA {name:"Koshi Goruma"})
+CREATE (q)-[:IS]->(queda);
+
+OPTIONAL MATCH (queda:QUEDA {name:"Queda"}), (q:QUEDA {name:"Single leg pegando alto a perna"})
+CREATE (q)-[:IS]->(queda);
+
+OPTIONAL MATCH (queda:QUEDA {name:"Queda"}), (q:QUEDA {name:"Single leg pegando a perna em baixo"})
+CREATE (q)-[:IS]->(queda);
+
+OPTIONAL MATCH (queda:QUEDA {name:"Queda"}), (q:QUEDA {name:"Baiana"})
+CREATE (q)-[:IS]->(queda);
+
+OPTIONAL MATCH (queda:QUEDA {name:"Queda"}), (q:QUEDA {name:"Balão"})
+CREATE (q)-[:IS]->(queda);
+
+OPTIONAL MATCH (queda:QUEDA {name:"Queda"}), (q:QUEDA {name:"Marote seionage"})
+CREATE (q)-[:IS]->(queda);
+
+OPTIONAL MATCH (c:CONTROLELATERAL {name:"Controle lateral"}), (q:CONTROLELATERAL {name:"100kg"})
+CREATE (q)-[:IS]->(c);
+
+OPTIONAL MATCH (c:CONTROLELATERAL {name:"Controle lateral"}), (q:CONTROLELATERAL {name:"Hon kesa gatame"})
+CREATE (q)-[:IS]->(c);
+
+OPTIONAL MATCH (c:CONTROLELATERAL {name:"Controle lateral"}), (q:CONTROLELATERAL {name:"Hon kesa gatame para atrás"})
+CREATE (q)-[:IS]->(c);
+
+OPTIONAL MATCH (c:CONTROLELATERAL {name:"Controle lateral"}), (q:CONTROLELATERAL {name:"Norte-sul"})
+CREATE (q)-[:IS]->(c);
+
+OPTIONAL MATCH (f:FIN {name:"Finalização"}), (alr:FIN {name:"Arm-lock reto"})
+CREATE (alr)-[:IS]->(f);
+
+
+OPTIONAL MATCH (f:FIN {name:"Finalização"}), (al:FIN {name:"Arm-lock"})
+CREATE (al)-[:IS]->(f);
+
+OPTIONAL MATCH (c:CHOCK {name:"Estrangulamento"}), (f:FIN {name:"Finalização"})
+CREATE (c)-[:IS]->(f);
+
+OPTIONAL MATCH (c:CHOCK {name:"Estrangulamento"}), (cc:CHOCK {name:"Estrangulamento circulatório"})
+CREATE (cc)-[:IS]->(c);
+
+OPTIONAL MATCH (c:CHOCK {name:"Estrangulamento"}), (cr:CHOCK {name:"Estrangulamento respiratório"})
+CREATE (cr)-[:IS]->(c);
+
+OPTIONAL MATCH (f:FIN {name:"Finalização"}), (ml:FIN {name:"Mata leão"})
+CREATE (ml)-[:IS]->(f);
+
+OPTIONAL MATCH (ml:FIN {name:"Mata leão"}), (cc:CHOCK {name:"Estrangulamento circulatório"})
+CREATE (ml)-[:IS]->(cc);
+
+OPTIONAL MATCH (f:FIN {name:"Finalização"}), (r:FIN {name:"Relóginho"})
+CREATE (r)-[:IS]->(f);
+
+OPTIONAL MATCH (f:FIN {name:"Finalização"}), (a:FIN {name:"Americana"})
+CREATE (a)-[:IS]->(f);
+
+OPTIONAL MATCH (f:FIN {name:"Finalização"}), (k:FIN {name:"Kimura"})
+CREATE (k)-[:IS]->(f);
+
+
+OPTIONAL MATCH (rasp:RASPAGEM {name:"Raspagem"}), (r:RASPAGEM {name:"Raspagem da montada 1"})
+CREATE (r)-[:IS]->(rasp);
+
+OPTIONAL MATCH (rasp:RASPAGEM {name:"Raspagem"}), (r:RASPAGEM {name:"Raspagem da montada 2"})
+CREATE (r)-[:IS]->(rasp);
+
+OPTIONAL MATCH (rasp:RASPAGEM {name:"Raspagem"}), (r:RASPAGEM {name:"Raspagem 1"})
+CREATE (r)-[:IS]->(rasp);
+
+// OPTIONAL MATCH (pg:PASSAGEMDEGUARDA {name:"Passagem de guarda 1"}), (pass:PASSAGEMDEGUARDA {name:"Passagem de guarda"})
+// CREATE (pg)-[:IS]->(pass);
+
+OPTIONAL MATCH (pg:PASSAGEMDEGUARDA {name:"Passagem da guarda andando para trás"}), (pass:PASSAGEMDEGUARDA {name:"Passagem de guarda"})
+CREATE (pg)-[:IS]->(pass);
+
+OPTIONAL MATCH (pass:PASSAGEMDEGUARDA {name:"Passagem de guarda"}), (pe:PASSAGEMDEGUARDAEMPE {name:"Passagem de guarda em pé"})
+CREATE (pe)-[:IS]->(pass);
+
+OPTIONAL MATCH (b:PASSAGEMDEGUARDAEMPE {name:"Break"}), (pe:PASSAGEMDEGUARDAEMPE {name:"Passagem de guarda em pé"})
+CREATE (b)-[:IS]->(pe);
+
+OPTIONAL MATCH (ej:PASSAGEMDEGUARDAEMPE {name:"Espetando o joelho"}), (pe:PASSAGEMDEGUARDAEMPE {name:"Passagem de guarda em pé"})
+CREATE (ej)-[:IS]->(pe);
+
+OPTIONAL MATCH (e:PASSAGEMDEGUARDAEMPE {name:"Emborcando"}), (pe:PASSAGEMDEGUARDAEMPE {name:"Passagem de guarda em pé"})
+CREATE (e)-[:IS]->(pe);
+
+OPTIONAL MATCH (g:GUARDA {name:"Guarda"}), (gf:GUARDA {name:"Guarda fechada"})
+CREATE (gf)-[:IS]->(g);
+
+OPTIONAL MATCH (g:GUARDA {name:"Guarda"}), (ga:GUARDA {name:"Guarda aberta"})
+CREATE (ga)-[:IS]->(g);
+
+OPTIONAL MATCH (g:GUARDA {name:"Guarda"}), (ga:GUARDA {name:"Guarda borboleta"})
+CREATE (ga)-[:IS]->(g);
+
+OPTIONAL MATCH (g:GUARDA {name:"Guarda"}), (ga:GUARDA {name:"Guarda X"})
+CREATE (ga)-[:IS]->(g);
+
+OPTIONAL MATCH (g:GUARDA {name:"Guarda"}), (ga:GUARDA {name:"Guarda arranha"})
+CREATE (ga)-[:IS]->(g);
+
+OPTIONAL MATCH (g:GUARDA {name:"Guarda"}), (ga:GUARDA {name:"De La Riva"})
+CREATE (ga)-[:IS]->(g);
+
+OPTIONAL MATCH (g:GUARDA {name:"Guarda"}), (mg:GUARDA {name:"Meia guarda"})
+CREATE (mg)-[:IS]->(g);
+
+OPTIONAL MATCH (mg:GUARDA {name: "Meia guarda"}), (r:RASPAGEM {name: "Raspagem da meia guarda"})
+CREATE (r)-[:IS]->(mg);
+
+OPTIONAL MATCH (mg:GUARDA {name: "Meia guarda"}), (r:RASPAGEM {name: "Raspagem da meia guarda com lapela"})
+CREATE (r)-[:IS]->(mg);
+
+OPTIONAL MATCH (cl:CONTROLELATERAL {name:"Controle lateral"}), (jb:JB {name:"Joelho na barriga"})
+CREATE (jb)-[:IS]->(cl);
+
+
 // Start
 
 OPTIONAL MATCH (bjj:MA {name: "Brazilian Jiu-Jitsu"}), (inicio:BJJ {name: "Início"})
@@ -390,40 +547,6 @@ CREATE (inicio)-[to:TO {score: 0, p: 'passador', info_pt: ''}]->(q);
 OPTIONAL MATCH (inicio:BJJ {name: "Início"}), (q:QUEDA {name:"Marote seionage"})
 CREATE (inicio)-[to:TO {score: 0, p: 'passador', info_pt: ''}]->(q);
 
-OPTIONAL MATCH (queda:QUEDA {name:"Queda"}), (q:QUEDA {name:"O-goshi"})
-CREATE (q)-[:IS]->(queda);
-
-OPTIONAL MATCH (queda:QUEDA {name:"Queda"}), (q:QUEDA {name:"Osotogari"})
-CREATE (q)-[:IS]->(queda);
-
-OPTIONAL MATCH (queda:QUEDA {name:"Queda"}), (q:QUEDA {name:"Soto-O-Gari"})
-CREATE (q)-[:IS]->(queda);
-
-OPTIONAL MATCH (queda:QUEDA {name:"Queda"}), (q:QUEDA {name:"Seoinage"})
-CREATE (q)-[:IS]->(queda);
-
-OPTIONAL MATCH (queda:QUEDA {name:"Queda"}), (q:QUEDA {name:"Ippon Seoinage"})
-CREATE (q)-[:IS]->(queda);
-
-OPTIONAL MATCH (queda:QUEDA {name:"Queda"}), (q:QUEDA {name:"Koshi Goruma"})
-CREATE (q)-[:IS]->(queda);
-
-OPTIONAL MATCH (queda:QUEDA {name:"Queda"}), (q:QUEDA {name:"Single leg pegando alto a perna"})
-CREATE (q)-[:IS]->(queda);
-
-OPTIONAL MATCH (queda:QUEDA {name:"Queda"}), (q:QUEDA {name:"Single leg pegando a perna em baixo"})
-CREATE (q)-[:IS]->(queda);
-
-OPTIONAL MATCH (queda:QUEDA {name:"Queda"}), (q:QUEDA {name:"Baiana"})
-CREATE (q)-[:IS]->(queda);
-
-OPTIONAL MATCH (queda:QUEDA {name:"Queda"}), (q:QUEDA {name:"Balão"})
-CREATE (q)-[:IS]->(queda);
-
-OPTIONAL MATCH (queda:QUEDA {name:"Queda"}), (q:QUEDA {name:"Marote seionage"})
-CREATE (q)-[:IS]->(queda);
-
-
 // Transition from fall to stable control.
 
 OPTIONAL MATCH (q:QUEDA {name:"Balão"}), (m:MONTADA {name:"Montada"})
@@ -460,18 +583,6 @@ CREATE (m)-[:TO {score: 4, p: 'passador', info_pt: 'TODO'}]->(al);
 
 // Side control
 
-OPTIONAL MATCH (c:CONTROLELATERAL {name:"Controle lateral"}), (q:CONTROLELATERAL {name:"100kg"})
-CREATE (c)-[:IS]->(q);
-
-OPTIONAL MATCH (c:CONTROLELATERAL {name:"Controle lateral"}), (q:CONTROLELATERAL {name:"Hon kesa gatame"})
-CREATE (c)-[:IS]->(q);
-
-OPTIONAL MATCH (c:CONTROLELATERAL {name:"Controle lateral"}), (q:CONTROLELATERAL {name:"Hon kesa gatame para atrás"})
-CREATE (c)-[:IS]->(q);
-
-OPTIONAL MATCH (c:CONTROLELATERAL {name:"Controle lateral"}), (q:CONTROLELATERAL {name:"Norte-sul"})
-CREATE (c)-[:IS]->(q);
-
 // Movimentação controle lateral
 
 OPTIONAL MATCH (c:CONTROLELATERAL {name:"Hon kesa gatame para atrás"}), (q:CONTROLELATERAL {name:"100kg"})
@@ -502,22 +613,13 @@ CREATE (q)-[to:TO {score: 0, p: 'passador', info_pt: 'passa perna esqueda pela c
 OPTIONAL MATCH (q:CONTROLELATERAL {name:"Hon kesa gatame"}), (c:FIN {name:"Arm-lock reto"})
 CREATE (q)-[to:TO {score: 0, p: 'passador', info_pt: 'no braço direito quando este está no seu ombro direito'}]->(c);
 
-OPTIONAL MATCH (f:FIN {name:"Finalização"}), (alr:FIN {name:"Arm-lock reto"})
-CREATE (f)-[:IS]->(alr);
-
 OPTIONAL MATCH (alr:FIN {name:"Arm-lock reto"}), (f:FIN {name:"Finalizado"})
 CREATE (alr)-[:TO {score: 0, p: 'passador'}]->(f);
-
-OPTIONAL MATCH (f:FIN {name:"Finalização"}), (al:FIN {name:"Arm-lock"})
-CREATE (f)-[:IS]->(al);
 
 OPTIONAL MATCH (al:FIN {name:"Arm-lock"}), (f:FIN {name:"Finalizado"})
 CREATE (al)-[:TO {score: 0, p: 'passador'}]->(f);
 
 // Relóginho
-
-OPTIONAL MATCH (f:FIN {name:"Finalização"}), (r:FIN {name:"Relóginho"})
-CREATE (f)-[:IS]->(r);
 
 OPTIONAL MATCH (r:FIN {name:"Relóginho"}), (f:FIN {name:"Finalizado"})
 CREATE (r)-[:TO {score: 0, p: 'passador', info_pt: 'TODO'}]->(f);
@@ -529,9 +631,6 @@ OPTIONAL MATCH (kg:CONTROLELATERAL {name:"100kg"}), (k:FIN {name:"Kimura"})
 CREATE (kg)-[:TO {score: 0, p: 'passador', info_pt: 'avançar corpo sobre o peito dele'}]->(k);
 
 // Americana
-
-OPTIONAL MATCH (f:FIN {name:"Finalização"}), (a:FIN {name:"Americana"})
-CREATE (f)-[:IS]->(a);
 
 OPTIONAL MATCH (a:FIN {name:"Americana"}), (f:FIN {name:"Finalizado"})
 CREATE (a)-[:TO {score: 0, p: 'passador'}]->(f);
@@ -552,9 +651,6 @@ CREATE (jb)-[to:TO {score: 0, p: 'passador', info_pt: 'segurando com o braço es
 
 // Kimura
 
-OPTIONAL MATCH (f:FIN {name:"Finalização"}), (k:FIN {name:"Kimura"})
-CREATE (f)-[:IS]->(k);
-
 OPTIONAL MATCH (k:FIN {name:"Kimura"}), (f:FIN {name:"Finalizado"})
 CREATE (k)-[:TO {score: 0, p: 'passador', info_pt: 'TODO'}]->(f);
 
@@ -564,29 +660,10 @@ CREATE (k)-[:TO {score: 0, p: 'guardeiro', info_pt: 'TODO, kimura,  guardeiro???
 
 // Chock
 
-OPTIONAL MATCH (c:CHOCK {name:"Estrangulamento"}), (cc:CHOCK {name:"Estrangulamento circulatório"})
-CREATE (cc)-[:IS]->(c);
-
-OPTIONAL MATCH (c:CHOCK {name:"Estrangulamento"}), (cr:CHOCK {name:"Estrangulamento respiratório"})
-CREATE (cr)-[:IS]->(c);
-
-OPTIONAL MATCH (f:FIN {name:"Finalização"}), (ml:FIN {name:"Mata leão"})
-CREATE (f)-[:IS]->(ml);
-
 OPTIONAL MATCH (ml:FIN {name:"Mata leão"}), (f:FIN {name:"Finalizado"})
 CREATE (ml)-[:TO {score: 0, p: 'passador', info_pt: 'mão esquerda com a palma para'}]->(f);
 
-OPTIONAL MATCH (ml:FIN {name:"Mata leão"}), (cc:CHOCK {name:"Estrangulamento circulatório"})
-CREATE (ml)-[:IS]->(cc);
-
-
-// Mount sweep 
-
-OPTIONAL MATCH (rasp:RASPAGEM {name:"Raspagem"}), (r:RASPAGEM {name:"Raspagem da montada 1"})
-CREATE (r)-[:IS]->(rasp);
-
-OPTIONAL MATCH (rasp:RASPAGEM {name:"Raspagem"}), (r:RASPAGEM {name:"Raspagem da montada 2"})
-CREATE (r)-[:IS]->(rasp);
+// Mount sweep
 
 OPTIONAL MATCH (m:MONTADA {name:"Montada"}), (r:RASPAGEM {name:"Raspagem da montada 1"})
 CREATE (m)-[to:TO {score: 4, p: 'guardeiro', info_pt: 'pé esquerdo trava perna direita dele, segurar mão esquerda dele perto de você, sobre o peito, dar barrigada para esquerda'}]->(r);
@@ -603,9 +680,6 @@ CREATE (r)-[:TO {score: 2, p: 'guardeiro', info_pt: ''}]->(kg);
 
 // Passagem de guarda
 
-OPTIONAL MATCH (pg:PASSAGEMDEGUARDA {name:"Passagem de guarda 1"}), (pass:PASSAGEMDEGUARDA {name:"Passagem de guarda"})
-CREATE (pg)-[:IS]->(pass);
-
 OPTIONAL MATCH (pg:PASSAGEMDEGUARDA {name:"Passagem de guarda 1"}), (kg:CONTROLELATERAL {name:"100kg"})
 CREATE (pg)-[:TO {score: 3, p: 'passador', info_pt: ''}]->(kg);
 
@@ -613,17 +687,12 @@ CREATE (pg)-[:TO {score: 3, p: 'passador', info_pt: ''}]->(kg);
 // OPTIONAL MATCH (pg:PASSAGEMDEGUARDA {name:"Passagem de guarda 1"}), (r:RASPAGEM {name:"Raspagem da montada 1"})
 // CREATE (r)-[:TO {p: 'passador'}]->(pg); monta -> raspagem da montada 1 -> guarda -> (passador ele) -> raspagem 1
 
-OPTIONAL MATCH (pg:PASSAGEMDEGUARDA {name:"Passagem da guarda andando para trás"}), (pass:PASSAGEMDEGUARDA {name:"Passagem de guarda"})
-CREATE (pg)-[:IS]->(pass);
-
 OPTIONAL MATCH (pg:PASSAGEMDEGUARDA {name:"Passagem da guarda andando para trás"}), (kg:CONTROLELATERAL {name:"100kg"})
 CREATE (pg)-[:TO {score: 3, p: 'passador', info_pt: ''}]->(kg);
 
 // OPTIONAL MATCH (pg:PASSAGEMDEGUARDA {name:"Passagem da guarda andando para trás"}), (r:RASPAGEM {name:"Raspagem da montada 1"})
 // CREATE (r)-[:TO {p: 'passador'}]->(pg);
 
-OPTIONAL MATCH (b:PASSAGEMDEGUARDAEMPE {name:"Break"}), (pe:PASSAGEMDEGUARDAEMPE {name:"Passagem de guarda em pé"})
-CREATE (b)-[:IS]->(pe);
 
 OPTIONAL MATCH (inicio:BJJ {name: "Início"}), (b:PASSAGEMDEGUARDAEMPE {name:"Break"})
 CREATE (inicio)-[:TO {score: 0, p: 'passador', info_pt: ''}]->(b);
@@ -631,17 +700,11 @@ CREATE (inicio)-[:TO {score: 0, p: 'passador', info_pt: ''}]->(b);
 OPTIONAL MATCH (b:PASSAGEMDEGUARDAEMPE {name:"Break"}), (kg:CONTROLELATERAL {name:"100kg"})
 CREATE (b)-[:TO {score: 3, p: 'passador', info_pt: ''}]->(kg);
 
-OPTIONAL MATCH (ej:PASSAGEMDEGUARDAEMPE {name:"Espetando o joelho"}), (pe:PASSAGEMDEGUARDAEMPE {name:"Passagem de guarda em pé"})
-CREATE (ej)-[:IS]->(pe);
-
 OPTIONAL MATCH (inicio:BJJ {name: "Início"}), (ej:PASSAGEMDEGUARDAEMPE {name:"Espetando o joelho"})
 CREATE (inicio)-[:TO {score: 0, p: 'passador', info_pt: ''}]->(ej);
 
 OPTIONAL MATCH (ej:PASSAGEMDEGUARDAEMPE {name:"Espetando o joelho"}), (kg:CONTROLELATERAL {name:"100kg"})
 CREATE (ej)-[:TO {score: 3, p: 'passador', info_pt: ''}]->(kg);
-
-OPTIONAL MATCH (e:PASSAGEMDEGUARDAEMPE {name:"Emborcando"}), (pe:PASSAGEMDEGUARDAEMPE {name:"Passagem de guarda em pé"})
-CREATE (e)-[:IS]->(pe);
 
 OPTIONAL MATCH (inicio:BJJ {name: "Início"}), (e:PASSAGEMDEGUARDAEMPE {name:"Emborcando"})
 CREATE (inicio)-[:TO {score: 0, p: 'passador', info_pt: ''}]->(e);
@@ -664,24 +727,6 @@ CREATE (r)-[:TO {score: 2, p: 'guardeiro', info_pt: ''}]->(mg);
 
 // Guarda - as pernas :) - e raspagens
 
-OPTIONAL MATCH (g:GUARDA {name:"Guarda"}), (gf:GUARDA {name:"Guarda fechada"})
-CREATE (gf)-[:IS]->(g);
-
-OPTIONAL MATCH (g:GUARDA {name:"Guarda"}), (ga:GUARDA {name:"Guarda aberta"})
-CREATE (ga)-[:IS]->(g);
-
-OPTIONAL MATCH (g:GUARDA {name:"Guarda"}), (ga:GUARDA {name:"Guarda borboleta"})
-CREATE (ga)-[:IS]->(g);
-
-OPTIONAL MATCH (g:GUARDA {name:"Guarda"}), (ga:GUARDA {name:"Guarda X"})
-CREATE (ga)-[:IS]->(g);
-
-OPTIONAL MATCH (g:GUARDA {name:"Guarda"}), (ga:GUARDA {name:"Guarda arranha"})
-CREATE (ga)-[:IS]->(g);
-
-OPTIONAL MATCH (g:GUARDA {name:"Guarda"}), (ga:GUARDA {name:"De La Riva"})
-CREATE (ga)-[:IS]->(g);
-
 // OPTIONAL MATCH (gf:GUARDA {name:"Guarda fechada"}), (pg:GUARDA {name:"Puxa na guarda fechada"})
 // CREATE (pg)-[:IS]->(gf);
 
@@ -690,9 +735,6 @@ CREATE (inicio)-[:TO {score: 0, p: 'guardeiro'}]->(pg);
 
 // OPTIONAL MATCH (pg:GUARDA {name:"Puxa na guarda fechada"}), (k:FIN {name:"Kimura"})
 // CREATE (pg)-[:TO {score: 0, p: 'guardeiro'}]->(k);
-
-OPTIONAL MATCH (rasp:RASPAGEM {name:"Raspagem"}), (r:RASPAGEM {name:"Raspagem 1"})
-CREATE (r)-[:IS]->(rasp);
 
 OPTIONAL MATCH (pg:GUARDA {name:"Puxa na guarda fechada"}), (r:GUARDA {name:"Guarda fechada"})
 CREATE (pg)-[:TO {score: 0, p: 'guardeiro', info_pt: ''}]->(r); //TODO: 2 pontos ou 0, pg:GUARDA ou pg:QUEDA?
@@ -738,13 +780,11 @@ CREATE (gf)-[:TO {score: 3, p: 'passador', info_pt: ''}]->(kg);
 // OPTIONAL MATCH (kg:CONTROLELATERAL {name: "100kg"}), (f:FIN {name:""})
 // CREATE (gf)-[:TO {score: 0, p: 'passador', info_pt: ''}]->(f);
 
-OPTIONAL MATCH (kg:CONTROLELATERAL {name: "100kg"}), (jb:JB {name:"Joelho na barriga"})
-CREATE (gf)-[:TO {score: 0, p: 'passador', info_pt: ''}]->(jb);
-
-OPTIONAL MATCH (kg:CONTROLELATERAL {name: "Hon kesa gatame para atrás"}), (f:FIN {name:"Arm-lock"})
-CREATE (gf)-[:TO {score: 0, p: 'passador', info_pt: 'Enquanto ele faz fuga de quadril, senta no ombro dele, pesca a mão com a perna direita, faz triângulo no braço dele, abaixa o braço para dar o arm-lock'}]->(f);
+OPTIONAL MATCH (h:CONTROLELATERAL {name: "Hon kesa gatame para atrás"}), (f:FIN {name:"Arm-lock"})
+CREATE (h)-[:TO {score: 0, p: 'passador', info_pt: 'Enquanto ele faz fuga de quadril, senta no ombro dele, pesca a mão com a perna direita, faz triângulo no braço dele, abaixa o braço para dar o arm-lock'}]->(f);
 
 // Meia-guarda
+
 OPTIONAL MATCH (mg:GUARDA {name: "Meia guarda"}), (r:RASPAGEM {name: "Raspagem da meia guarda"})
 CREATE (mg)-[:TO {score: 0, p: "guardeiro", info_pt:""}]->(r);
 
@@ -760,11 +800,6 @@ CREATE (gf)-[:TO {score: 0, p: 'passador', variacao: 1, info_pt: 'empurando com 
 
 OPTIONAL MATCH (gf:GUARDA {name:"Meia guarda"}), (kg:CONTROLELATERAL {name: "100kg"})
 CREATE (gf)-[:TO {score: 0, p: 'passador', variacao: 2, info_pt: 'tirando o joelho fazendo 1, 2 com o pé'}]->(kg);
-
-
-:commit
-
-:begin
 
 MATCH ()-[t:TO]->()
 WHERE exists(t.score) AND t.score > 0

@@ -12,8 +12,8 @@ RETURN n;
 MATCH (n:BJJ)
 RETURN n;
 
-MATCH ((s:BJJ)-[:TO]->(next)), (bjj:BJJ)-[:INFO_PT]->(info)
-RETURN s, next, bjj, info;
+MATCH (n2)<-[i2:INFO_PT]-(s)-[i:IS]->(next)
+RETURN s, i, next, i2, n2;
 
 OPTIONAL MATCH (start:BJJ { name: 'Início' }),(end:BJJ { name: 'Finalizado' }), p = shortestPath((start)-[:TO*]-(end))
 RETURN p;
