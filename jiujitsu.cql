@@ -334,11 +334,19 @@ CREATE (r:GUARDA:BJJ {name:"Repor guarda"}),
 (r)-[:SCORE]->({score: 0}),
 (r)-[:INFO_PT]->({desc: ''});
 
-CREATE (r:RASPAGEM:BJJ {name:"Raspagem 1 da meia guarda"}),
+CREATE (x:RASPAGEM:BJJ {name:"Raspagem da meia guarda"}),
+(x)-[:TRANSLATION_EN]->({name: ''}),
+(x)-[:TRANSLATION_PT]->({name: 'Raspagem da meia guarda'}),
+(x)-[:SCORE]->({score: 2}),
+(x)-[:VARIACOES]->({varicoes: 1}),
+(x)-[:INFO_PT]->({desc: ['Desce o máximo que puder, apoiando um hombro no chão e o outro no peito do oponente. Pega o pé do lado direito e entrega para sua mão esquerda que virá pela lateral dele. Apóa a mão direita e levanta.']});
+
+CREATE (r:RASPAGEM:BJJ {name:"Raspagem da meia guarda com lapela"}),
 (r)-[:TRANSLATION_EN]->({name: ''}),
-(r)-[:TRANSLATION_PT]->({name: 'Raspagem 1 da meia guarda'}),
+(r)-[:TRANSLATION_PT]->({name: "Raspagem da meia guarda com lapela"}),
 (r)-[:SCORE]->({score: 2}),
-(r)-[:INFO_PT]->({desc: 'Desce o máximo que puder, apoiando um hombro no chão e o outro no peito do oponente. Pega o pé do lado direito e entrega para sua mão esquerda que virá pela lateral dele. Apóa a mão direita e levanta.'});
+(r)-[:VARIACOES]->({variacoes: 3}),
+(r)-[:INFO_PT]->({desc: ['', '', '']});
 
 // Relations
 
@@ -716,17 +724,14 @@ CREATE (r)-[:TO {score: 0, p: 'guardeiro', info_pt: ''}]->(gf);
 OPTIONAL MATCH (gf:GUARDA {name:"Guarda fechada"}), (k:FIN {name:"Kimura"})
 CREATE (gf)-[:TO {score: 0, p: 'guardeiro', info_pt: 'leva para as costas o braço dele'}]->(k);
 
-OPTIONAL MATCH (mg:GUARDA {name:"Meia guarda"}), (r:RASPAGEM {name:"Raspagem 1 da meia guarda"})
-CREATE (mg)-[:TO {score: 2, p: 'guardeiro', info_pt: ''}]->(r);
+OPTIONAL MATCH (mg:GUARDA {name:"Meia guarda"}), (r:RASPAGEM {name:"Raspagem da meia guarda"})
+CREATE (mg)-[:TO {score: 2, p: 'guardeiro', variacao: 1, info_pt: ''}]->(r);
 
-OPTIONAL MATCH (r:RASPAGEM {name:"Raspagem 1 da meia guarda"}), (kg:CONTROLELATERAL {name: "100kg"})
-CREATE (r)-[:TO {score: 2, p: 'passador', info_pt: 'pesando!!!'}]->(kg);
+OPTIONAL MATCH (r:RASPAGEM {name:"Raspagem da meia guarda"}), (kg:CONTROLELATERAL {name: "100kg"})
+CREATE (r)-[:TO {score: 2, p: 'passador', variacao: 1, info_pt: 'pesando!!!'}]->(kg);
 
 OPTIONAL MATCH (gf:GUARDA {name:"Guarda fechada"}), (kg:CONTROLELATERAL {name: "100kg"})
 CREATE (gf)-[:TO {score: 3, p: 'passador', info_pt: ''}]->(kg);
-
-OPTIONAL MATCH (gf:GUARDA {name:"Meia guarda"}), (kg:CONTROLELATERAL {name: "100kg"})
-CREATE (gf)-[:TO {score: 0, p: 'passador', info_pt: 'escapando da meia guarda'}]->(kg);
 
 // 100kg
 
@@ -738,6 +743,24 @@ CREATE (gf)-[:TO {score: 0, p: 'passador', info_pt: ''}]->(jb);
 
 OPTIONAL MATCH (kg:CONTROLELATERAL {name: "Hon kesa gatame para atrás"}), (f:FIN {name:"Arm-lock"})
 CREATE (gf)-[:TO {score: 0, p: 'passador', info_pt: 'Enquanto ele faz fuga de quadril, senta no ombro dele, pesca a mão com a perna direita, faz triângulo no braço dele, abaixa o braço para dar o arm-lock'}]->(f);
+
+// Meia-guarda
+OPTIONAL MATCH (mg:GUARDA {name: "Meia guarda"}), (r:RASPAGEM {name: "Raspagem da meia guarda"})
+CREATE (mg)-[:TO {score: 0, p: "guardeiro", info_pt:""}]->(r);
+
+OPTIONAL MATCH (mg:GUARDA {name: "Meia guarda"}), (r:RASPAGEM {name: "Raspagem da meia guarda com lapela"})
+CREATE (mg)-[:TO {score: 0, p: "guardeiro", variacao: 1, info_pt:"Pega lapela com a mão deita passa por cima das costas dele e entrega para a mão esquerda, fecha o cotovelo segurando o braço dele, inverte guarda e raspa para a esquerda."}]->(r);
+
+OPTIONAL MATCH (mg:GUARDA {name: "Meia guarda"}), (r:RASPAGEM {name: "Raspagem da meia guarda com lapela"})
+CREATE (mg)-[:TO {score: 0, p: "guardeiro", variacao: 2, situacao: 'Oponente estica perna esquerda.', info_pt:"Coloca gancho na perna esquerda dele acima do joelho e joga ele para a direita sua."}]->(r);
+
+
+OPTIONAL MATCH (gf:GUARDA {name:"Meia guarda"}), (kg:CONTROLELATERAL {name: "100kg"})
+CREATE (gf)-[:TO {score: 0, p: 'passador', variacao: 1, info_pt: 'empurando com o pé'}]->(kg);
+
+OPTIONAL MATCH (gf:GUARDA {name:"Meia guarda"}), (kg:CONTROLELATERAL {name: "100kg"})
+CREATE (gf)-[:TO {score: 0, p: 'passador', variacao: 2, info_pt: 'tirando o joelho fazendo 1, 2 com o pé'}]->(kg);
+
 
 :commit
 
