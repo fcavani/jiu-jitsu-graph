@@ -814,6 +814,6 @@ SET t.neg_score = -1 * t.score;
 
 MATCH ()-[t:TO]->()
 WHERE NOT exists(t.score) OR t.score = 0
-SET t.neg_score = 1;
+SET t.neg_score = -10;
 
 :commit
