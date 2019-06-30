@@ -682,7 +682,7 @@ OPTIONAL MATCH (m:MONTADA {name:"Montada"}), (r:RASPAGEM {name:"Raspagem da mont
 CREATE (m)-[to:TO {score: 4, p: 'guardeiro', info_pt: 'TODO'}]->(r);
 
 OPTIONAL MATCH (r:RASPAGEM {name:"Raspagem da montada 2"}), (kg:CONTROLELATERAL {name:"100kg"})
-CREATE (r)-[:TO {score: 2, p: 'guardeiro', info_pt: ''}]->(kg);
+CREATE (r)-[:TO {score: 2, p: 'passador', info_pt: ''}]->(kg);
 
 
 // Passagem de guarda
@@ -727,7 +727,7 @@ CREATE (r)-[:TO {score: 2, p: 'guardeiro', info_pt: ''}]->(gf);
 
 // TODO: To falando besteira, não cai na montada???
 OPTIONAL MATCH (r:RASPAGEM {name:"Raspagem da montada 1"}), (mg:GUARDA:BJJ {name:"Meia guarda"})
-CREATE (r)-[:TO {score: 2, p: 'guardeiro', info_pt: ''}]->(mg);
+CREATE (r)-[:TO {score: 2, p: 'passador', info_pt: ''}]->(mg);
 
 // OPTIONAL MATCH (k:FIN {name:"Kimura"}), (r:RASPAGEM {name:"Raspagem da montada 1"})
 // CREATE (r)-[:TO {p: 'guardeiro'}]->(k);
@@ -750,7 +750,7 @@ OPTIONAL MATCH (gf:GUARDA {name:"Guarda fechada"}), (r:RASPAGEM {name:"Raspagem 
 CREATE (gf)-[:TO {score: 0, p: 'guardeiro', info_pt: 'trazer ele bem colado a você'}]->(r);
 
 OPTIONAL MATCH (r:RASPAGEM {name:"Raspagem 1"}), (m:MONTADA {name:"Montada"})
-CREATE (r)-[:TO {score: 2, p: 'guardeiro', info_pt: ''}]->(m);
+CREATE (r)-[:TO {score: 2, p: 'passador', info_pt: ''}]->(m);
 
 OPTIONAL MATCH (pg:GUARDA {name:"Guarda fechada"}), (pga:PASSAGEMDEGUARDA {name:"Passagem da guarda andando para trás"})
 CREATE (pg)-[:TO {score: 0, p: 'passador', info_pt: ''}]->(pga);
