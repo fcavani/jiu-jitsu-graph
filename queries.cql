@@ -6,25 +6,14 @@
 // You should have received a copy of the license along with this
 // work. If not, see <http://creativecommons.org/licenses/by-nc/4.0/>.
 
-MATCH (n)
-RETURN n;
-
-MATCH (n:BJJ)
-RETURN n;
-
-MATCH (n2)<-[i2:INFO_PT]-(s)-[i:IS]->(next)
-RETURN s, i, next, i2, n2;
-
-OPTIONAL MATCH (start:BJJ { name: 'Início' }),(end:BJJ { name: 'Finalizado' }), p = shortestPath((start)-[:TO*]-(end))
-RETURN p;
+MATCH (s)-[t:IS]->(n)
+RETURN s, t, n;
 
 MATCH ((s:BJJ)-[t:TO]->(next))
 RETURN s, t, next
 
-
-OPTIONAL MATCH (start:BJJ { name: 'Início' }),(end:BJJ { name: 'Finalizado' }), p = shortestPath((start)-[r:TO*]-(end))
-WHERE all(x IN r WHERE x.p = 'passador' OR NOT EXISTS(x.p))
-RETURN p;
+MATCH ((s:BJJ {name: 'Início'})-[t:TO]->(next))
+RETURN s, t, next
 
 // Find the sub graph with passador only.
 
@@ -38,6 +27,20 @@ WITH *, relationships(path) AS TO
 WHERE all(r in TO WHERE r.p = 'guardeiro')
 RETURN path
 
+// From Início to 3 relations deep with info nodes
+
+MATCH p = (s:BJJ {name: 'Início'})-[t:TO]->(next)-[*1..3]->(next2)
+WITH *, relationships(p) AS t2
+WHERE NOT next:FIN AND NOT next2:FIN
+RETURN s, t, next, t2, next2
+
+// From Início to 3 relations deep
+
+MATCH p = (s:BJJ {name: 'Início'})-[t:TO]->(next)-[*1..3]->(next2)
+WITH *, relationships(p) AS t2
+WHERE NOT next:FIN AND NOT next2:FIN AND all(r in t2 WHERE type(r) = 'TO')
+RETURN s, t, next, t2, next2
+
 // Find the longest path with more pontuation until finalized.
 
 MATCH (start:BJJ {name: 'Início'}), (end:BJJ {name: 'Finalizado'})
@@ -47,23 +50,3 @@ RETURN path, weight
 MATCH (start:BJJ {name: 'Início'})-[TO {p: 'passador'}]-> (end:BJJ)
 CALL apoc.algo.dijkstra(start, end, 'TO', 'neg_score') YIELD path, weight
 RETURN path, weight
-
-
-// Fail with heap space
-
-MATCH (start:BJJ{name:'Início'}), (end:BJJ{name:'Finalizado'})
-CALL algo.shortestPath.stream(start, end, 'neg_score', {
-    relationshipQuery:'MATCH(n:BJJ)-[r:TO]->(m) RETURN id(n) as source, id(m) as target, r.neg_score as weight',
-    defaultValue:0.0})
-YIELD nodeId, cost
-RETURN algo.asNode(nodeId).name AS name, cost;
-
-// Don't work
-
-MATCH (start:BJJ{name:'Início'}), (end:BJJ{name:'Finalizado'})
-CALL algo.shortestPath(start, end, 'score',{
-nodeQuery:'MATCH(n:start) RETURN id(n) as id',
-relationshipQuery:'MATCH(n:start)-[r:TO]->(m:end) RETURN id(n) as source, id(m) as target, r.score * -1 as weight',
-graph:'cypher'})
-YIELD writeMillis,loadMillis,nodeCount, totalCost
-RETURN writeMillis,loadMillis,nodeCount,totalCost
