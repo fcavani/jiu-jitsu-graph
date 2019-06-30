@@ -27,14 +27,14 @@ WITH *, relationships(path) AS TO
 WHERE all(r in TO WHERE r.p = 'guardeiro')
 RETURN path
 
-// From Início to 3 relations deep with info nodes
+// From Início to 3 relations deep with info nodes and without submission
 
 MATCH p = (s:BJJ {name: 'Início'})-[t:TO]->(next)-[*1..3]->(next2)
 WITH *, relationships(p) AS t2
 WHERE NOT next:FIN AND NOT next2:FIN
 RETURN s, t, next, t2, next2
 
-// From Início to 3 relations deep
+// From Início to 3 relations deep whitout submission
 
 MATCH p = (s:BJJ {name: 'Início'})-[t:TO]->(next)-[*1..3]->(next2)
 WITH *, relationships(p) AS t2
@@ -49,4 +49,10 @@ RETURN path, weight
 
 MATCH (start:BJJ {name: 'Início'})-[TO {p: 'passador'}]-> (end:BJJ)
 CALL apoc.algo.dijkstra(start, end, 'TO', 'neg_score') YIELD path, weight
+RETURN path, weight
+
+MATCH p = (s:BJJ {name: 'Início'})-[t:TO]->(next)-[*1..3]->(next2)
+WITH *, relationships(p) AS t2
+WHERE NOT next:FIN AND NOT next2:FIN AND all(r in t2 WHERE type(r) = 'TO')
+CALL apoc.algo.dijkstra(s, next2, 'TO', 'neg_score') YIELD path, weight
 RETURN path, weight
