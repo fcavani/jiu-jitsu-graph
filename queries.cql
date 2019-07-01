@@ -120,4 +120,23 @@ YIELD loadMillis, computeMillis, writeMillis, effectiveNodeCount
 RETURN loadMillis, computeMillis, writeMillis, effectiveNodeCount;
 
 
+//
+// Trabalhar mais nesse
+// Ajustar segundo valor da relação - NO LOOPS????
+// 5 demora mas fica muito bom
+//
+
+MATCH p = (s:BJJ {name: 'Início'})-[*0..1]->(next)-[*..5]->(next2)
+WITH *, relationships(p) AS t
+WHERE next2:FIN AND all(r in t WHERE type(r) = 'TO')
+RETURN p
+
+// Testar sem finalização - testar maior pontuação
+
+MATCH p = (s:BJJ {name: 'Início'})-[*0..1]->(next)-[*..5]->(next2)
+WITH *, relationships(p) AS t
+WHERE NOT next2:FIN AND all(r in t WHERE type(r) = 'TO')
+RETURN p
+
+
 
