@@ -133,15 +133,24 @@ RETURN p
 
 // Testar sem finalização - testar maior pontuação
 
-MATCH p = (s:BJJ {name: 'Início'})-[*0..1]->(next)-[*..5]->(next2)
+MATCH p = (s:BJJ {name: 'Início'})-[]->()-[]->(next2)
 WITH *, relationships(p) AS t
 WHERE NOT next2:FIN AND all(r in t WHERE type(r) = 'TO')
 RETURN p
 
 // Testar - maior pontuação até finalizar - o que não faz muito sentido.
+// Um arm-lock ligado a fim que brota do nada...
 MATCH p = (s:BJJ {name: 'Início'})-[]->()-[]->(next2)
 WITH *, relationships(p) AS t
 WHERE next2:FIN AND all(r in t WHERE type(r) = 'TO')
+CALL apoc.algo.dijkstra(s, next2, 'TO', 'neg_score') YIELD path, weight
+RETURN path
+
+// Testar - maior pontuação até 5 arestas - aparecem FIN
+
+MATCH p = (s:BJJ {name: 'Início'})-[]->(next)-[*..5]->(next2)
+WITH *, relationships(p) AS t
+WHERE NOT next:FIN AND NOT next2:FIN AND all(r in t WHERE type(r) = 'TO')
 CALL apoc.algo.dijkstra(s, next2, 'TO', 'neg_score') YIELD path, weight
 RETURN path
 
