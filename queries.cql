@@ -56,3 +56,68 @@ WITH *, relationships(p) AS t2
 WHERE NOT next:FIN AND NOT next2:FIN AND all(r in t2 WHERE type(r) = 'TO')
 CALL apoc.algo.dijkstra(s, next2, 'TO', 'neg_score') YIELD path, weight
 RETURN path, weight
+
+//
+// Tests
+//
+
+MATCH (n:BJJ {name: "Início"})
+CALL algo.spanningTree.kmin("BJJ", "TO", "score", id(n), 1,
+{write:true, writeProperty:"MINST"})
+YIELD loadMillis, computeMillis, writeMillis, effectiveNodeCount
+RETURN loadMillis, computeMillis, writeMillis, effectiveNodeCount;
+
+// MINST
+
+MATCH (n:BJJ {name: "Início"})
+CALL algo.spanningTree.minimum("BJJ", "TO", "neg_score", id(n),
+{write: true, writeProperty:"MINST"})
+YIELD loadMillis, computeMillis, writeMillis, effectiveNodeCount
+RETURN loadMillis, computeMillis, writeMillis, effectiveNodeCount;
+
+MATCH path = (n:BJJ {name: "Início"})-[MINST *0..]->()
+WITH relationships(path) AS rels
+UNWIND rels AS rel
+WITH DISTINCT rel AS rel
+RETURN startNode(rel).name AS source, endNode(rel).name AS destination, rel.score AS cost
+
+MATCH path = (n:BJJ {name: "Início"})-[MINST *0..]->()
+WITH relationships(path) AS rels
+UNWIND rels AS rel
+WITH DISTINCT rel AS rel
+RETURN startNode(rel) as source, endNode(rel).name as destination, rel
+
+// MAXST
+
+MATCH (n:BJJ {name: "Início"})
+CALL algo.spanningTree.maximum("BJJ", "TO", "neg_score", id(n),
+{write: true, writeProperty:"MAXST"})
+YIELD loadMillis, computeMillis, writeMillis, effectiveNodeCount
+RETURN loadMillis, computeMillis, writeMillis, effectiveNodeCount;
+
+MATCH path = (n:BJJ {name: "Início"})-[MAXST *0..3]->()
+WITH relationships(path) AS rels
+UNWIND rels AS rel
+WITH DISTINCT rel AS rel
+RETURN startNode(rel).name AS source, endNode(rel).name AS destination, rel.score AS cost
+
+MATCH path = (n:BJJ {name: "Início"})-[MAXST *0..3]->()
+WITH relationships(path) AS rels
+UNWIND rels AS rel
+WITH DISTINCT rel AS rel
+RETURN startNode(rel) as source, endNode(rel).name as destination, rel
+
+MATCH (n)
+REMOVE n:MAX
+RETURN n.name, labels(n)
+
+MATCH (start:BJJ {name: 'Início'})-[TO {p: 'passador'}]-> (end:BJJ)
+CALL apoc.algo.dijkstra(start, end, 'TO', 'neg_score')
+YIELD path, weight
+CALL algo.spanningTree.minimum("BJJ", "TO", "neg_score", id(nodes(path)[0]),
+{write: true, writeProperty:"MINST2"})
+YIELD loadMillis, computeMillis, writeMillis, effectiveNodeCount
+RETURN loadMillis, computeMillis, writeMillis, effectiveNodeCount;
+
+
+
