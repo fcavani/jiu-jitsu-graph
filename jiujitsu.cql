@@ -588,6 +588,9 @@ CREATE (q)-[:TO {score: 2, p: 'passador'}]->(a);
 OPTIONAL MATCH (m:MONTADA {name:"Montada"}), (al:FIN {name:"Arm-lock"})
 CREATE (m)-[:TO {score: 4, p: 'passador', info_pt: 'TODO'}]->(al);
 
+OPTIONAL MATCH (m:MONTADA {name:"Montada"}), (al:FIN {name:"Americana"})
+CREATE (m)-[:TO {score: 4, p: 'passador', info_pt: 'TODO'}]->(al);
+
 // Side control
 
 // Movimentação controle lateral
@@ -634,8 +637,8 @@ CREATE (r)-[:TO {score: 0, p: 'passador', info_pt: 'TODO'}]->(f);
 OPTIONAL MATCH (k:CONTROLELATERAL {name:"100kg"}), (r:FIN {name:"Relóginho"})
 CREATE (k)-[:TO {score: 0, p: 'passador', info_pt: 'TODO'}]->(r);
 
-OPTIONAL MATCH (kg:CONTROLELATERAL {name:"100kg"}), (k:FIN {name:"Kimura"})
-CREATE (kg)-[:TO {score: 0, p: 'passador', info_pt: 'avançar corpo sobre o peito dele'}]->(k);
+// OPTIONAL MATCH (kg:CONTROLELATERAL {name:"100kg"}), (k:FIN {name:"Kimura"})
+// CREATE (kg)-[:TO {score: 0, p: 'passador', info_pt: 'avançar corpo sobre o peito dele'}]->(k);
 
 // Americana
 
@@ -771,16 +774,13 @@ OPTIONAL MATCH (r:GUARDA {name:"Repor guarda"}), (gf:GUARDA {name:"Meia guarda"}
 CREATE (r)-[:TO {score: 0, p: 'guardeiro', info_pt: ''}]->(gf);
 
 OPTIONAL MATCH (gf:GUARDA {name:"Guarda fechada"}), (k:FIN {name:"Kimura"})
-CREATE (gf)-[:TO {score: 0, p: 'guardeiro', info_pt: 'leva para as costas o braço dele'}]->(k);
+CREATE (gf)-[:TO {score: 0, p: 'guardeiro', info_pt: 'leva para as costas o braço dele, braço apontando para baixo'}]->(k);
 
 OPTIONAL MATCH (mg:GUARDA {name:"Meia guarda"}), (r:RASPAGEM {name:"Raspagem da meia guarda"})
 CREATE (mg)-[:TO {score: 2, p: 'guardeiro', variacao: 1, info_pt: ''}]->(r);
 
 OPTIONAL MATCH (r:RASPAGEM {name:"Raspagem da meia guarda"}), (kg:CONTROLELATERAL {name: "100kg"})
 CREATE (r)-[:TO {score: 2, p: 'passador', variacao: 1, info_pt: 'pesando!!!'}]->(kg);
-
-OPTIONAL MATCH (gf:GUARDA {name:"Guarda fechada"}), (kg:CONTROLELATERAL {name: "100kg"})
-CREATE (gf)-[:TO {score: 3, p: 'passador', info_pt: ''}]->(kg);
 
 // 100kg
 
