@@ -138,5 +138,12 @@ WITH *, relationships(p) AS t
 WHERE NOT next2:FIN AND all(r in t WHERE type(r) = 'TO')
 RETURN p
 
+// Testar - maior pontuação até finalizar - o que não faz muito sentido.
+MATCH p = (s:BJJ {name: 'Início'})-[]->()-[]->(next2)
+WITH *, relationships(p) AS t
+WHERE next2:FIN AND all(r in t WHERE type(r) = 'TO')
+CALL apoc.algo.dijkstra(s, next2, 'TO', 'neg_score') YIELD path, weight
+RETURN path
+
 
 
