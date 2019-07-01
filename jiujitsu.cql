@@ -605,13 +605,13 @@ OPTIONAL MATCH (q:CONTROLELATERAL {name:"Hon kesa gatame"}), (c:CONTROLELATERAL 
 CREATE (q)-[to:TO {score: 0, p: 'passador', info_pt: 'tira o braço do caminho'}]->(c);
 
 OPTIONAL MATCH (c:CONTROLELATERAL {name:"Norte-sul"}), (q:CONTROLELATERAL {name:"Hon kesa gatame"})
-CREATE (c)-[to:TO {score: 0, p: 'passador', info_pt: 'TODO: Como?'}]->(c);
+CREATE (c)-[to:TO {score: 0, p: 'passador', info_pt: 'TODO: Como?'}]->(q);
 
 OPTIONAL MATCH (q:CONTROLELATERAL {name:"Hon kesa gatame"}), (c:CONTROLELATERAL {name:"100kg"})
 CREATE (q)-[to:TO {score: 0, p: 'passador', info_pt: ''}]->(c);
 
 OPTIONAL MATCH (c:CONTROLELATERAL {name:"100kg"}), (q:CONTROLELATERAL {name:"Hon kesa gatame para atrás"})
-CREATE (c)-[to:TO {score: 0, p: 'passador', info_pt: ''}]->(c);
+CREATE (c)-[to:TO {score: 0, p: 'passador', info_pt: ''}]->(q);
 
 // Side control finalizations
 
@@ -763,6 +763,9 @@ CREATE (pg)-[:TO {score: 0, p: 'passador', info_pt: ''}]->(pg1);
 
 OPTIONAL MATCH (r:RASPAGEM {name:"Raspagem 100kg 1"}), (kg:CONTROLELATERAL {name:"100kg"})
 CREATE (kg)-[:TO {score: 0, p: 'guardeiro', info_pt: 'TODO'}]->(r);
+
+OPTIONAL MATCH (r:RASPAGEM {name:"Raspagem 100kg 1"}), (kg:CONTROLELATERAL {name:"100kg"})
+CREATE (r)-[:TO {score: 2, p: 'passador', info_pt: 'TODO'}]->(kg);
 
 OPTIONAL MATCH (kg:CONTROLELATERAL {name:"100kg"}), (r:GUARDA {name:"Repor guarda"})
 CREATE (kg)-[:TO {score: 0, p: 'guardeiro', info_pt: 'TODO'}]->(r);
