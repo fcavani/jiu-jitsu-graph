@@ -357,8 +357,15 @@ CREATE (r:RASPAGEM:BJJ {name:"Raspagem da meia guarda com lapela"}),
 (r)-[:TRANSLATION_EN]->({name: ''}),
 (r)-[:TRANSLATION_PT]->({name: "Raspagem da meia guarda com lapela"}),
 (r)-[:SCORE]->({score: 2}),
-(r)-[:VARIACOES]->({variacoes: 3}),
-(r)-[:INFO_PT]->({desc: ['', '', '']});
+(r)-[:VARIACOES]->({variacoes: 2}),
+(r)-[:INFO_PT]->({desc: ['Lapela direita para mão esquerda por cima, pega calça do lado direito, junta braço esquerdo travando esgrima dele, inverte guarda e raspa.', 'Mesma coisa da anterior, mas ele estica a perna direita dele, perna direita vai em gancho perto do joelho, perna esquerda protege lá perto do pé dele, raspa para a sua direita']});
+
+CREATE (r:RASPAGEM:BJJ {name:"Raspagem da meia guarda indo para as costas"}),
+(r)-[:TRANSLATION_EN]->({name: ''}),
+(r)-[:TRANSLATION_PT]->({name: "Raspagem da meia guarda indo para as costas"}),
+(r)-[:SCORE]->({score: 2}),
+(r)-[:VARIACOES]->({variacoes: 1}),
+(r)-[:INFO_PT]->({desc: ["Meia guarda, fuga para a direita, estica os dois braços dele para atrás da sua cabeça, pega no pano dele (punho) direito, puxa este braço para direito, fuga para a esquerda, poem ganchos."]});
 
 // Guarda????? Guarda tartaruga????
 // Como eu chego aqui?????
@@ -553,6 +560,9 @@ OPTIONAL MATCH (mg:GUARDA {name: "Meia guarda"}), (r:RASPAGEM {name: "Raspagem d
 CREATE (mg)-[:IS]->(r);
 
 OPTIONAL MATCH (mg:GUARDA {name: "Meia guarda"}), (r:RASPAGEM {name: "Raspagem da meia guarda com lapela"})
+CREATE (mg)-[:IS]->(r);
+
+OPTIONAL MATCH (mg:GUARDA {name: "Meia guarda"}), (r:RASPAGEM {name: "Raspagem da meia guarda indo para as costas"})
 CREATE (mg)-[:IS]->(r);
 
 OPTIONAL MATCH (cl:CONTROLELATERAL {name:"Controle lateral"}), (jb:JB {name:"Joelho na barriga"})
@@ -842,10 +852,10 @@ OPTIONAL MATCH (gf:GUARDA {name:"Guarda fechada"}), (k:FIN {name:"Kimura"})
 CREATE (gf)-[:TO {score: 0, p: 'guardeiro', info_pt: 'leva para as costas o braço dele, braço apontando para baixo'}]->(k);
 
 OPTIONAL MATCH (mg:GUARDA {name:"Meia guarda"}), (r:RASPAGEM {name:"Raspagem da meia guarda"})
-CREATE (mg)-[:TO {score: 2, p: 'guardeiro', variacao: 1, info_pt: ''}]->(r);
+CREATE (mg)-[:TO {score: 0, p: 'guardeiro', variacoes: 1, info_pt: ''}]->(r);
 
 OPTIONAL MATCH (r:RASPAGEM {name:"Raspagem da meia guarda"}), (kg:CONTROLELATERAL {name: "100kg"})
-CREATE (r)-[:TO {score: 2, p: 'passador', variacao: 1, info_pt: 'pesando!!!'}]->(kg);
+CREATE (r)-[:TO {score: 2, p: 'passador', variacoes: 1, info_pt: 'pesando!!!'}]->(kg);
 
 // 100kg
 
@@ -861,20 +871,28 @@ OPTIONAL MATCH (mg:GUARDA {name: "Meia guarda"}), (r:RASPAGEM {name: "Raspagem d
 CREATE (mg)-[:TO {score: 0, p: "guardeiro", info_pt:""}]->(r);
 
 OPTIONAL MATCH (mg:GUARDA {name: "Meia guarda"}), (r:RASPAGEM {name: "Raspagem da meia guarda com lapela"})
-CREATE (mg)-[:TO {score: 0, p: "guardeiro", variacao: 1, info_pt:"Pega lapela com a mão deita passa por cima das costas dele e entrega para a mão esquerda, fecha o cotovelo segurando o braço dele, inverte guarda e raspa para a esquerda."}]->(r);
+CREATE (mg)-[:TO {score: 0, p: "guardeiro", variacoes: 1, info_pt:"Pega lapela com a mão deita passa por cima das costas dele e entrega para a mão esquerda, fecha o cotovelo segurando o braço dele, inverte guarda e raspa para a esquerda."}]->(r);
 
 OPTIONAL MATCH (mg:GUARDA {name: "Meia guarda"}), (r:RASPAGEM {name: "Raspagem da meia guarda com lapela"})
-CREATE (mg)-[:TO {score: 0, p: "guardeiro", variacao: 2, situacao: 'Oponente estica perna esquerda.', info_pt:"Coloca gancho na perna esquerda dele acima do joelho e joga ele para a direita sua."}]->(r);
+CREATE (mg)-[:TO {score: 0, p: "guardeiro", variacoes: 2, situacao: 'Oponente estica perna esquerda.', info_pt:"Coloca gancho na perna esquerda dele acima do joelho e joga ele para a direita sua."}]->(r);
 
+OPTIONAL MATCH (r:RASPAGEM {name: "Raspagem da meia guarda com lapela"}), (kg:CONTROLELATERAL {name: "100kg"})
+CREATE (r)-[:TO {score: 2, p: 'passador', variacoes: 1, info_pt: ''}]->(kg);
 
 OPTIONAL MATCH (gf:GUARDA {name:"Meia guarda"}), (kg:CONTROLELATERAL {name: "100kg"})
-CREATE (gf)-[:TO {score: 0, p: 'passador', variacao: 1, info_pt: 'empurando com o pé'}]->(kg);
+CREATE (gf)-[:TO {score: 2, p: 'guardeiro', variacoes: 1, info_pt: 'empurando com o pé'}]->(kg);
 
 OPTIONAL MATCH (gf:GUARDA {name:"Meia guarda"}), (kg:CONTROLELATERAL {name: "100kg"})
-CREATE (gf)-[:TO {score: 0, p: 'passador', variacao: 2, info_pt: 'tirando o joelho fazendo 1, 2 com o pé'}]->(kg);
+CREATE (gf)-[:TO {score: 0, p: 'passador', variacoes: 2, info_pt: 'tirando o joelho fazendo 1, 2 com o pé'}]->(kg);
 
-OPTIONAL MATCH (gf:GUARDA {name:"Meia guarda"}), (c:COSTAS {name:"Costas"})
-CREATE (gf)-[:TO {score: 0, p: 'guardeiro', variacao: 1, info_pt: 'TODO'}]->(c);
+// OPTIONAL MATCH (gf:GUARDA {name:"Meia guarda"}), (c:COSTAS {name:"Costas"})
+// CREATE (gf)-[:TO {score: 0, p: 'guardeiro', variacoes: 1, info_pt: 'TODO'}]->(c);
+
+OPTIONAL MATCH (mg:GUARDA {name:"Meia guarda"}), (r:RASPAGEM {name:"Raspagem da meia guarda indo para as costas"})
+CREATE (mg)-[:TO {score: 0, p: 'guardeiro', variacoes: 0, info_pt: ''}]->(r);
+
+OPTIONAL MATCH (mg:RASPAGEM {name:"Raspagem da meia guarda indo para as costas"}), (c:COSTAS {name:"Costas"})
+CREATE (mg)-[:TO {score: 6, p: 'guardeiro', variacoes: 0, info_pt: ''}]->(c);
 
 MATCH ()-[t:TO]->()
 WHERE exists(t.score) AND t.score > 0
