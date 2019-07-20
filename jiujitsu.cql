@@ -360,12 +360,20 @@ CREATE (r:RASPAGEM:BJJ {name:"Raspagem da meia guarda com lapela"}),
 (r)-[:VARIACOES]->({variacoes: 2}),
 (r)-[:INFO_PT]->({desc: ['Lapela direita para mão esquerda por cima, pega calça do lado direito, junta braço esquerdo travando esgrima dele, inverte guarda e raspa.', 'Mesma coisa da anterior, mas ele estica a perna direita dele, perna direita vai em gancho perto do joelho, perna esquerda protege lá perto do pé dele, raspa para a sua direita']});
 
-CREATE (r:RASPAGEM:BJJ {name:"Raspagem da meia guarda indo para as costas"}),
+CREATE (r:COSTAS:BJJ {name:"Ida para as costas a partir da meia guarda"}),
 (r)-[:TRANSLATION_EN]->({name: ''}),
-(r)-[:TRANSLATION_PT]->({name: "Raspagem da meia guarda indo para as costas"}),
+(r)-[:TRANSLATION_PT]->({name: "Ida para as costas a partir da meia guarda"}),
 (r)-[:SCORE]->({score: 2}),
 (r)-[:VARIACOES]->({variacoes: 1}),
 (r)-[:INFO_PT]->({desc: ["Meia guarda, fuga para a direita, estica os dois braços dele para atrás da sua cabeça, pega no pano dele (punho) direito, puxa este braço para direito, fuga para a esquerda, poem ganchos."]});
+
+CREATE (r:COSTAS:BJJ {name:"Defesa ida para as costas a partir da meia guarda"}),
+(r)-[:TRANSLATION_EN]->({name: ''}),
+(r)-[:TRANSLATION_PT]->({name: "Defesa ida para as costas a partir da meia guarda"}),
+(r)-[:SCORE]->({score: 2}),
+(r)-[:VARIACOES]->({variacoes: 1}),
+(r)-[:INFO_PT]->({desc: ["Defende colocando o braço esquerdo para a direita. Troca pegada para a mão esquerda e abraça a perna com a direita. Raspa."]});
+
 
 // Guarda????? Guarda tartaruga????
 // Como eu chego aqui?????
@@ -562,7 +570,7 @@ CREATE (mg)-[:IS]->(r);
 OPTIONAL MATCH (mg:GUARDA {name: "Meia guarda"}), (r:RASPAGEM {name: "Raspagem da meia guarda com lapela"})
 CREATE (mg)-[:IS]->(r);
 
-OPTIONAL MATCH (mg:GUARDA {name: "Meia guarda"}), (r:RASPAGEM {name: "Raspagem da meia guarda indo para as costas"})
+OPTIONAL MATCH (mg:GUARDA {name: "Meia guarda"}), (r:COSTAS {name: "Ida para as costas a partir da meia guarda"})
 CREATE (mg)-[:IS]->(r);
 
 OPTIONAL MATCH (cl:CONTROLELATERAL {name:"Controle lateral"}), (jb:JB {name:"Joelho na barriga"})
@@ -888,11 +896,17 @@ CREATE (gf)-[:TO {score: 0, p: 'passador', variacoes: 2, info_pt: 'tirando o joe
 // OPTIONAL MATCH (gf:GUARDA {name:"Meia guarda"}), (c:COSTAS {name:"Costas"})
 // CREATE (gf)-[:TO {score: 0, p: 'guardeiro', variacoes: 1, info_pt: 'TODO'}]->(c);
 
-OPTIONAL MATCH (mg:GUARDA {name:"Meia guarda"}), (r:RASPAGEM {name:"Raspagem da meia guarda indo para as costas"})
+OPTIONAL MATCH (mg:GUARDA {name:"Meia guarda"}), (r:COSTAS {name:"Ida para as costas a partir da meia guarda"})
 CREATE (mg)-[:TO {score: 0, p: 'guardeiro', variacoes: 0, info_pt: ''}]->(r);
 
-OPTIONAL MATCH (mg:RASPAGEM {name:"Raspagem da meia guarda indo para as costas"}), (c:COSTAS {name:"Costas"})
+OPTIONAL MATCH (mg:COSTAS {name:"Ida para as costas a partir da meia guarda"}), (c:COSTAS {name:"Costas"})
 CREATE (mg)-[:TO {score: 6, p: 'guardeiro', variacoes: 0, info_pt: ''}]->(c);
+
+OPTIONAL MATCH (mg:COSTAS {name:"Ida para as costas a partir da meia guarda"}), (c:COSTAS {name:"Defesa ida para as costas a partir da meia guarda"})
+CREATE (mg)-[:TO {score: 6, p: 'guardeiro', variacoes: 0, info_pt: ''}]->(c);
+
+OPTIONAL MATCH (mg:COSTAS {name:"Defesa ida para as costas a partir da meia guarda"}), (c:CONTROLELATERAL {name:"100kg"})
+CREATE (mg)-[:TO {score: 2, p: 'guardeiro', variacoes: 0, info_pt: ''}]->(c);
 
 MATCH ()-[t:TO]->()
 WHERE exists(t.score) AND t.score > 0
