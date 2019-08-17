@@ -28,6 +28,9 @@ review.
 
 ## Install Neo4J
 
+First of all install docker fallowing
+[this instructions](https://neo4j.com/developer/docker-run-neo4j/).
+
 ```console
 mkdir -p ${HOME}/neo4j/data
 mkdir ${HOME}/neo4j/logs
@@ -45,9 +48,6 @@ wget https://github.com/neo4j-contrib/neo4j-graph-algorithms/releases/download/3
 ```
 
 ## Running Neo4J
-
-First of all install docker fallowing
-[this instructions](https://neo4j.com/developer/docker-run-neo4j/).
 
 After start the container:
 
