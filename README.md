@@ -65,6 +65,14 @@ docker run \
 
 ## Import graph db
 
+First open a shell inside container:
+
+```console
+docker exec -it myneo4j bash
+```
+
+Inside do this:
+
 ```console
 cp jiujitsu.cql ${HOME}/neo4j/import/
 docker exec -it myneo4j bash
