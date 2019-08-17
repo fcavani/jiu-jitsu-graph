@@ -1,6 +1,6 @@
 # jiu-jitsu-graph
 
-Jiu-jitsu positions, sequences, punctuation and descriptions in Neo4j graph database.
+Jiu-jitsu positions, sequences, scores and descriptions in Neo4j graph database.
 
 It's a simple view of a complex art by someone with a blue belt.
 I'm really don't want to simplify jiu-jitsu to some computational model,
