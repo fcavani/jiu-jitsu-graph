@@ -12,6 +12,10 @@
 // logo falha e incompleta.
 // Isto não substitui a prática de Jiu-jitsu em uma academia adequada.
 
+
+// Todo:
+// - Passador de costas na meia guarda, guardeiro pega as costas...
+
 // Clean up data base
 
 :begin
@@ -121,7 +125,7 @@ CREATE (singleleg:QUEDA:BJJ {name:"Single leg pegando a perna em baixo"}),
 (singleleg)-[:TRANSLATION_EN]->({name: ''}),
 (singleleg)-[:TRANSLATION_PT]->({name: 'Single leg pegando a perna em baixo'}),
 (singleleg)-[:SCORE]->({score: 2}),
-(singleleg)-[:INFO_PT]->({desc: 'abaixa, pega calcanhar esquerdo, abre perna direita e empura um puco acima com a cabeça e os ombros (?)'});
+(singleleg)-[:INFO_PT]->({desc: 'Mão direita na gola e esquerda no outro cotovelo pegando o pano, puxa ele para frente fazendo a perna esquerda dele vir para frente, trava este pé com o seu pé esquerdo, mão direita desce pela perna esquerda para pegar bem no calcanhar, puxa a perna para o meio das suas pernas, mão esquerda vai lá no joelho, cabeça na barriga dele voltada para dentro, ajoelha empurando ele para traz.'});
 
 CREATE (dl:QUEDA:BJJ {name:"Baiana"}),
 (dl)-[:TRANSLATION_EN]->({name: 'Double leg'}),
@@ -222,21 +226,17 @@ CREATE (c:FIN:BJJ {name:"Mata leão"}),
 CREATE (r:FIN:BJJ {name:"Godoi Chock"}),
 (r)-[:TRANSLATION_EN]->({name: 'Godoi Chock'}),
 (r)-[:TRANSLATION_PT]->({name: 'Godoi Chock'}),
+(r)-[:AUTHOR]->({name: 'Roberto Godoi'}),
 (r)-[:SCORE]->({score: 0}),
 (r)-[:VARIACOES]->({variacoes: 1}),
 (r)-[:INFO_PT]->({desc: ['Oponente no 4 apoios, você no norte-sul. Mão direita entra junto ao pescoço e pega na gola direita dele com 4 dedos para dentro. Põem a cabeça entre a perna e o braço dele no lado direito dele. Empurra e agara a perda direita dele. Vira colocando-o de barriga para cima. Se não pegou, puxa a gola (ou mexe o pulso???).']});
 
-CREATE (r:RASPAGEM:BJJ {name:"Raspagem da montada 1"}),
+CREATE (r:RASPAGEM:BJJ {name:"Raspagem da montada"}),
 (r)-[:TRANSLATION_EN]->({name: ''}),
-(r)-[:TRANSLATION_PT]->({name: 'Raspagem da montada 1'}),
+(r)-[:TRANSLATION_PT]->({name: 'Raspagem da montada'}),
 (r)-[:SCORE]->({score: 2}),
-(r)-[:INFO_PT]->({desc: 'Domina braço e perna de um lado, dá uma barrigada para este lado. Cai na guarda. Faz passagem.'});
-
-CREATE (r:RASPAGEM:BJJ {name:"Raspagem da montada 2"}),
-(r)-[:TRANSLATION_EN]->({name: ''}),
-(r)-[:TRANSLATION_PT]->({name: 'Raspagem da montada 2'}),
-(r)-[:SCORE]->({score: 2}),
-(r)-[:INFO_PT]->({desc: 'Dá uma barrigada para frente, afunda, domina as pernas do oponente com os dois braços e gira ele. Depois faz a passagem para o 100kg.'});
+(r)-[:VARIACOES]->({variacoes: 2}),
+(r)-[:INFO_PT]->({desc: ['Domina braço e perna de um lado, dá uma barrigada para este lado. Cai na guarda. Faz passagem.', 'Dá uma barrigada para frente, afunda, domina as pernas do oponente com os dois braços e gira ele. Depois faz a passagem para o 100kg.']});
 
 CREATE (r:RASPAGEM:BJJ {name:"Raspagem da montada supinando"}),
 (r)-[:TRANSLATION_EN]->({name: ''}),
@@ -273,6 +273,13 @@ CREATE (r:PASSAGEMDEGUARDAEMPE:BJJ {name:"Emborcando"}),
 (r)-[:TRANSLATION_PT]->({name: 'Emborcando'}),
 (r)-[:SCORE]->({score: 3}),
 (r)-[:INFO_PT]->({desc: 'TODO'});
+
+CREATE (r:PASSAGEMDEGUARDAEMPE:BJJ {name:"Passagem de guarda Godoi"}),
+(r)-[:TRANSLATION_EN]->({name: ''}),
+(r)-[:TRANSLATION_PT]->({name: 'assagem de guarda Godoi'}),
+(r)-[:AUTHOR]->({name: 'Roberto Godoi'}),
+(r)-[:SCORE]->({score: 3}),
+(r)-[:INFO_PT]->({desc: 'Livra uma das pernas do gancho, domina gola direita dele com a mão direita sua, coloca o joelho sobre a barriga do adversário, escorrega o joelho para o chão e deixa o pé prendendo a perna dele.'});
 
 CREATE (r:GUARDA:BJJ {name:"Guarda"}),
 (r)-[:TRANSLATION_EN]->({name: ''}),
@@ -359,6 +366,20 @@ CREATE (r:RASPAGEM:BJJ {name:"Raspagem da meia guarda com lapela"}),
 (r)-[:SCORE]->({score: 2}),
 (r)-[:VARIACOES]->({variacoes: 2}),
 (r)-[:INFO_PT]->({desc: ['Lapela direita para mão esquerda por cima, pega calça do lado direito, junta braço esquerdo travando esgrima dele, inverte guarda e raspa.', 'Mesma coisa da anterior, mas ele estica a perna direita dele, perna direita vai em gancho perto do joelho, perna esquerda protege lá perto do pé dele, raspa para a sua direita']});
+
+CREATE (r:RASPAGEM:BJJ {name:"Raspagem da meia guarda profunda"}),
+(r)-[:TRANSLATION_EN]->({name: ''}),
+(r)-[:TRANSLATION_PT]->({name: "Raspagem da meia guarda profunda"}),
+(r)-[:SCORE]->({score: 2}),
+(r)-[:VARIACOES]->({variacoes: 1}),
+(r)-[:INFO_PT]->({desc: ['Ganha espaço para colocar a esgrima no lado esquerdo, entra com a perna colocando a parte da canela na bariga dele, perna dobrada, entra para baixo dele e abraça a coxa direita dele passando em diagonal pelo gluteo dele, empura ele para frente, empura o pé dele com a direita e pega ele com a mão esquerda, levanta com o ombro no peito dele e raspa-o para a direita, vai para o 100kg.']});
+
+CREATE (r:RASPAGEM:BJJ {name:"Raspagem da meia guarda 1, 2 e 3"}),
+(r)-[:TRANSLATION_EN]->({name: ''}),
+(r)-[:TRANSLATION_PT]->({name: "Raspagem da meia guarda 1, 2 e 3"}),
+(r)-[:SCORE]->({score: 2}),
+(r)-[:VARIACOES]->({variacoes: 1}),
+(r)-[:INFO_PT]->({desc: ['Passa a lapela por entre as pernas dele, manda ele para a frente, na meia guarda vira o corpo com os joelhos apontando para o lado oposto da guarda, mão direita no joelho dele e mão esquerda segurando a calça abaixo do joelho, com ajuda da perna vai com a perna dele três vezes para o lado esquerdo e com isso ele virará, sobe e faz 100kg.']});
 
 CREATE (r:COSTAS:BJJ {name:"Ida para as costas a partir da meia guarda"}),
 (r)-[:TRANSLATION_EN]->({name: ''}),
@@ -510,10 +531,7 @@ OPTIONAL MATCH (f:FIN {name:"Finalização"}), (k:FIN {name:"Kimura"})
 CREATE (f)-[:IS]->(k);
 
 
-OPTIONAL MATCH (rasp:RASPAGEM {name:"Raspagem"}), (r:RASPAGEM {name:"Raspagem da montada 1"})
-CREATE (rasp)-[:IS]->(r);
-
-OPTIONAL MATCH (rasp:RASPAGEM {name:"Raspagem"}), (r:RASPAGEM {name:"Raspagem da montada 2"})
+OPTIONAL MATCH (rasp:RASPAGEM {name:"Raspagem"}), (r:RASPAGEM {name:"Raspagem da montada"})
 CREATE (rasp)-[:IS]->(r);
 
 OPTIONAL MATCH (rasp:RASPAGEM {name:"Raspagem"}), (r:RASPAGEM {name:"Raspagem 1"})
@@ -535,6 +553,9 @@ OPTIONAL MATCH (ej:PASSAGEMDEGUARDAEMPE {name:"Espetando o joelho"}), (pe:PASSAG
 CREATE (pe)-[:IS]->(ej);
 
 OPTIONAL MATCH (e:PASSAGEMDEGUARDAEMPE {name:"Emborcando"}), (pe:PASSAGEMDEGUARDAEMPE {name:"Passagem de guarda em pé"})
+CREATE (pe)-[:IS]->(e);
+
+OPTIONAL MATCH (e:PASSAGEMDEGUARDAEMPE {name:"Passagem de guarda Godoi"}), (pe:PASSAGEMDEGUARDAEMPE {name:"Passagem de guarda em pé"})
 CREATE (pe)-[:IS]->(e);
 
 OPTIONAL MATCH (g:GUARDA {name:"Guarda"}), (gf:GUARDA {name:"Guarda fechada"})
@@ -568,6 +589,12 @@ OPTIONAL MATCH (mg:GUARDA {name: "Meia guarda"}), (r:RASPAGEM {name: "Raspagem d
 CREATE (mg)-[:IS]->(r);
 
 OPTIONAL MATCH (mg:GUARDA {name: "Meia guarda"}), (r:RASPAGEM {name: "Raspagem da meia guarda com lapela"})
+CREATE (mg)-[:IS]->(r);
+
+OPTIONAL MATCH (mg:GUARDA {name: "Meia guarda"}), (r:RASPAGEM {name: "Raspagem da meia guarda 1, 2 e 3"})
+CREATE (mg)-[:IS]->(r);
+
+OPTIONAL MATCH (mg:GUARDA {name: "Meia guarda"}), (r:RASPAGEM {name: "Raspagem da meia guarda profunda"})
 CREATE (mg)-[:IS]->(r);
 
 OPTIONAL MATCH (mg:GUARDA {name: "Meia guarda"}), (r:COSTAS {name: "Ida para as costas a partir da meia guarda"})
@@ -644,6 +671,9 @@ CREATE (q)-[:TO {score: 2}]->(jb);
 
 OPTIONAL MATCH (q:QUEDA {name:"Ippon Seoinage"}), (jb:JB {name:"Joelho na barriga"})
 CREATE (q)-[:TO {score: 2}]->(jb);
+
+OPTIONAL MATCH (q:QUEDA {name:"Single leg pegando a perna em baixo"}), (c:CONTROLELATERAL {name:"100kg"})
+CREATE (q)-[:TO {score: 2}]->(c);
 
 // Fall to finalization
 
@@ -755,17 +785,20 @@ CREATE (gc)-[:TO {score: 0, p: 'passador', info_pt: ''}]->(f);
 
 // Mount sweep
 
-OPTIONAL MATCH (m:MONTADA {name:"Montada"}), (r:RASPAGEM {name:"Raspagem da montada 1"})
-CREATE (m)-[to:TO {score: 4, p: 'guardeiro', info_pt: 'pé esquerdo trava perna direita dele, segurar mão esquerda dele perto de você, sobre o peito, dar barrigada para esquerda'}]->(r);
+OPTIONAL MATCH (m:MONTADA {name:"Montada"}), (r:RASPAGEM {name:"Raspagem da montada"})
+CREATE (m)-[to:TO {score: 4, p: 'guardeiro', variacoes: 1, situacao: '', info_pt: 'pé esquerdo trava perna direita dele, segurar mão esquerda dele perto de você, sobre o peito, dar barrigada para esquerda'}]->(r);
 
-OPTIONAL MATCH (m:MONTADA {name:"Montada"}), (r:RASPAGEM {name:"Raspagem da montada 2"})
-CREATE (m)-[to:TO {score: 4, p: 'guardeiro', info_pt: 'TODO'}]->(r);
+OPTIONAL MATCH (m:MONTADA {name:"Montada"}), (r:RASPAGEM {name:"Raspagem da montada"})
+CREATE (m)-[to:TO {score: 4, p: 'guardeiro', variacoes: 1, situacao: '', info_pt: 'não solta pernas'}]->(r);
 
 OPTIONAL MATCH (m:MONTADA {name:"Montada"}), (r:RASPAGEM {name:"Raspagem da montada supinando"})
 CREATE (m)-[to:TO {score: 4, p: 'guardeiro', info_pt: 'TODO'}]->(r);
 
-OPTIONAL MATCH (r:RASPAGEM {name:"Raspagem da montada 2"}), (kg:CONTROLELATERAL {name:"100kg"})
-CREATE (r)-[:TO {score: 2, p: 'passador', info_pt: ''}]->(kg);
+OPTIONAL MATCH (r:RASPAGEM {name:"Raspagem da montada"}), (kg:CONTROLELATERAL {name:"100kg"})
+CREATE (r)-[:TO {score: 2, p: 'guardeiro', info_pt: ''}]->(kg);
+
+OPTIONAL MATCH (r:RASPAGEM {name:"Raspagem da montada supinando"}), (kg:CONTROLELATERAL {name:"100kg"})
+CREATE (r)-[:TO {score: 2, p: 'guardeiro', info_pt: ''}]->(kg);
 
 
 // Passagem de guarda
@@ -802,14 +835,21 @@ CREATE (inicio)-[:TO {score: 0, p: 'passador', info_pt: ''}]->(e);
 OPTIONAL MATCH (e:PASSAGEMDEGUARDAEMPE {name:"Emborcando"}), (kg:CONTROLELATERAL {name:"100kg"})
 CREATE (e)-[:TO {score: 3, p: 'passador', info_pt: ''}]->(kg);
 
+OPTIONAL MATCH (inicio:BJJ {name: "Início"}), (e:PASSAGEMDEGUARDAEMPE {name:"Passagem de guarda Godoi"})
+CREATE (inicio)-[:TO {score: 0, p: 'passador', info_pt: ''}]->(e);
+
+OPTIONAL MATCH (e:PASSAGEMDEGUARDAEMPE {name:"Passagem de guarda Godoi"}), (kg:CONTROLELATERAL {name:"100kg"})
+CREATE (e)-[:TO {score: 3, p: 'passador', info_pt: 'TODO: algo além do 100kg???'}]->(kg);
+
+
 // Sweep
 
 // TODO: To falando besteira, não cai na montada???
-OPTIONAL MATCH (r:RASPAGEM {name:"Raspagem da montada 1"}), (gf:GUARDA:BJJ {name:"Guarda fechada"})
+OPTIONAL MATCH (r:RASPAGEM {name:"Raspagem da montada"}), (gf:GUARDA:BJJ {name:"Guarda fechada"})
 CREATE (r)-[:TO {score: 2, p: 'guardeiro', info_pt: ''}]->(gf);
 
 // TODO: To falando besteira, não cai na montada???
-OPTIONAL MATCH (r:RASPAGEM {name:"Raspagem da montada 1"}), (mg:GUARDA:BJJ {name:"Meia guarda"})
+OPTIONAL MATCH (r:RASPAGEM {name:"Raspagem da montada"}), (mg:GUARDA:BJJ {name:"Meia guarda"})
 CREATE (r)-[:TO {score: 2, p: 'passador', info_pt: ''}]->(mg);
 
 // OPTIONAL MATCH (k:FIN {name:"Kimura"}), (r:RASPAGEM {name:"Raspagem da montada 1"})
@@ -882,16 +922,28 @@ OPTIONAL MATCH (mg:GUARDA {name: "Meia guarda"}), (r:RASPAGEM {name: "Raspagem d
 CREATE (mg)-[:TO {score: 0, p: "guardeiro", variacoes: 1, info_pt:"Pega lapela com a mão deita passa por cima das costas dele e entrega para a mão esquerda, fecha o cotovelo segurando o braço dele, inverte guarda e raspa para a esquerda."}]->(r);
 
 OPTIONAL MATCH (mg:GUARDA {name: "Meia guarda"}), (r:RASPAGEM {name: "Raspagem da meia guarda com lapela"})
-CREATE (mg)-[:TO {score: 0, p: "guardeiro", variacoes: 2, situacao: 'Oponente estica perna esquerda.', info_pt:"Coloca gancho na perna esquerda dele acima do joelho e joga ele para a direita sua."}]->(r);
+CREATE (mg)-[:TO {score: 0, p: "guardeiro", variacoes: 2, situacao: 'Oponente estica perna esquerda.', info_pt:"Se oponente estica perna esquerda. Coloca gancho na perna esquerda dele acima do joelho e joga ele para a direita sua."}]->(r);
+
+OPTIONAL MATCH (mg:GUARDA {name: "Meia guarda"}), (r:RASPAGEM {name: "Raspagem da meia guarda 1, 2 e 3"})
+CREATE (mg)-[:TO {score: 0, p: "guardeiro", variacoes: 1, situacao: ['']}]->(r);
+
+OPTIONAL MATCH (mg:GUARDA {name: "Meia guarda"}), (r:RASPAGEM {name: "Raspagem da meia guarda profunda"})
+CREATE (mg)-[:TO {score: 0, p: "guardeiro", variacoes: 1, situacao: ''}]->(r);
 
 OPTIONAL MATCH (r:RASPAGEM {name: "Raspagem da meia guarda com lapela"}), (kg:CONTROLELATERAL {name: "100kg"})
-CREATE (r)-[:TO {score: 2, p: 'passador', variacoes: 1, info_pt: ''}]->(kg);
+CREATE (r)-[:TO {score: 2, p: 'passador', variacoes: 1, info_pt: ['']}]->(kg);
 
 OPTIONAL MATCH (gf:GUARDA {name:"Meia guarda"}), (kg:CONTROLELATERAL {name: "100kg"})
 CREATE (gf)-[:TO {score: 2, p: 'guardeiro', variacoes: 1, info_pt: 'empurando com o pé'}]->(kg);
 
 OPTIONAL MATCH (gf:GUARDA {name:"Meia guarda"}), (kg:CONTROLELATERAL {name: "100kg"})
-CREATE (gf)-[:TO {score: 0, p: 'passador', variacoes: 2, info_pt: 'tirando o joelho fazendo 1, 2 com o pé'}]->(kg);
+CREATE (gf)-[:TO {score: 0, p: 'passador', variacoes: 1, info_pt: 'tirando o joelho fazendo 1, 2 com o pé'}]->(kg);
+
+OPTIONAL MATCH (r:RASPAGEM {name:"Raspagem da meia guarda profunda"}), (kg:CONTROLELATERAL {name: "100kg"})
+CREATE (r)-[:TO {score: 2, p: 'passador', variacoes: 1, info_pt: ['']}]->(kg);
+
+OPTIONAL MATCH (r:RASPAGEM {name: "Raspagem da meia guarda 1, 2 e 3"}), (kg:CONTROLELATERAL {name: "100kg"})
+CREATE (r)-[:TO {score: 2, p: 'guardeiro', variacoes: 1, info_pt: ''}]->(kg);
 
 // OPTIONAL MATCH (gf:GUARDA {name:"Meia guarda"}), (c:COSTAS {name:"Costas"})
 // CREATE (gf)-[:TO {score: 0, p: 'guardeiro', variacoes: 1, info_pt: 'TODO'}]->(c);
@@ -900,7 +952,7 @@ OPTIONAL MATCH (mg:GUARDA {name:"Meia guarda"}), (r:COSTAS {name:"Ida para as co
 CREATE (mg)-[:TO {score: 0, p: 'guardeiro', variacoes: 0, info_pt: ''}]->(r);
 
 OPTIONAL MATCH (mg:COSTAS {name:"Ida para as costas a partir da meia guarda"}), (c:COSTAS {name:"Costas"})
-CREATE (mg)-[:TO {score: 6, p: 'guardeiro', variacoes: 0, info_pt: ''}]->(c);
+CREATE (mg)-[:TO {score: 6, p: 'guardeiro', variacoes: 0, info_pt: 'raspagem 2 mais 4 da ida para as costas'}]->(c);
 
 OPTIONAL MATCH (mg:COSTAS {name:"Ida para as costas a partir da meia guarda"}), (c:COSTAS {name:"Defesa ida para as costas a partir da meia guarda"})
 CREATE (mg)-[:TO {score: 6, p: 'guardeiro', variacoes: 0, info_pt: ''}]->(c);

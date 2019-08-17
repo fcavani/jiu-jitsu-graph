@@ -27,7 +27,7 @@ WITH *, relationships(path) AS TO
 WHERE all(r in TO WHERE r.p = 'guardeiro')
 RETURN path
 
-// From Início to 3 relations deep with info nodes and without submission
+// From Início to 3 relations deep with info nodes and whitout submission
 
 MATCH p = (s:BJJ {name: 'Início'})-[t:TO]->(next)-[*1..3]->(next2)
 WITH *, relationships(p) AS t2
