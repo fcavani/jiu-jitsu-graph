@@ -46,6 +46,11 @@ wget https://github.com/neo4j-contrib/neo4j-graph-algorithms/releases/download/3
 
 ## Running Neo4J
 
+First of all install docker fallowing
+[this instructions](https://neo4j.com/developer/docker-run-neo4j/).
+
+After start the container:
+
 ```console
 docker run \
     --name myneo4j \
@@ -63,19 +68,23 @@ docker run \
     neo4j:latest
 ```
 
-## Import graph db
+## Import graph database
 
-First open a shell inside container:
+Copy the cql file to the container mapped folder.
+
+```console
+cp jiujitsu.cql ${HOME}/neo4j/import/
+```
+
+Open a shell inside container:
 
 ```console
 docker exec -it myneo4j bash
 ```
 
-Inside do this:
+Inside of it do this for populate the database:
 
 ```console
-cp jiujitsu.cql ${HOME}/neo4j/import/
-docker exec -it myneo4j bash
 cat /import/jiujitsu.cql | cypher-shell -u neo4j -p test123 --format verbose
 ```
 
