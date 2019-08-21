@@ -1,6 +1,6 @@
 # jiu-jitsu-graph
 
-Jiu-jitsu positions, sequences, punctuation and descriptions in Neo4j graph database.
+Jiu-jitsu positions, sequences, scores and descriptions in Neo4j graph database.
 
 It's a simple view of a complex art by someone with a blue belt.
 I'm really don't want to simplify jiu-jitsu to some computational model,
@@ -35,6 +35,9 @@ review.
 
 ## Install Neo4J
 
+First of all install docker fallowing
+[this instructions](https://neo4j.com/developer/docker-run-neo4j/).
+
 ```console
 mkdir -p ${HOME}/neo4j/data
 mkdir ${HOME}/neo4j/logs
@@ -52,9 +55,6 @@ wget https://github.com/neo4j-contrib/neo4j-graph-algorithms/releases/download/3
 ```
 
 ## Running Neo4J
-
-First of all install docker fallowing
-[this instructions](https://neo4j.com/developer/docker-run-neo4j/).
 
 After start the container:
 
