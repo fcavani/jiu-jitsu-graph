@@ -6,8 +6,15 @@ It's a simple view of a complex art by someone with a blue belt.
 I'm really don't want to simplify jiu-jitsu to some computational model,
 it's not possible but it's fun to document some simple aspects of it.
 
-*This isn't a form of replacement to the normal train in a properly school
-with a good master.*
+**This isn't a form of replacement to the normal train in a properly school
+with a good master.**
+
+## Warning
+
+Don't try to load jiu-jitsu.cql in an ongoing database. **YOU WILL LOST EVERYTHING!!!**
+Begin a new database and follow the instructions!
+
+I start the cql file with a clean up. Sorry.
 
 ## Objectives
 
