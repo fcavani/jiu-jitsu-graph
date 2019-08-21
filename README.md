@@ -11,7 +11,9 @@ with a good master.**
 
 ## Warning
 
-Don't try to load jiu-jitsu.cql in an ongoing database. **YOU WILL LOST EVERYTHING!!!**
+Don't try to load jiu-jitsu.cql on an ongoing database.
+
+**YOU WILL LOST EVERYTHING!!!**
 
 Begin a new database and follow the instructions!
 
