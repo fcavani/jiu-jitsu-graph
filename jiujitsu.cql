@@ -182,10 +182,10 @@ CREATE (c:CONTROLELATERAL:BJJ {name:"Norte-sul"}),
 (c)-[:INFO_PT]->({desc: 'cabeça por cima da cabeça dele, encostando no plexo, braços enpurando o braço dele para cima dele e bem junto ao corpo dele, minha perna esticada ou encolhida.'});
 
 CREATE (c:JB:BJJ {name:"Joelho na barriga"}),
-(c)-[:TRANSLATION_EN]->({name: ''}),
+(c)-[:TRANSLATION_EN]->({name: 'Knee on belly'}),
 (c)-[:TRANSLATION_PT]->({name: 'Joelho na barriga'}),
 (c)-[:SCORE]->({score: 2}),
-(c)-[:INFO_PT]->({desc: 'Joelho posicionado logo abaixo do plexo, outra perna esticada, longe do alcance do openente.'});
+(c)-[:INFO_PT]->({desc: 'Joelho posicionado logo abaixo do plexo, outra perna esticada ou com o pé inteiro no chão, longe do alcance do openente.'});
 
 CREATE (c:FIN:BJJ {name:"Arm-lock"}),
 (c)-[:TRANSLATION_EN]->({name: 'Arm-lock'}),
@@ -754,11 +754,14 @@ CREATE (kg)-[:TO {score: 0, p: 'passador', info_pt: 'Hum??? TODO'}]->(a);
 OPTIONAL MATCH (jb:JB {name:"Joelho na barriga"}), (alr:FIN {name:"Arm-lock reto"})
 CREATE (jb)-[:TO {score: 0, p: 'passador', info_pt: 'mão esquerda dele no seu ombro direito, faz mão passar a altura do seu pescoço gira/empurra? cotovelo dele'}]->(alr);
 
-OPTIONAL MATCH (jb:JB {name:"Joelho na barriga"}), (alr:FIN {name:"Arm-lock"})
-CREATE (jb)-[:TO {score: 0, p: 'passador', info_pt: 'TODO'}]->(alr);
+OPTIONAL MATCH (jb:JB {name:"Joelho na barriga"}), (al:FIN {name:"Arm-lock"})
+CREATE (jb)-[:TO {score: 0, p: 'passador', variacoes: 1, situacao: 'joelho na barriga com defesa', info_pt: ['Quando openente defende com as duas mão no seu joelho, entrar com a mão direita entre o braço e o corpo dele, perto da axila, passar perna esquerda pela cabeça dele, ir levantando-o com a mão direita, fazer giro e colocar perna esquerda com o joelho nas costas e a direita com a panturilha no rosto dele, com a mão que esta puxando o braço pegar a sua gola, perna esquerda sobe com a canela sobre a lateral do corpo dele, sentar, fexar as pernas sobre o braço deles, levantar a barriga e se ele mesmo assim não bater colocar o braço para uma das laterais do seu corpo.']}]->(al);
 
 OPTIONAL MATCH (jb:JB {name:"Joelho na barriga"}), (m:MONTADA {name:"Montada"})
 CREATE (jb)-[to:TO {score: 0, p: 'passador', info_pt: 'segurando com o braço esquerdo o direito dele, faz o joelho na barriga'}]->(m);
+
+OPTIONAL MATCH (jb:JB {name:"Joelho na barriga"}), (c:COSTAS {name:"Costas"})
+CREATE (jb)-[:TO {score: 0, p: 'passador', variacoes: 1, situacao: 'joelho na barriga com defesa', info_pt: ['No 100kg pegar a lapela direita dele e passar por baixo do pescoço dele, fazer joelho na barriga (plantar os pés com a sola no chão fazendo uma base bem estável), pegar a manga direita dele com a sua mão direita, passar perna que está com o joelho na barriga para o meio das pernas dele e colocar todo o pé no chão, levantar ele puxando pela lapela e pela manga, cair para o lado da perna que já está com o gancho, esticar ele e colocar o outro gancho.']}]->(c);
 
 // Kimura
 
