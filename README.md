@@ -1,6 +1,6 @@
 # jiu-jitsu-graph
 
-![Graph - 2019-09-03](https://github.com/fcavani/jiu-jitsu-graph/graph.png)
+![Graph - 2019-09-03](https://raw.githubusercontent.com/fcavani/jiu-jitsu-graph/master/graph.png)
 
 Jiu-jitsu positions, sequences, scores and descriptions in Neo4j graph database.
 
