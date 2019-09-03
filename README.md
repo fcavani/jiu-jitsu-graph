@@ -1,5 +1,7 @@
 # jiu-jitsu-graph
 
+![Graph - 2019-09-03](https://github.com/fcavani/jiu-jitsu-graph/graph.png)
+
 Jiu-jitsu positions, sequences, scores and descriptions in Neo4j graph database.
 
 It's a simple view of a complex art by someone with a blue belt.
