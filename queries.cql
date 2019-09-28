@@ -15,6 +15,19 @@ RETURN s, t, next
 MATCH ((s:BJJ {name: 'Início'})-[t:TO]->(next))
 RETURN s, t, next
 
+// Analising what is possible begining from 100kg 
+MATCH ((s:BJJ {name: '100kg'})-[t:TO]->(next))
+RETURN s, t, next
+
+MATCH ((s:BJJ {name: '100kg'})-[t:TO {p: 'passador'}]->(next))
+RETURN s, t, next
+
+// From 100kg 'guardeiro' to finalization.
+MATCH path = (to1 {name: '100kg'})-[*1..3]->(to2:BJJ)
+WITH *, relationships(path) AS TO
+WHERE to2:FIN AND all(r in TO WHERE r.p = 'guardeiro' AND type(r) = 'TO')
+RETURN path
+
 // Find the sub graph with passador only.
 
 MATCH path = (to1 {name: 'Início'})-[*]->(to2:BJJ)
