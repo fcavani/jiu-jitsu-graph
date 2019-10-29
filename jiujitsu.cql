@@ -894,14 +894,15 @@ CREATE (pg)-[:TO {score: 0, p: 'passador', variacoes: 1, situacao: '', info_pt: 
 OPTIONAL MATCH (pg:GUARDA {name:"Guarda fechada"}), (pg1:PASSAGEMDEGUARDA {name:"Passagem de guarda 1"})
 CREATE (pg)-[:TO {score: 0, p: 'passador', variacoes: 1, situacao: '', info_pt: ['']}]->(pg1);
 
-OPTIONAL MATCH (r:RASPAGEM {name:"Raspagem 100kg 1"}), (kg:CONTROLELATERAL {name:"100kg"})
-CREATE (kg)-[:TO {score: 0, p: 'guardeiro', variacoes: 1, situacao: '', info_pt: ['TODO']}]->(r);
+// OPTIONAL MATCH (r:RASPAGEM {name:"Raspagem 100kg 1"}), (kg:CONTROLELATERAL {name:"100kg"})
+// CREATE (kg)-[:TO {score: 0, p: 'guardeiro', variacoes: 1, situacao: '', info_pt: ['TODO']}]->(r);
 
-OPTIONAL MATCH (r:RASPAGEM {name:"Raspagem 100kg 1"}), (kg:CONTROLELATERAL {name:"100kg"})
-CREATE (r)-[:TO {score: 2, p: 'passador', variacoes: 1, situacao: '', info_pt: ['TODO']}]->(kg);
+// OPTIONAL MATCH (r:RASPAGEM {name:"Raspagem 100kg 1"}), (kg:CONTROLELATERAL {name:"100kg"})
+// CREATE (r)-[:TO {score: 2, p: 'passador', variacoes: 1, situacao: '', info_pt: ['TODO']}]->(kg);
 
 OPTIONAL MATCH (kg:CONTROLELATERAL {name:"100kg"}), (r:GUARDA {name:"Repor guarda"})
-CREATE (kg)-[:TO {score: 0, p: 'guardeiro', variacoes: 1, situacao: '', info_pt: ['TODO']}]->(r);
+CREATE (kg)-[:TO {score: 0, p: 'guardeiro', variacoes: 2, situacao: '', info_pt: ['Antebraço esquerdo encomodando o pescoço e mão direita no ombro dele, fuga de quadril para a esquerda, canela esquerda no peito dele e perna direita sobre as costas dele, então repõem a guarda fechada.',
+"Igual a anterior mas vai para a meia guarda"]}]->(r);
 
 OPTIONAL MATCH (r:GUARDA {name:"Repor guarda"}), (gf:GUARDA {name:"Guarda fechada"})
 CREATE (r)-[:TO {score: 3, p: 'guardeiro', variacoes: 1, situacao: '', info_pt: ['']}]->(gf);
