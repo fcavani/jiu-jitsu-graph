@@ -6,7 +6,7 @@ Jiu-jitsu positions, sequences, scores and descriptions in Neo4j graph database.
 
 It's a simple view of a complex art by someone with a blue belt.
 I'm really don't want to simplify jiu-jitsu to some computational model,
-it's not possible but it's fun to document some simple aspects of it.
+it's not possible, but it's fun to document some simple aspects of it.
 
 **This isn't a form of replacement to the normal train in a properly school
 with a good master.**
@@ -19,7 +19,7 @@ Don't try to load jiu-jitsu.cql on an ongoing database.
 
 Begin a new database and follow the instructions!
 
-I start the cql file with a clean up. Sorry.
+I started the cql file with a clean up. Sorry.
 
 ## Objectives
 
@@ -61,7 +61,7 @@ wget https://github.com/neo4j-contrib/neo4j-graph-algorithms/releases/download/3
 
 ## Running Neo4J
 
-After start the container:
+After, start the container:
 
 ```console
 docker run \
@@ -94,7 +94,7 @@ Open a shell inside container:
 docker exec -it myneo4j bash
 ```
 
-Inside of it do this for populate the database:
+Inside of it do this to populate the database:
 
 ```console
 cat /import/jiujitsu.cql | cypher-shell -u neo4j -p test123 --format verbose
