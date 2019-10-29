@@ -9,11 +9,20 @@
 MATCH (s)-[t:IS]->(n)
 RETURN s, t, n;
 
-MATCH ((s:BJJ)-[t:TO]->(next))
-RETURN s, t, next
+MATCH p = (:MA)-[*1..3]->()
+RETURN p
+
+MATCH p = (s:BJJ)-[t:TO]->(next)
+RETURN p
 
 MATCH ((s:BJJ {name: 'Início'})-[t:TO]->(next))
 RETURN s, t, next
+
+// Select all node and edges with TO and IS edges. 3 levels.
+MATCH p = ()-[*1..3]->()
+WITH *, relationships(p) AS t
+WHERE all(r in t WHERE type(r) = 'TO' OR type(r) = 'IS')
+RETURN p
 
 // Analising what is possible begining from 100kg 
 MATCH ((s:BJJ {name: '100kg'})-[t:TO]->(next))
