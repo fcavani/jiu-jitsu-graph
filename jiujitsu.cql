@@ -23,7 +23,7 @@
 
 MATCH p = (m)-[]->()
 WHERE m:MA
-DETACH DELETE m
+DETACH DELETE p;
 
 // MATCH (n)-[r]->()
 // DELETE n, r;
