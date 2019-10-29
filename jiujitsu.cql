@@ -179,12 +179,6 @@ CREATE (c:CONTROLELATERAL:BJJ:MA {name:"Hon kesa gatame para atrás"}),
 (c)-[:SCORE]->({score: 0}),
 (c)-[:INFO_PT]->({desc: ''});
 
-CREATE (c:CONTROLELATERAL:BJJ:MA {name:"Norte-sul"}),
-(c)-[:TRANSLATION_EN]->({name: ''}),
-(c)-[:TRANSLATION_PT]->({name: 'Norte-sul'}),
-(c)-[:SCORE]->({score: 0}),
-(c)-[:INFO_PT]->({desc: 'cabeça por cima da cabeça dele, encostando no plexo, braços enpurando o braço dele para cima dele e bem junto ao corpo dele, minha perna esticada ou encolhida.'});
-
 CREATE (c:JB:BJJ:MA {name:"Joelho na barriga"}),
 (c)-[:TRANSLATION_EN]->({name: 'Knee on belly'}),
 (c)-[:TRANSLATION_PT]->({name: 'Joelho na barriga'}),
@@ -348,11 +342,11 @@ CREATE (r:RASPAGEM:BJJ:MA {name:"Raspagem 1"}),
 (r)-[:SCORE]->({score: 2}),
 (r)-[:INFO_PT]->({desc: 'Mão direita segura pelo pano a mão esquerda dele, mão esquerda(?) pega na gola, abre guarda, fuga de quadril, perna direita rente a cintura dele, perna esquerda calçando na lateral, "chuta" com a direita e monta'});
 
-CREATE (r:RASPAGEM:BJJ:MA {name:"Raspagem 100kg 1"}),
-(r)-[:TRANSLATION_EN]->({name: ''}),
-(r)-[:TRANSLATION_PT]->({name: 'Raspagem 100kg 1'}),
-(r)-[:SCORE]->({score: 2}),
-(r)-[:INFO_PT]->({desc: 'TODO'});
+// CREATE (r:RASPAGEM:BJJ:MA {name:"Raspagem 100kg 1"}),
+// (r)-[:TRANSLATION_EN]->({name: ''}),
+// (r)-[:TRANSLATION_PT]->({name: 'Raspagem 100kg 1'}),
+// (r)-[:SCORE]->({score: 2}),
+// (r)-[:INFO_PT]->({desc: 'TODO'});
 
 CREATE (x:RASPAGEM:BJJ:MA {name:"Raspagem da meia guarda"}),
 (x)-[:TRANSLATION_EN]->({name: ''}),
@@ -413,14 +407,20 @@ CREATE (r:COSTAS:BJJ:MA:QUATROAPOIOS {name:"Quatro apoios"}),
 (r)-[:VARIACOES]->({variacoes: 1}),
 (r)-[:INFO_PT]->({desc: ['ajoelhado e com os cotovelos no chão']});
 
-CREATE (r:BJJ:MA:COSTAS {name:"Costas"}),
+CREATE (r:COSTAS:BJJ:MA {name:"Costas"}),
 (r)-[:TRANSLATION_EN]->({name: ''}),
 (r)-[:TRANSLATION_PT]->({name: 'Costas'}),
 (r)-[:SCORE]->({score: 0}),
 (r)-[:VARIACOES]->({variacoes: 1}),
 (r)-[:INFO_PT]->({desc: ['Oponente de costas para você e ganchos colocados. Não cruzar pernas.']});
 
-
+CREATE (r:NORTESUL:BJJ:MA {name:"Norte-sul"}),
+(r)-[:TRANSLATION_EN]->({name: ''}),
+(r)-[:TRANSLATION_PT]->({name: 'Norte-sul'}),
+(r)-[:ALT_NAME_PT]->({nome: ["Meia-nove"]}),
+(r)-[:SCORE]->({score: 0}),
+(r)-[:VARIACOES]->({variacoes: 1}),
+(r)-[:INFO_PT]->({desc: ['Openente de costas para o chão. Você: cabeça na barriga dele de joelhos (ou espalhado) fazendo pressão.']});
 
 // Relations
 
@@ -453,6 +453,9 @@ OPTIONAL MATCH (ma:MA {name:'Brazilian Jiu-Jitsu'}), (g:GUARDA:BJJ:MA {name:"Gua
 CREATE (ma)-[:IS]->(g);
 
 OPTIONAL MATCH (ma:MA {name:'Brazilian Jiu-Jitsu'}), (c:COSTAS:BJJ:MA {name:"Costas"})
+CREATE (ma)-[:IS]->(c);
+
+OPTIONAL MATCH (ma:MA {name:'Brazilian Jiu-Jitsu'}), (c:NORTESUL:BJJ:MA {name:"Norte-sul"})
 CREATE (ma)-[:IS]->(c);
 
 OPTIONAL MATCH (queda:QUEDA:BJJ:MA {name:"Queda"}), (q:QUEDA:BJJ:MA {name:"O-goshi"})
@@ -497,12 +500,8 @@ CREATE (c)-[:IS]->(q);
 OPTIONAL MATCH (c:CONTROLELATERAL:BJJ:MA {name:"Controle lateral"}), (q:CONTROLELATERAL:BJJ:MA {name:"Hon kesa gatame para atrás"})
 CREATE (c)-[:IS]->(q);
 
-OPTIONAL MATCH (c:CONTROLELATERAL:BJJ:MA {name:"Controle lateral"}), (q:CONTROLELATERAL:BJJ:MA {name:"Norte-sul"})
-CREATE (c)-[:IS]->(q);
-
 OPTIONAL MATCH (f:FIN:BJJ:MA {name:"Finalização"}), (alr:FIN:BJJ:MA {name:"Arm-lock reto"})
 CREATE (f)-[:IS]->(alr);
-
 
 OPTIONAL MATCH (f:FIN:BJJ:MA {name:"Finalização"}), (al:FIN:BJJ:MA {name:"Arm-lock"})
 CREATE (f)-[:IS]->(al);
@@ -537,6 +536,9 @@ OPTIONAL MATCH (ml:FIN:BJJ:MA{name:"Godoi Chock"}), (cc:CHOCK:BJJ:MA {name:"Estr
 CREATE (cc)-[:IS]->(ml);
 
 OPTIONAL MATCH (f:FIN:BJJ:MA {name:"Finalização"}), (a:FIN:BJJ:MA {name:"Americana"})
+CREATE (f)-[:IS]->(a);
+
+OPTIONAL MATCH (f:FIN:BJJ:MA {name:"Finalização"}), (a:FIN:BJJ:MA {name:"Kimura"})
 CREATE (f)-[:IS]->(a);
 
 OPTIONAL MATCH (rasp:RASPAGEM:BJJ:MA {name:"Raspagem"}), (r:RASPAGEM:BJJ:MA {name:"Raspagem da montada"})
@@ -589,9 +591,6 @@ CREATE (g)-[:IS]->(mg);
 
 OPTIONAL MATCH (g:GUARDA:BJJ:MA {name:"Guarda"}), (qa:COSTAS:BJJ:MA {name:"Quatro apoios"})
 CREATE (g)-[:IS]->(qa);
-
-OPTIONAL MATCH (c:COSTAS:BJJ:MA {name:"Costas"}), (qa:COSTAS:BJJ:MA {name:"Quatro apoios"})
-CREATE (c)-[:IS]->(qa);
 
 OPTIONAL MATCH (mg:GUARDA:BJJ:MA {name: "Meia guarda"}), (r:RASPAGEM:BJJ:MA {name: "Raspagem da meia guarda"})
 CREATE (mg)-[:IS]->(r);
@@ -707,10 +706,10 @@ CREATE (c)-[to:TO {score: 0, p: 'passador', info_pt: ['']}]->(q);
 OPTIONAL MATCH (c:CONTROLELATERAL:BJJ:MA {name:"100kg"}), (q:CONTROLELATERAL:BJJ:MA {name:"Hon kesa gatame"})
 CREATE (c)-[to:TO {score: 0, p: 'passador', info_pt: 'inverte base, joelho em baixo do ombro dele'}]->(q);
 
-OPTIONAL MATCH (q:CONTROLELATERAL:BJJ:MA {name:"Hon kesa gatame"}), (c:CONTROLELATERAL:BJJ:MA {name:"Norte-sul"})
+OPTIONAL MATCH (q:CONTROLELATERAL:BJJ:MA {name:"Hon kesa gatame"}), (c:NORTESUL:BJJ:MA {name:"Norte-sul"})
 CREATE (q)-[to:TO {score: 0, p: 'passador', info_pt: 'tira o braço do caminho'}]->(c);
 
-OPTIONAL MATCH (c:CONTROLELATERAL:BJJ:MA {name:"Norte-sul"}), (q:CONTROLELATERAL:BJJ:MA {name:"Hon kesa gatame"})
+OPTIONAL MATCH (c:NORTESUL:BJJ:MA {name:"Norte-sul"}), (q:CONTROLELATERAL:BJJ:MA {name:"Hon kesa gatame"})
 CREATE (c)-[to:TO {score: 0, p: 'passador', info_pt: 'TODO: Como?'}]->(q);
 
 OPTIONAL MATCH (q:CONTROLELATERAL:BJJ:MA {name:"Hon kesa gatame"}), (c:CONTROLELATERAL:BJJ:MA {name:"100kg"})
@@ -924,6 +923,10 @@ CREATE (pg)-[:TO {score: 0, p: 'passador', variacoes: 1, situacao: '', info_pt: 
 
 OPTIONAL MATCH (h:CONTROLELATERAL:BJJ:MA {name: "Hon kesa gatame para atrás"}), (f:FIN:BJJ:MA {name:"Arm-lock"})
 CREATE (h)-[:TO {score: 0, p: 'passador', variacoes: 1, info_pt: ['Enquanto ele faz fuga de quadril, senta no ombro dele, pesca a mão com a perna direita, faz triângulo no braço dele, abaixa o braço para dar o arm-lock']}]->(f);
+
+// Norte-sul
+
+
 
 // Meia-guarda
 
