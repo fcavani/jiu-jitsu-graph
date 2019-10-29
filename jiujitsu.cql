@@ -401,8 +401,7 @@ CREATE (r:PASSAGEMDEGUARDA:BJJ {name:"Passagem da meia guarda"}),
 (r)-[:TRANSLATION_PT]->({name: "Passagem da meia guarda"}),
 (r)-[:SCORE]->({score: 3}),
 (r)-[:VARIACOES]->({variacoes: 3}),
-(r)-[:INFO_PT]->({desc: ["Colocando a cabeça oposta a esgrima, planta da perna na guarda, levanta o quadril, se não tirar ajudar com o outro pé"],
-                        [""]});
+(r)-[:INFO_PT]->({desc: ["Colocando a cabeça oposta a esgrima, planta da perna na guarda, levanta o quadril, se não tirar ajudar com o outro pé"]});
 
 // Guarda????? Guarda tartaruga????
 // Como eu chego aqui?????
