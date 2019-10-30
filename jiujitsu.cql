@@ -399,7 +399,7 @@ CREATE (r:PASSAGEMDEGUARDA:BJJ:MA {name:"Passagem da meia guarda"}),
 
 // Guarda????? Guarda tartaruga????
 // Como eu chego aqui?????
-CREATE (r:COSTAS:BJJ:MA:QUATROAPOIOS {name:"Quatro apoios"}),
+CREATE (r:COSTAS:BJJ:MA {name:"Quatro apoios"}),
 (r)-[:ALT_NAME_PT]->({nome: ["Guarda tartaruga"]}),
 (r)-[:TRANSLATION_EN]->({name: ''}),
 (r)-[:TRANSLATION_PT]->({name: 'Quatro apoios'}),
@@ -421,6 +421,13 @@ CREATE (r:NORTESUL:BJJ:MA {name:"Norte-sul"}),
 (r)-[:SCORE]->({score: 0}),
 (r)-[:VARIACOES]->({variacoes: 1}),
 (r)-[:INFO_PT]->({desc: ['Openente de costas para o chão. Você: cabeça na barriga dele de joelhos (ou espalhado) fazendo pressão.']});
+
+CREATE (r:FIFTY:BJJ:MA {name:"Fifty-fifty"}),
+(r)-[:TRANSLATION_EN]->({name: 'Fifty-fifty'}),
+(r)-[:TRANSLATION_PT]->({name: 'Fifty-fifty'}),
+(r)-[:SCORE]->({score: 0}),
+(r)-[:VARIACOES]->({variacoes: 1}),
+(r)-[:INFO_PT]->({desc: ['Os dois: perna direita sobre a dele com o pé para baixo da axila.']});
 
 // Relations
 
@@ -456,6 +463,9 @@ OPTIONAL MATCH (ma:MA {name:'Brazilian Jiu-Jitsu'}), (c:COSTAS:BJJ:MA {name:"Cos
 CREATE (ma)-[:IS]->(c);
 
 OPTIONAL MATCH (ma:MA {name:'Brazilian Jiu-Jitsu'}), (c:NORTESUL:BJJ:MA {name:"Norte-sul"})
+CREATE (ma)-[:IS]->(c);
+
+OPTIONAL MATCH (ma:MA {name:'Brazilian Jiu-Jitsu'}), (c:FIFTY:BJJ:MA {name:"Fifty-fifty"})
 CREATE (ma)-[:IS]->(c);
 
 OPTIONAL MATCH (queda:QUEDA:BJJ:MA {name:"Queda"}), (q:QUEDA:BJJ:MA {name:"O-goshi"})
