@@ -599,7 +599,7 @@ CREATE (g)-[:IS]->(ga);
 OPTIONAL MATCH (g:GUARDA:BJJ:MA {name:"Guarda"}), (mg:GUARDA:BJJ:MA {name:"Meia guarda"})
 CREATE (g)-[:IS]->(mg);
 
-OPTIONAL MATCH (g:GUARDA:BJJ:MA {name:"Guarda"}), (qa:COSTAS:BJJ:MA {name:"Quatro apoios"})
+OPTIONAL MATCH (g:GUARDA:BJJ:MA {name:"Guarda"}), (qa:QUATROAPOIOS:BJJ:MA {name:"Quatro apoios"})
 CREATE (g)-[:IS]->(qa);
 
 OPTIONAL MATCH (mg:GUARDA:BJJ:MA {name: "Meia guarda"}), (r:RASPAGEM:BJJ:MA {name: "Raspagem da meia guarda"})
