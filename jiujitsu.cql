@@ -399,7 +399,7 @@ CREATE (r:PASSAGEMDEGUARDA:BJJ:MA {name:"Passagem da meia guarda"}),
 
 // Guarda????? Guarda tartaruga????
 // Como eu chego aqui?????
-CREATE (r:COSTAS:BJJ:MA {name:"Quatro apoios"}),
+CREATE (r:QUATROAPOIOS:BJJ:MA {name:"Quatro apoios"}),
 (r)-[:ALT_NAME_PT]->({nome: ["Guarda tartaruga"]}),
 (r)-[:TRANSLATION_EN]->({name: ''}),
 (r)-[:TRANSLATION_PT]->({name: 'Quatro apoios'}),
