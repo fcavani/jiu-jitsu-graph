@@ -938,23 +938,20 @@ CREATE (h)-[:TO {score: 0, p: 'passador', variacoes: 1, info_pt: ['Enquanto ele 
 // OPTIONAL MATCH (mg:GUARDA {name: "Meia guarda"}), (r:RASPAGEM {name: "Raspagem da meia guarda"})
 // CREATE (mg)-[:TO {score: 0, p: "guardeiro", variacoes: 1, info_pt:[""]}]->(r);
 
-OPTIONAL MATCH (mg:GUARDA:BJJ:MA {name: "Meia guarda"}), (r:RASPAGEM:BJJ:MA {name: "Raspagem da meia guarda com lapela"})
-CREATE (mg)-[:TO {score: 0, p: "guardeiro", variacoes: 1, situacao: '', info_pt:["Pega lapela com a mão deita passa por cima das costas dele e entrega para a mão esquerda, fecha o cotovelo segurando o braço dele, inverte guarda e raspa para a esquerda."]}]->(r);
+OPTIONAL MATCH (mg:GUARDA:BJJ:MA {name: "Meia guarda"}), (r:CONTROLELATERAL:BJJ:MA {name: "100kg"})
+CREATE (mg)-[:TO {score: 2, p: "guardeiro", variacoes: 1, nome:["Raspagem da meia guarda com lapela"], situacao: [''], info_pt:["Pega lapela com a mão deita passa por cima das costas dele e entrega para a mão esquerda, fecha o cotovelo segurando o braço dele, inverte guarda e raspa para a esquerda."]}]->(r);
 
-OPTIONAL MATCH (mg:GUARDA:BJJ:MA {name: "Meia guarda"}), (r:RASPAGEM:BJJ:MA {name: "Raspagem da meia guarda com lapela"})
-CREATE (mg)-[:TO {score: 0, p: "guardeiro", variacoes: 2, situacao: 'Oponente estica perna esquerda.', info_pt:["Se oponente estica perna esquerda. Coloca gancho na perna esquerda dele acima do joelho e joga ele para a direita sua."]}]->(r);
+OPTIONAL MATCH (mg:GUARDA:BJJ:MA {name: "Meia guarda"}), (r:CONTROLELATERAL:BJJ:MA {name: "100kg"})
+CREATE (mg)-[:TO {score: 2, p: "guardeiro", variacoes: 1, nome:["Raspagem da meia guarda com lapela com defesa"], situacao: ['Oponente estica perna esquerda.'], info_pt:["Se oponente estica perna esquerda. Coloca gancho na perna esquerda dele acima do joelho e joga ele para a direita sua."]}]->(r);
 
-OPTIONAL MATCH (mg:GUARDA:BJJ:MA {name: "Meia guarda"}), (r:RASPAGEM:BJJ:MA {name: "Raspagem da meia guarda 1, 2 e 3"})
-CREATE (mg)-[:TO {score: 0, p: "guardeiro", variacoes: 1, situacao: ['']}]->(r);
+OPTIONAL MATCH (mg:GUARDA:BJJ:MA {name: "Meia guarda"}), (r:CONTROLELATERAL:BJJ:MA {name: "100kg"})
+CREATE (mg)-[:TO {score: 2, p: "guardeiro", variacoes: 1, nome:["Raspagem da meia guarda 1, 2 e 3"], situacao: [''], info_pt:[""]}]->(r);
 
-OPTIONAL MATCH (mg:GUARDA:BJJ:MA {name: "Meia guarda"}), (r:RASPAGEM:BJJ:MA {name: "Raspagem da meia guarda profunda"})
-CREATE (mg)-[:TO {score: 0, p: "guardeiro", variacoes: 1, situacao: ''}]->(r);
-
-OPTIONAL MATCH (r:RASPAGEM:BJJ:MA {name: "Raspagem da meia guarda com lapela"}), (kg:CONTROLELATERAL:BJJ:MA {name: "100kg"})
-CREATE (r)-[:TO {score: 2, p: 'passador', variacoes: 1, situacao: '', info_pt: ['']}]->(kg);
+OPTIONAL MATCH (mg:GUARDA:BJJ:MA {name: "Meia guarda"}), (r:CONTROLELATERAL:BJJ:MA {name: "100kg"})
+CREATE (mg)-[:TO {score: 2, p: "guardeiro", variacoes: 1, nome: ["Raspagem da meia guarda profunda"], situacao: [''], info_pt:[""]}]->(r);
 
 OPTIONAL MATCH (gf:GUARDA:BJJ:MA {name:"Meia guarda"}), (kg:CONTROLELATERAL:BJJ:MA {name: "100kg"})
-CREATE (gf)-[:TO {score: 2, p: 'guardeiro', variacoes: 1, situacao: '', info_pt: 'empurando com o pé'}]->(kg);
+CREATE (gf)-[:TO {score: 2, p: 'passador', variacoes: 1, nome: ["Passagem da meia guarda"], situacao: [''], info_pt: ['Coloca testa no chão, com o quadril para cima, apontando par ao teto, vai tirando o pé do chão até o joelho passa a perna dele faz a passagem para o 100kg.']}]->(kg);
 
 // OPTIONAL MATCH (gf:GUARDA {name:"Meia guarda"}), (kg:CONTROLELATERAL:BJJ:MA {name: "100kg"})
 // CREATE (gf)-[:TO {score: 0, p: 'passador', variacoes: 1, situacao: '', info_pt: 'tirando o joelho fazendo 1, 2 com o pé'}]->(kg);
