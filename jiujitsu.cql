@@ -905,17 +905,12 @@ CREATE (pg)-[:TO {score: 0, p: 'passador', variacoes: 1, situacao: '', info_pt: 
 OPTIONAL MATCH (pg:GUARDA:BJJ:MA {name:"Guarda fechada"}), (pg1:PASSAGEMDEGUARDA:BJJ:MA {name:"Passagem de guarda 1"})
 CREATE (pg)-[:TO {score: 0, p: 'passador', variacoes: 1, situacao: '', info_pt: ['']}]->(pg1);
 
-// BUG !!!!!
-// OPTIONAL MATCH (kg:CONTROLELATERAL:BJJ:MA {name:"100kg"}), (r:GUARDA:BJJ:MA {name:"Repor guarda"})
-// CREATE (kg)-[:TO {score: 0, p: 'guardeiro', variacoes: 2, situacao: '', info_pt: ['Antebraço esquerdo encomodando o pescoço e mão direita no ombro dele, fuga de quadril para a esquerda, canela esquerda no peito dele e perna direita sobre as costas dele, então repõem a guarda fechada.',"Igual a anterior mas vai para a meia guarda"]}]->(r);
+OPTIONAL MATCH (kg:CONTROLELATERAL:BJJ:MA {name:"100kg"}), (r:GUARDA:BJJ:MA {name:"Guarda fechada"})
+CREATE (kg)-[:TO {score: 0, p: 'guardeiro', variacoes: 1, situacao: '', info_pt: ['Antebraço esquerdo encomodando o pescoço e mão direita no ombro dele, fuga de quadril para a esquerda, canela esquerda no peito dele e perna direita sobre as costas dele, então repõem a guarda fechada.']}]->(r);
 
-// BUG !!!!!
-// OPTIONAL MATCH (r:GUARDA:BJJ:MA {name:"Repor guarda"}), (gf:GUARDA:BJJ:MA {name:"Guarda fechada"})
-// CREATE (r)-[:TO {score:03, p: 'guardeiro', variacoes: 1, situacao: '', info_pt: ['']}]->(gf);
+OPTIONAL MATCH (kg:CONTROLELATERAL:BJJ:MA {name:"100kg"}), (r:GUARDA:BJJ:MA {name:"Meia guarda"})
+CREATE (kg)-[:TO {score: 0, p: 'guardeiro', variacoes: 1, situacao: '', info_pt: ['Antebraço esquerdo encomodando o pescoço e mão direita no ombro dele, fuga de quadril para a esquerda, canela esquerda no peito dele e perna direita sobre as costas dele, então vai para a meia guarda']}]->(r);
 
-// BUG !!!!!
-// OPTIONAL MATCH (r:GUARDA:BJJ:MA {name:"Repor guarda"}), (mg:GUARDA:BJJ:MA {name:"Meia guarda"})
-// CREATE (r)-[:TO {score: 0, p: 'guardeiro', variacoes: 1, situacao: '', info_pt: ['']}]->(mg);
 
 // BUG !!!!!
 // OPTIONAL MATCH (gf:GUARDA:BJJ:MA {name:"Guarda fechada"}), (k:FIN:BJJ:MA {name:"Kimura"})
