@@ -1,0 +1,75 @@
+type Start {
+    name: string
+    next: Queda
+}
+
+type Person {
+    name: string
+    country: string
+}
+
+type Basics {
+    name: string
+    is: Basics
+    position: string
+}
+
+type EndGame {
+    name: string
+    type: Basics
+}
+
+type Queda {
+    description: string
+    type: Basics
+    passador: PositionPassador
+    guardeiro: PositionGuardeiro
+    submit: EndGame
+}
+
+type Move {
+    id: string
+    name: string
+    description: string
+    class: string
+    points: int
+    author: Person
+    situation: string
+    lapela: bool
+}
+
+type PositionGuardeiro {
+    name: string
+    description: string
+    type: Basics
+    next: PositionPassador
+    submit: EndGame
+    move: [Move]
+}
+
+type PositionPassador {
+    name: string
+    description: string
+    type: Basic
+    next: PositionPassador
+    submit: EndGame
+    move: [Move]
+}
+
+id: string @index(term) .
+name: string @index(term) @lang .
+description: string @index(fulltext) @lang .
+country: string @index(term) @lang .
+position: string @index(term) @lang .
+class: string @index(term) @lang .
+situation: string @index(fulltext) @lang .
+points: int .
+lapela: bool .
+author: uid .
+is: uid .
+type: uid .
+submit: [uid] .
+next: [uid] .
+passador: [uid] .
+guardeiro: [uid] .
+move: [uid] .
