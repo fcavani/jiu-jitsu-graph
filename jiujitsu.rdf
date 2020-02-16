@@ -1,0 +1,121 @@
+{
+  set {
+      _:bjj <name> "Jiu Jitsu Brasileiro"@pt .
+      _:bjj <dgraph.type> "Basics" .
+      
+
+      _:queda <name> "queda"@pt .
+      _:queda <dgraph.type> "Basics" .
+      _:queda <is> _:bjj .
+
+      _:controle_lateral <name> "controle lateral"@pt .
+      _:controle_lateral <dgraph.type> "Basics" .
+      _:controle_lateral <position> "passador" .
+      _:controle_lateral <is> _:bjj .
+
+      _:costas_position <name> "costas"@pt .
+      _:costas_position <dgraph.type> "Basics" .
+      _:costas_position <position> "passador" .
+      _:costas_position <is> _:bjj .
+
+      _:guarda <name> "guarda"@pt .
+      _:guarda <dgraph.type> "Basics" .
+      _:guarda <position> "guardeiro" .
+      _:guarda <is> _:bjj .
+
+      _:passador <name> "passador"@pt .
+      _:passador <dgraph.type> "Basics" .
+      _:passador <position> "passador" .
+      _:passador <is> _:bjj .
+
+      _:fin <name> "finalização"@pt .
+      _:fin <name> "submit"@en .
+      _:fin <dgraph.type> "Basics" .
+      _:fin <is> _:bjj .
+
+      _:start <name> "início"@pt .
+      _:start <name> "start"@en .
+      _:start <dgraph.type> "Start" .
+      _:start <next> _:ogoshe (points=0) .
+      _:start <next> _:puxar_na_guarda (points=0) .
+
+      _:ogoshe <name> "O-goshe"@pt .
+      _:ogoshe <dgraph.type> "Queda" .
+      _:ogoshe <description> "abraça pela cintura..."@pt .
+      _:ogoshe <type> _:queda .
+      _:ogoshe <passador> _:passar . 
+      _:ogoshe <passador> _:100kg (points=2) . 
+      _:ogoshe <guardeiro> _:meia_guarda (points=2) .
+      _:ogoshe <submit> _:arm-lock .
+
+      _:puxar_na_guarda <name> "puxar na guarda"@pt .
+      _:puxar_na_guarda <dgraph.type> "Queda" .
+      _:puxar_na_guarda <type> _:queda .
+      _:puxar_na_guarda <guardeiro> _:guarda_inteira .
+
+      _:arm-lock <name> "arm-lock"@en .
+      _:arm-lock <name> "chave de braço"@pt .
+      _:arm-lock <dgraph.type> "EndGame" .
+      _:arm-lock <type> _:fin .
+
+      _:guarda_inteira <name> "guarda"@pt .
+      _:guarda_inteira <dgraph.type> "PositionGuardeiro" .
+      _:guarda_inteira <description> ""@pt .
+      _:guarda_inteira <type> _:guarda .
+
+      _:meia_guarda <name> "meia guarda"@pt .
+      _:meia_guarda <dgraph.type> "PositionGuardeiro" .
+      _:meia_guarda <description> ""@pt .
+      _:meia_guarda <type> _:guarda .
+      _:meia_guarda <next> _:100kg (points=2, move="['mg_sweep_lapela']") .
+      _:meia_guarda <next> _:costas (points=4, move="['mg_ida_costas']") .
+      
+      _:100kg <name> "100kg"@pt .
+      _:100kg <dgraph.type> "PositionPassador" .
+      _:100kg <description> ""@pt .
+      _:100kg <type> _:controle_lateral .
+      _:100kg <submit> _:arm-lock .
+
+      _:costas <name> "costas"@pt .
+      _:costas <dgraph.type> "PositionPassador" .
+      _:costas <description> ""@pt .
+      _:costas <type> _:costas_position .
+
+      _:passar <name> "Passar"@pt .
+      _:passar <dgraph.type> "PositionPassador" .
+      _:passar <description> "Tentando passar a guarda."@pt .
+      _:passar <type> _:passador .
+      _:passar <next> _:100kg (points=3).
+
+
+
+      _:rgodoy <name> "Roberto Godoy"@pt .
+      _:rgodoy <dgraph.type> "Person" .
+      _:rgodoy <country> "Brazil"@en .
+      _:rgodoy <country> "Brasil"@pt .
+
+      _:mkimura <name> "Masahiko Kimura"@pt .
+      _:mkimura <dgraph.type> "Person" .
+      _:mkimura <country> "Japan"@en .
+      _:mkimura <country> "Japão"@pt .
+
+      _:none <name> "desconhecido"@pt .
+      _:none <name> "unknow"@en .
+      _:none <dgraph.type> "Person" .
+      _:none <country> "unknow"@en .
+      _:none <country> "desconhecido"@pt .
+
+
+      _:bjj <movements> _:mg_sweep_lapela
+      _:mg_sweep_lapela <id> "mg_sweep_lapela" .
+      _:mg_sweep_lapela <dgraph.type> "Move" .
+      _:mg_sweep_lapela <name> "raspagem na meia guarda com lapela"@pt .
+      _:mg_sweep_lapela <description> ""@pt .
+      _:mg_sweep_lapela <class> "sweep"@en .
+      _:mg_sweep_lapela <points> "2" .
+      _:mg_sweep_lapela <author> _:none .
+      _:mg_sweep_lapela <situation> ""@pt .
+      _:mg_sweep_lapela <lapela> "true" .
+
+  }
+}
