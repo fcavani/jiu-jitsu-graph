@@ -1,4 +1,4 @@
-# jiu-jitsu-graph
+# The Jiu-jitsu graph database
 
 ![Graph - 2019-09-03](https://raw.githubusercontent.com/fcavani/jiu-jitsu-graph/master/graph.png)
 
@@ -8,7 +8,7 @@ It's a simple view of a complex art by someone with a blue belt.
 I'm really don't want to simplify jiu-jitsu to some computational model,
 it's not possible, but it's fun to document some simple aspects of it.
 
-**This isn't a form of replacement to the normal train in a properly school
+**This isn't a form of replacement to the normal train at a properly school
 with a good master.**
 
 ## Warning
@@ -17,31 +17,27 @@ Don't try to load jiu-jitsu.cql on an ongoing database.
 
 **YOU WILL LOST EVERYTHING!!!**
 
-Begin a new database and follow the instructions!
+Begin a new database or follow the instructions!
 
 I started the cql file with a clean up. Sorry.
 
 ## Objectives
 
-- Find in jiu-jitsu community people with graph database knowledge and Github
-experience.
+- Find at jiu-jitsu community people with graph database knowledge and Github experience.
 
-- Open this database to somebody how wants to contribute with new positions and
-better descriptions.
+- Open this database to somebody how wants to contribute with new positions and better descriptions.
 
 - Translate from Portuguese to English position names and descriptions.
 
-- Improve the graph model.
+- Improve the graph model. I'm migration it to dgraph.
 
 ## Contributions
 
-Contributions must be made only with a Github pull request and subsequent
-review.
+Contributions must be made only by a Github pull request. Will be a review before merge it.
 
 ## Install Neo4J
 
-First of all install docker fallowing
-[this instructions](https://neo4j.com/developer/docker-run-neo4j/).
+Install docker fallowing [this instructions](https://neo4j.com/developer/ docker-run-neo4j/) if you don't have it.
 
 ```console
 mkdir -p ${HOME}/neo4j/data
@@ -61,7 +57,7 @@ wget https://github.com/neo4j-contrib/neo4j-graph-algorithms/releases/download/3
 
 ## Running Neo4J
 
-After, start the container:
+Start the container:
 
 ```console
 docker run \
@@ -82,23 +78,28 @@ docker run \
 
 ## Import graph database
 
-Copy the cql file to the container mapped folder.
+Copy the cql file into the container mapped folder.
 
 ```console
 cp jiujitsu.cql ${HOME}/neo4j/import/
 ```
 
-Open a shell inside container:
+Open a shell inside the container:
 
 ```console
 docker exec -it myneo4j bash
 ```
 
-Inside of it do this to populate the database:
+Populate the database:
 
 ```console
 cat /import/jiujitsu.cql | cypher-shell -u neo4j -p test123 --format verbose
 ```
+
+## Contact the developer
+
+- By email: fcavani@gmail.com
+- Twitter: @fcavani
 
 ## LICENSE
 
