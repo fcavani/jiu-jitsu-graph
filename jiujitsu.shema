@@ -22,9 +22,8 @@ type EndGame {
 type Queda {
     description: string
     type: Basics
-    passador: PositionPassador
-    guardeiro: PositionGuardeiro
-    submit: EndGame
+    passador: Action
+    guardeiro: Action
 }
 
 type Move {
@@ -38,21 +37,11 @@ type Move {
     lapela: bool
 }
 
-type PositionGuardeiro {
-    name: string
-    description: string
-    type: Basics
-    next: PositionPassador
-    submit: EndGame
-    move: [Move]
-}
-
-type PositionPassador {
+type Action {
     name: string
     description: string
     type: Basic
-    next: PositionPassador
-    submit: EndGame
+    next: Action
     move: [Move]
 }
 
@@ -68,7 +57,6 @@ lapela: bool .
 author: uid .
 is: uid .
 type: uid .
-submit: [uid] .
 next: [uid] .
 passador: [uid] .
 guardeiro: [uid] .
