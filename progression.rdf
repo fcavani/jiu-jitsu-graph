@@ -1,0 +1,31 @@
+{
+  set {
+    _:start <name> "início"@pt .
+    _:start <name> "start"@en .
+    _:start <dgraph.type> "Start" .
+    _:start <begin> _:stand .
+
+    _:end <name> "fim"@pt .
+    _:end <name> "end"@en .
+    _:end <dgraph.type> "Position" .
+    _:end <description> ""@pt .
+
+    _:stand <fall> _:full_guard (ogoshe=true) .
+    _:full_guard <pass> _:100kg .
+    _:100kg <submission> _:end (todo=true) .
+
+    _:stand <fall> _:full_guard (ogoshe=true) .
+    _:full_guard <sweep> _:montada (tesourinha=true, papel_de_bala=true, empurando_joelho=true) .
+    _:full_guard <submission> _:end (kimura=true) .
+    _:montada <submission> _:end (americana=true, chocke_antebraco=true) .
+
+    _:stand <fall> _:half_guard (ogoshe=true)  .
+    _:half_guard <pass> _:100kg (todo=true) .
+    _:half_guard <sweep> _:montada .
+    _:half_guard <back> _:quatro_apoios .
+    _:half_guard <back> _:costas .
+    _:quatro_apoios <back> _:end (crucifixo=true, arco_e_flexa=true) .
+    _:costas <back> _:end (todo=true) .
+    _:montada <submission> _:end (americana=true, chocke_antebraco=true) .
+  }
+}

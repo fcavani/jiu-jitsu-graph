@@ -2,174 +2,90 @@
   set {
       _:bjj <name> "Jiu Jitsu Brasileiro"@pt .
       _:bjj <dgraph.type> "Basics" .
+
+      _:fall <name> "queda"@pt .
+      _:fall <name> "takedown"@en .
+      _:fall <dgraph.type> "Basics" .
+      _:fall <description> "Fazendo queda"@pt .
+      _:fall <is> _:bjj .
+
+      _:guard <name> "guarda"@pt .
+      _:guard <dgraph.type> "Basics" .
+      _:guard <position> "guardeiro" .
+      _:guard <description> "Fazendo guarda"@pt .
+      _:guard <is> _:bjj .
+
+      _:pass <name> "passagem"@pt .
+      _:pass <dgraph.type> "Basics" .
+      _:pass <position> "passador" .
+      _:pass <description> "Passando guarda"@pt .
+      _:pass <is> _:bjj .
+    
+      _:sweep <name> "raspagem"@pt .
+      _:sweep <name> "sweep"@en .
+      _:sweep <dgraph.type> "Basics" .
+      _:sweep <position> "guardeiro" .
+      _:sweep <description> "raspando ou invertendo de posição com o adversário, de guardeiro para passador"@pt .
+      _:sweep <is> _:bjj .
+
+      _:side_control <name> "controle lateral"@pt .
+      _:side_control <name> "side control"@en .
+      _:side_control <dgraph.type> "Basics" .
+      _:side_control <position> "passador" .
+      _:side_control <description> "Fazendo controle lateral"@pt .
+      _:side_control <is> _:bjj .
       
+      _:back <name> "costas"@pt .
+      _:back <dgraph.type> "Basics" .
+      _:back <position> "passador" .
+      _:back <description> "Fazendo ataque nas costas"@pt .
+      _:back <is> _:bjj .
 
-      _:queda <name> "queda"@pt .
-      _:queda <name> "takedown"@en .
-      _:queda <dgraph.type> "Basics" .
-      _:queda <is> _:bjj .
+      _:mount <name> "montada"@pt .
+      _:mount <dgraph.type> "Basics" .
+      _:mount <position> "passador" .
+      _:mount <description> "Sentado sobre o adverário."@pt .
+      _:mount <is> _:bjj .
 
-      _:controle_lateral <name> "controle lateral"@pt .
-      _:controle_lateral <name> "side control"@en .
-      _:controle_lateral <dgraph.type> "Basics" .
-      _:controle_lateral <position> "passador" .
-      _:controle_lateral <is> _:bjj .
+      _:submission <name> "finalização"@pt .
+      _:submission <name> "submission"@en .
+      _:submission <dgraph.type> "Basics" .
+      _:submission <description> "Finalizando"@pt .
+      _:submission <is> _:bjj .
 
-      _:costas_position <name> "costas"@pt .
-      _:costas_position <dgraph.type> "Basics" .
-      _:costas_position <position> "passador" .
-      _:costas_position <is> _:bjj .
+      _:stand <name> "em pé"@pt .
+      _:stand <name> "stand up"@en .
+      _:stand <dgraph.type> "Position" .
 
-      _:guarda <name> "guarda"@pt .
-      _:guarda <dgraph.type> "Basics" .
-      _:guarda <position> "guardeiro" .
-      _:guarda <is> _:bjj .
+      _:full_guard <name> "guarda"@pt .
+      _:full_guard <name> "guard"@en .
+      _:full_guard <dgraph.type> "Position" .
+      _:full_guard <description> ""@pt .
+      _:full_guard <type> _:guard .
 
-      _:passador <name> "passador"@pt .
-      _:passador <dgraph.type> "Basics" .
-      _:passador <position> "passador" .
-      _:passador <is> _:bjj .
+      _:half_guard <name> "meia guarda"@pt .
+      _:half_guard <dgraph.type> "Position" .
+      _:half_guard <description> ""@pt .
+      _:half_guard <type> _:guard .
 
-      _:fin <name> "finalização"@pt .
-      _:fin <name> "submit"@en .
-      _:fin <dgraph.type> "Basics" .
-      _:fin <is> _:bjj .
-
-      _:start <name> "início"@pt .
-      _:start <name> "start"@en .
-      _:start <dgraph.type> "Start" .
-      _:start <next> _:ogoshe (points=0) .
-      _:start <next> _:puxar_na_guarda (points=0) .
-
-      _:ogoshe <name> "O-goshe"@pt .
-      _:ogoshe <dgraph.type> "Queda" .
-      _:ogoshe <description> "abraça pela cintura..."@pt .
-      _:ogoshe <type> _:queda .
-      _:ogoshe <passador> _:passar . 
-      _:ogoshe <passador> _:100kg (points=2) . 
-      _:ogoshe <guardeiro> _:meia_guarda (points=0) .
-      _:ogoshe <passador> _:arm-lock .
-
-      _:puxar_na_guarda <name> "puxar na guarda"@pt .
-      _:puxar_na_guarda <dgraph.type> "Queda" .
-      _:puxar_na_guarda <type> _:queda .
-      _:puxar_na_guarda <guardeiro> _:guarda_inteira .
-
-      _:arm-lock <name> "arm-lock"@en .
-      _:arm-lock <name> "chave de braço"@pt .
-      _:arm-lock <dgraph.type> "EndGame" .
-      _:arm-lock <type> _:fin .
-
-      _:chocke <name> "chocke"@en .
-      _:chocke <name> "estrangulamento"@pt .
-      _:chocke <dgraph.type> "EndGame" .
-      _:chocke <type> _:fin .
-
-      _:guarda_inteira <name> "guarda"@pt .
-      _:guarda_inteira <dgraph.type> "Action" .
-      _:guarda_inteira <description> ""@pt .
-      _:guarda_inteira <type> _:guarda .
-
-      _:meia_guarda <name> "meia guarda"@pt .
-      _:meia_guarda <dgraph.type> "Action" .
-      _:meia_guarda <description> ""@pt .
-      _:meia_guarda <type> _:guarda .
-      _:meia_guarda <passador> _:100kg (points=2, move="['mg_sweep_lapela']") .
-      _:meia_guarda <guardeiro> _:costas (points=4, move="['mg_ida_costas']") .
-      
       _:100kg <name> "100kg"@pt .
-      _:100kg <dgraph.type> "Action" .
+      _:100kg <dgraph.type> "Position" .
       _:100kg <description> ""@pt .
-      _:100kg <type> _:controle_lateral .
-      _:100kg <passador> _:arm-lock (move="['fin_arm_lock']") .
-      _:100kg <passador> _:kimura (move="['fin_kimura']") .
-      
+      _:100kg <type> _:side_control .
 
       _:costas <name> "costas"@pt .
-      _:costas <dgraph.type> "Action" .
+      _:costas <dgraph.type> "Position" .
       _:costas <description> ""@pt .
-      _:costas <type> _:costas_position .
-      _:costas <guardeiro> _:mata_leao (move="['fin_mata_leao']") .
-      _:costas <guardeiro> _:chocke (move="['fin_chocke']") .
+      _:costas <type> _:back .
 
+      _:montada <name> "montada"@pt .
+      _:montada <dgraph.type> "Position" .
+      _:montada <description> ""@pt .
+      _:montada <type> _:mount .
 
-
-
-      _:rgodoy <name> "Roberto Godoy"@pt .
-      _:rgodoy <dgraph.type> "Person" .
-      _:rgodoy <country> "Brazil"@en .
-      _:rgodoy <country> "Brasil"@pt .
-
-      _:mkimura <name> "Masahiko Kimura"@pt .
-      _:mkimura <dgraph.type> "Person" .
-      _:mkimura <country> "Japan"@en .
-      _:mkimura <country> "Japão"@pt .
-
-      _:none <name> "desconhecido"@pt .
-      _:none <name> "unknow"@en .
-      _:none <dgraph.type> "Person" .
-      _:none <country> "unknow"@en .
-      _:none <country> "desconhecido"@pt .
-
-
-
-
-
-      _:bjj <movements> _:mg_sweep_lapela .
-      _:mg_sweep_lapela <id> "mg_sweep_lapela" .
-      _:mg_sweep_lapela <dgraph.type> "Move" .
-      _:mg_sweep_lapela <name> "raspagem na meia guarda com lapela"@pt .
-      _:mg_sweep_lapela <description> ""@pt .
-      _:mg_sweep_lapela <class> "sweep"@en .
-      _:mg_sweep_lapela <points> "2" .
-      _:mg_sweep_lapela <author> _:none .
-      _:mg_sweep_lapela <situation> ""@pt .
-      _:mg_sweep_lapela <lapela> "true" .
-
-      _:bjj <movements> _:fn_arm_lock .
-      _:fin_arm_lock <id> "fin_arm_lock" .
-      _:fin_arm_lock <dgraph.type> "Move" .
-      _:fin_arm_lock <name> "Chave de braço"@pt .
-      _:fin_arm_lock <name> "Arm lock"@en .
-      _:fin_arm_lock <description> ""@pt .
-      _:fin_arm_lock <class> "arm_lock"@en .
-      _:fin_arm_lock <author> _:none .
-      _:fin_arm_lock <situation> ""@pt .
-      _:fin_arm_lock <lapela> "false" .
-
-      _:bjj <movements> _:fin_kimura .
-      _:fin_kimura <id> "fin_kimura" .
-      _:fin_kimura <dgraph.type> "Move" .
-      _:fin_kimura <name> "Kimura"@pt .
-      _:fin_kimura <name> "Kimura"@en .
-      _:fin_kimura <description> ""@pt .
-      _:fin_kimura <class> "fin_kimura"@en .
-      _:fin_kimura <author> _:mkimura .
-      _:fin_kimura <situation> ""@pt .
-      _:fin_kimura <lapela> "false" .
-
-
-      _:bjj <movements> _:chocke_lapela .
-      _:chocke_lapela <id> "chocke_lapela" .
-      _:chocke_lapela <dgraph.type> "Move" .
-      _:chocke_lapela <name> "Estrangulamento"@pt .
-      _:chocke_lapela <name> "Chocke"@en .
-      _:chocke_lapela <description> "Usa a lapela no estrangulamento"@pt .
-      _:chocke_lapela <class> "chocke"@en .
-      _:chocke_lapela <author> _:none .
-      _:chocke_lapela <situation> ""@pt .
-      _:chocke_lapela <lapela> "false" .
-
-      _:bjj <movements> _:chocke_antebraco .
-      _:chocke_antebraco <id> "chocke_antebraco" .
-      _:chocke_antebraco <dgraph.type> "Move" .
-      _:chocke_antebraco <name> "Estrangulamento"@pt .
-      _:chocke_antebraco <name> "Chocke"@en .
-      _:chocke_antebraco <description> "Usa o antebraço no estrangulamento"@pt .
-      _:chocke_antebraco <class> "chocke"@en .
-      _:chocke_antebraco <author> _:none .
-      _:chocke_antebraco <situation> ""@pt .
-      _:chocke_antebraco <lapela> "false" .
-
+      _:quatro_apoios <name> "quatro_apoios"@pt .
+      _:quatro_apoios <dgraph.type> "Position" .
+      _:quatro_apoios <description> ""@pt .
+      _:quatro_apoios <type> _:back .
   }
 }

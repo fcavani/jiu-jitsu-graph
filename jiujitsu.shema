@@ -1,6 +1,5 @@
-type Start {
+type End {
     name: string
-    next: Queda
 }
 
 type Person {
@@ -8,56 +7,61 @@ type Person {
     country: string
 }
 
-type Basics {
-    name: string
-    is: Basics
-    position: string
-}
-
-type EndGame {
-    name: string
-    type: Basics
-}
-
-type Queda {
-    description: string
-    type: Basics
-    passador: Action
-    guardeiro: Action
-}
-
 type Move {
     id: string
     name: string
     description: string
-    class: string
+    class: Basics
     points: int
     author: Person
     situation: string
     lapela: bool
 }
 
-type Action {
+type Basics {
+    name: string
+    is: Basics
+    description: string
+    movements: Move
+}
+
+type Position {
     name: string
     description: string
-    type: Basic
-    next: Action
-    move: [Move]
+    type: Basics
+    fall: [Position]
+    guard: [Position]
+    pass: [Position]
+    sweep: [Position]
+    side_control: [Position]
+    back: [Position]
+    mount: [Position]
+    submission: Position
+}
+
+type Start {
+    name: string
+    begin: [Position]
 }
 
 id: string @index(term) .
 name: string @index(term) @lang .
 description: string @index(fulltext) @lang .
 country: string @index(term) @lang .
-position: string @index(term) @lang .
-class: string @index(term) @lang .
 situation: string @index(fulltext) @lang .
 points: int .
 lapela: bool .
 author: uid .
 is: uid .
+movements: uid .
 type: uid .
-next: [uid] .
-passador: [uid] .
-guardeiro: [uid] .
-move: [uid] .
+fall: [uid] .
+guard: [uid] .
+pass: [uid] .
+sweep: [uid] .
+side_control: [uid] .
+back: [uid] .
+mount: [uid] .
+submission: [uid] .
+begin: [uid] .
+class: uid .

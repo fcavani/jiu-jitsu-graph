@@ -1,0 +1,83 @@
+{
+  jiu_from_begin(func: eq(name@en, "start")) @recurse(depth: 50, loop: true) {
+    name@pt
+    description@pt
+    type
+    begin @facets
+    fall @facets
+    guard @facets
+    pass @facets
+    sweep @facets
+    side_control @facets
+    back @facets
+    mount @facets
+    submission @facets
+  }
+}
+
+{
+  jiu_from_begin(func: eq(name@en, "start")) @recurse(depth: 10, loop: true) {
+    name@pt
+    description@pt
+    begin @facets
+    fall @facets
+    guard @facets
+    pass @facets
+    sweep @facets
+    side_control @facets
+    back @facets
+    mount @facets
+    submission @facets(eq(americana, true))
+  }
+}
+
+{
+  kimura(func: eq(name@pt, "Masahiko Kimura")) {
+    uid
+    name@pt
+  }
+}
+
+{
+  jiu(func: anyofterms(name@pt, "Jiu")) {
+    uid
+    name@pt
+  }
+}
+
+{
+  mg(func: eq(name@pt, "meia guarda")) {
+    uid
+    name@pt
+    passador {
+      name@pt
+    }
+    guardeiro {
+      expand(_all_)
+    }
+  }
+}
+
+{
+  jiu_from_begin(func: eq(name@en, "start")) {
+    uid
+    name@pt
+    passador {
+      name@pt
+      passador {
+      	name@pt
+   	 	}
+    	guardeiro {
+      	name@pt
+    	}
+    }
+    guardeiro {
+      passador {
+      	name@pt
+   	 	}
+    	guardeiro {
+      	name@pt
+    	}
+    }
+  }
+}
