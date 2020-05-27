@@ -1,0 +1,30 @@
+{
+  set {
+
+    _:bjj <movements> _:sweep_tesourinha .
+    _:mg_sweep_lapela <id> "sweep_tesourinha" .
+    _:mg_sweep_lapela <dgraph.type> "Move" .
+    _:mg_sweep_lapela <name> "tesourinha"@pt .
+    _:mg_sweep_lapela <name> "raspagem número um"@pt .
+    _:mg_sweep_lapela <description> ""@pt .
+    _:mg_sweep_lapela <class> _:sweep .
+    _:mg_sweep_lapela <points> "2" .
+    _:mg_sweep_lapela <author> _:none .
+    _:mg_sweep_lapela <situation> ""@pt .
+    _:mg_sweep_lapela <lapela> "false" .
+    _:mg_sweep_lapela <variation> _:sweep_tesourinha_empurando_joelho
+
+    _:bjj <movements> _:sweep_tesourinha_empurando_joelho .
+    _:sweep_tesourinha_empurando_joelho <id> "sweep_tesourinha_empurando_joelho" .
+    _:sweep_tesourinha_empurando_joelho <dgraph.type> "Move" .
+    _:sweep_tesourinha_empurando_joelho <name> "tesourinha_empurando_joelho"@pt .
+    _:sweep_tesourinha_empurando_joelho <name> "raspagem número um empurrando o joelho"@pt .
+    _:sweep_tesourinha_empurando_joelho <description> "como na raspagem número um mas empurra o joelho com a parna que não está na barriga dele"@pt .
+    _:sweep_tesourinha_empurando_joelho <class> _:sweep .
+    _:sweep_tesourinha_empurando_joelho <points> "2" .
+    _:sweep_tesourinha_empurando_joelho <author> _:none .
+    _:sweep_tesourinha_empurando_joelho <situation> ""@pt .
+    _:sweep_tesourinha_empurando_joelho <lapela> "false" .
+
+  }
+}
