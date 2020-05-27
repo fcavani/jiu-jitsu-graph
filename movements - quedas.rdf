@@ -1,16 +1,122 @@
 {
   set {
-    
+
     _:bjj <movements> _:ogoshe .
     _:ogoshe <id> "ogoshe" .
     _:ogoshe <dgraph.type> "Move" .
     _:ogoshe <name> "O-goshe"@pt .
-    _:ogoshe <description> "abraça pela cintura..."@pt .
+    _:ogoshe <name> "O-goshe"@en .
+    _:ogoshe <description> "Entrada normal (fazend a chaleira - pé dirrito na frente do esquerdo e coloca pé esquerdo na frente do direito, ficando de costas para o adversário, centro da lombar deve estar apondando para perna direita dele...), abraça a cintura..."@pt .
     _:ogoshe <class> _:fall .
     _:ogoshe <points> "2" .
     _:ogoshe <author> _:none .
     _:ogoshe <situation> ""@pt .
-    _:ogoshe <lapela> "false" .
+
+    _:bjj <movements> _:osotogari .
+    _:osotogari <id> "osotogari" .
+    _:osotogari <dgraph.type> "Move" .
+    _:osotogari <name> "O-sot-gari"@pt .
+    _:osotogari <name> "O-sot-gari"@en .
+    _:osotogari <description> "lapela esquerda dele"@pt .
+    _:osotogari <class> _:fall .
+    _:osotogari <points> "2" .
+    _:osotogari <author> _:none .
+    _:osotogari <situation> ""@pt .
+
+    _:bjj <movements> _:sotoogari
+    _:sotoogari <id> "sotoogari" .
+    _:sotoogari <name> "Soto-O-Gari"@pt .
+    _:sotoogari <name> "Soto-O-Gari"@en .
+    _:sotoogari <description> "lapela direita dele"@pt .
+    _:sotoogari <class> _:fall .
+    _:sotoogari <points> "2" .
+    _:sotoogari <author> _:none .
+    _:sotoogari <situation> ""@pt .
+
+    _:bjj <movements> _:seoinage .
+    _:seoinage <id> "seoinage" .
+    _:seoinage <dgraph.type> "Move" .
+    _:seoinage <name> "Seoinage"@pt .
+    _:seoinage <name> "Seoinage"@en .
+    _:seoinage <description> "Entrada normal com cotovelo debaixo do braço direito dele. Mão na lapela esquerda dele."@pt .
+    _:seoinage <class> _:fall .
+    _:seoinage <points> "2" .
+    _:seoinage <author> _:none .
+    _:seoinage <situation> ""@pt .
+
+    _:bjj <movements> _:ipponseoinage .
+    _:ipponseoinage <id> "ipponseoinage" .
+    _:ipponseoinage <dgraph.type> "Move" .
+    _:ipponseoinage <name> "Ippon Seoinage"@pt .
+    _:ipponseoinage <name> "Ippon Seoinage"@en .
+    _:ipponseoinage <description> "Entra com o braço de baixo do suvaco dele."@pt .
+    _:ipponseoinage <class> _:fall .
+    _:ipponseoinage <points> "2" .
+    _:ipponseoinage <author> _:none .
+    _:ipponseoinage <situation> ""@pt .
+
+    _:bjj <movements> _:koshigoruma .
+    _:koshigoruma <id> "koshigoruma" .
+    _:koshigoruma <dgraph.type> "Move" .
+    _:koshigoruma <name> "Koshi Goruma"@pt .
+    _:koshigoruma <name> "Koshi Goruma"@en .
+    _:koshigoruma <description> ""@pt .
+    _:koshigoruma <class> _:fall .
+    _:koshigoruma <points> "2" .
+    _:koshigoruma <author> _:none .
+    _:koshigoruma <situation> ""@pt .
+
+    _:bjj <movements> _:maroteseionage .
+    _:maroteseionage <id> "maroteseionage" .
+    _:maroteseionage <dgraph.type> "Move" .
+    _:maroteseionage <name> "Marote seionage"@pt .
+    _:maroteseionage <name> "Marote seionage"@en .
+    _:maroteseionage <description> "Mesma entrada, entra com o cotovelo direito de baixo do braço, agaixa e projeta."@pt .
+    _:maroteseionage <class> _:fall .
+    _:maroteseionage <points> "2" .
+    _:maroteseionage <author> _:none .
+    _:maroteseionage <situation> ""@pt .
+
+    _:bjj <movements> _:singleleg .
+    _:singleleg <id> "singleleg" .
+    _:singleleg <dgraph.type> "Move" .
+    _:singleleg <name> "Single leg pegando alto a perna"@pt .
+    _:singleleg <description> "puxa, pega a perna que está adiante, coloca ela no meio das suas pernas ou de baixo do braço, apoia mão atrás do joelho e gira para o outro lado"@pt .
+    _:singleleg <class> _:fall .
+    _:singleleg <points> "2" .
+    _:singleleg <author> _:none .
+    _:singleleg <situation> ""@pt .
+    
+    _:bjj <movements> _:singleleg_heel .
+    _:singleleg_heel <id> "singleleg_heel" .
+    _:singleleg_heel <dgraph.type> "Move" .
+    _:singleleg_heel <name> "Single leg pegando no calcanhar"@pt .
+    _:singleleg_heel <description> "Mão direita na gola e esquerda no outro cotovelo pegando o pano, puxa ele para frente fazendo a perna esquerda dele vir para frente, trava este pé com o seu pé esquerdo, mão direita desce pela perna esquerda para pegar bem no calcanhar, puxa a perna para o meio das suas pernas, mão esquerda vai lá no joelho, cabeça na barriga dele voltada para dentro, ajoelha empurando ele para traz."@pt .
+    _:singleleg_heel <class> _:fall .
+    _:singleleg_heel <points> "2" .
+    _:singleleg_heel <author> _:none .
+    _:singleleg_heel <situation> ""@pt .
+
+    _:bjj <movements> _:doubleleg .
+    _:doubleleg <id> "doubleleg" .
+    _:doubleleg <dgraph.type> "Move" .
+    _:doubleleg <name> "Baiana"@pt .
+    _:doubleleg <name> "Double Leg"@en .
+    _:doubleleg <description> "entrada da baiana, abaixa, agraça as duas perna acima do joelho e rosto de lado com a orelha encostada no umbigo dele e empura."@pt .
+    _:doubleleg <class> _:fall .
+    _:doubleleg <points> "2" .
+    _:doubleleg <author> _:none .
+    _:doubleleg <situation> ""@pt .
+
+    _:bjj <movements> _:balao .
+    _:Balão <id> "Balão" .
+    _:Balão <dgraph.type> "Move" .
+    _:Balão <name> "Balão"@pt .
+    _:Balão <description> "pegada no pano do pulso, um pé na virilha, puxa, deita, outro pé na virilha..."@pt .
+    _:Balão <class> _:fall .
+    _:Balão <points> "2" .
+    _:Balão <author> _:none .
+    _:Balão <situation> ""@pt .
 
   }
 }
