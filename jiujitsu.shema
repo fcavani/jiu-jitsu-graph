@@ -7,15 +7,24 @@ type Person {
     country: string
 }
 
+type Link {
+    url: string
+    last_seen: dateTime
+    last_modification: dateTime
+    mime: string
+}
+
 type Move {
     id: string
-    name: string
+    name: [string]
     description: string
     class: Basics
     points: int
     author: Person
     situation: string
     lapela: bool
+    variation: [Move]
+    media: [Link]
 }
 
 type Basics {
