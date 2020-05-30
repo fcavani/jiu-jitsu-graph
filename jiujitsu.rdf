@@ -1,91 +1,99 @@
-{
-  set {
-      _:bjj <name> "Jiu Jitsu Brasileiro"@pt .
-      _:bjj <dgraph.type> "Basics" .
+_:bjj <name> "Jiu Jitsu Brasileiro"@pt .
+_:bjj <dgraph.type> "Basics" .
 
-      _:fall <name> "queda"@pt .
-      _:fall <name> "takedown"@en .
-      _:fall <dgraph.type> "Basics" .
-      _:fall <description> "Fazendo queda"@pt .
-      _:fall <is> _:bjj .
+_:fall <name> "queda"@pt .
+_:fall <name> "takedown"@en .
+_:fall <dgraph.type> "Basics" .
+_:fall <description> "Fazendo queda"@pt .
+_:fall <is> _:bjj .
 
-      _:guard <name> "guarda"@pt .
-      _:guard <dgraph.type> "Basics" .
-      _:guard <position> "guardeiro" .
-      _:guard <description> "Fazendo guarda"@pt .
-      _:guard <is> _:bjj .
+_:guard <name> "guarda"@pt .
+_:guard <dgraph.type> "Basics" .
+_:guard <position> "guardeiro" .
+_:guard <description> "Fazendo guarda"@pt .
+_:guard <is> _:bjj .
 
-      _:pass <name> "passagem"@pt .
-      _:pass <dgraph.type> "Basics" .
-      _:pass <position> "passador" .
-      _:pass <description> "Passando guarda"@pt .
-      _:pass <is> _:bjj .
-    
-      _:sweep <name> "raspagem"@pt .
-      _:sweep <name> "sweep"@en .
-      _:sweep <dgraph.type> "Basics" .
-      _:sweep <position> "guardeiro" .
-      _:sweep <description> "raspando ou invertendo de posição com o adversário, de guardeiro para passador"@pt .
-      _:sweep <is> _:bjj .
+_:pass <name> "passagem"@pt .
+_:pass <dgraph.type> "Basics" .
+_:pass <position> "passador" .
+_:pass <description> "Passando guarda"@pt .
+_:pass <is> _:bjj .
 
-      _:side_control <name> "controle lateral"@pt .
-      _:side_control <name> "side control"@en .
-      _:side_control <dgraph.type> "Basics" .
-      _:side_control <position> "passador" .
-      _:side_control <description> "Fazendo controle lateral"@pt .
-      _:side_control <is> _:bjj .
-      
-      _:back <name> "costas"@pt .
-      _:back <dgraph.type> "Basics" .
-      _:back <position> "passador" .
-      _:back <description> "Fazendo ataque nas costas"@pt .
-      _:back <is> _:bjj .
+_:sweep <name> "raspagem"@pt .
+_:sweep <name> "sweep"@en .
+_:sweep <dgraph.type> "Basics" .
+_:sweep <position> "guardeiro" .
+_:sweep <description> "raspando ou invertendo de posição com o adversário, de guardeiro para passador"@pt .
+_:sweep <is> _:bjj .
 
-      _:mount <name> "montada"@pt .
-      _:mount <dgraph.type> "Basics" .
-      _:mount <position> "passador" .
-      _:mount <description> "Sentado sobre o adverário."@pt .
-      _:mount <is> _:bjj .
+_:side_control <name> "controle lateral"@pt .
+_:side_control <name> "side control"@en .
+_:side_control <dgraph.type> "Basics" .
+_:side_control <position> "passador" .
+_:side_control <description> "Fazendo controle lateral"@pt .
+_:side_control <is> _:bjj .
 
-      _:submission <name> "finalização"@pt .
-      _:submission <name> "submission"@en .
-      _:submission <dgraph.type> "Basics" .
-      _:submission <description> "Finalizando"@pt .
-      _:submission <is> _:bjj .
+_:back <name> "costas"@pt .
+_:back <dgraph.type> "Basics" .
+_:back <position> "passador" .
+_:back <description> "Fazendo ataque nas costas"@pt .
+_:back <is> _:bjj .
 
-      _:stand <name> "em pé"@pt .
-      _:stand <name> "stand up"@en .
-      _:stand <dgraph.type> "Position" .
+_:mount <name> "montada"@pt .
+_:mount <dgraph.type> "Basics" .
+_:mount <position> "passador" .
+_:mount <description> "Sentado sobre o adverário."@pt .
+_:mount <is> _:bjj .
 
-      _:full_guard <name> "guarda"@pt .
-      _:full_guard <name> "guard"@en .
-      _:full_guard <dgraph.type> "Position" .
-      _:full_guard <description> ""@pt .
-      _:full_guard <type> _:guard .
+_:submission <name> "finalização"@pt .
+_:submission <name> "submission"@en .
+_:submission <dgraph.type> "Basics" .
+_:submission <description> "Finalizando"@pt .
+_:submission <is> _:bjj .
 
-      _:half_guard <name> "meia guarda"@pt .
-      _:half_guard <dgraph.type> "Position" .
-      _:half_guard <description> ""@pt .
-      _:half_guard <type> _:guard .
+_:transition <name> "transição"@pt .
+_:transition <name> "transition"@en .
+_:transition <dgraph.type> "Basics" .
+_:transition <description> "Fez a transição de uma posição a outra"@pt .
+_:transition <is> _:bjj .
 
-      _:100kg <name> "100kg"@pt .
-      _:100kg <dgraph.type> "Position" .
-      _:100kg <description> ""@pt .
-      _:100kg <type> _:side_control .
+_:stand <name> "em pé"@pt .
+_:stand <name> "stand up"@en .
+_:stand <dgraph.type> "Position" .
 
-      _:costas <name> "costas"@pt .
-      _:costas <dgraph.type> "Position" .
-      _:costas <description> ""@pt .
-      _:costas <type> _:back .
+_:full_guard <name> "guarda"@pt .
+_:full_guard <name> "guard"@en .
+_:full_guard <dgraph.type> "Position" .
+_:full_guard <description> ""@pt .
+_:full_guard <type> _:guard .
 
-      _:montada <name> "montada"@pt .
-      _:montada <dgraph.type> "Position" .
-      _:montada <description> ""@pt .
-      _:montada <type> _:mount .
+_:half_guard <name> "meia guarda"@pt .
+_:half_guard <dgraph.type> "Position" .
+_:half_guard <description> ""@pt .
+_:half_guard <type> _:guard .
 
-      _:quatro_apoios <name> "quatro_apoios"@pt .
-      _:quatro_apoios <dgraph.type> "Position" .
-      _:quatro_apoios <description> ""@pt .
-      _:quatro_apoios <type> _:back .
-  }
-}
+_:100kg <name> "100kg"@pt .
+_:100kg <dgraph.type> "Position" .
+_:100kg <description> ""@pt .
+_:100kg <type> _:side_control .
+
+_:knee_on_belly <name> "joelho na barriga"@pt .
+_:knee_on_belly <dgraph.type> "Position" .
+_:knee_on_belly <description> "Apoia o joelho na barriga logo abaixo do final do esterno. Perna que sobra deve ser esticada de modo a ficar longe do alcance da mão do adversário."@pt .
+_:knee_on_belly <type> _:side_control . # side control???
+
+_:costas <name> "costas"@pt .
+_:costas <dgraph.type> "Position" .
+_:costas <description> ""@pt .
+_:costas <type> _:back .
+
+_:montada <name> "montada"@pt .
+_:montada <dgraph.type> "Position" .
+_:montada <description> ""@pt .
+_:montada <type> _:mount .
+
+_:quatro_apoios <name> "quatro_apoios"@pt .
+_:quatro_apoios <alternative_name> "Guarda tartaruga" .
+_:quatro_apoios <dgraph.type> "Position" .
+_:quatro_apoios <description> ""@pt .
+_:quatro_apoios <type> _:back .

@@ -11,6 +11,7 @@ type Link {
     url: string
     last_seen: dateTime
     last_modification: dateTime
+    created_at: dateTime
     mime: string
 }
 
@@ -23,8 +24,8 @@ type Move {
     author: Person
     situation: string
     lapela: bool
-    variation: [Move]
-    media: [Link]
+    variations: [Move]
+    medias: [Link]
 }
 
 type Basics {
@@ -36,6 +37,7 @@ type Basics {
 
 type Position {
     name: string
+    alternative_name: [string]
     description: string
     type: Basics
     fall: [Position]
@@ -55,6 +57,7 @@ type Start {
 
 id: string @index(term) .
 name: string @index(term) @lang .
+alternative_name: [string] @index(fulltext) .
 description: string @index(fulltext) @lang .
 country: string @index(term) @lang .
 situation: string @index(fulltext) @lang .
@@ -74,3 +77,10 @@ mount: [uid] .
 submission: [uid] .
 begin: [uid] .
 class: uid .
+url: string @index(fulltext) .
+last_seen: dateTime .
+last_modification: dateTime .
+created_at: dateTime .
+mime: string @index(term) .
+variations: [uid] .
+medias: [uid] .
