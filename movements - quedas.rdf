@@ -117,11 +117,11 @@ _:doubleleg <author> _:none .
 _:doubleleg <situation> ""@pt .
 
 _:bjj <movements> _:balao .
-_:Balão <id> "Balão" .
-_:Balão <dgraph.type> "Move" .
-_:Balão <name> "Balão"@pt .
-_:Balão <description> "pegada no pano do pulso, um pé na virilha, puxa, deita, outro pé na virilha..."@pt .
-_:Balão <class> _:fall .
-_:Balão <points> "2" .
-_:Balão <author> _:none .
-_:Balão <situation> ""@pt .
+_:balao <id> "Balão" .
+_:balao <dgraph.type> "Move" .
+_:balao <name> "Balão"@pt .
+_:balao <description> "pegada no pano do pulso, um pé na virilha, puxa, deita, outro pé na virilha..."@pt .
+_:balao <class> _:fall .
+_:balao <points> "2" .
+_:balao <author> _:none .
+_:balao <situation> ""@pt .
