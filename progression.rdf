@@ -8,6 +8,8 @@ _:end <name> "end"@en .
 _:end <dgraph.type> "Position" .
 _:end <description> ""@pt .
 
+_:stand <submission> _:end (arm_lock="end") . # Arm-lock voador.
+
 _:stand <fall> _:100kg (ogoshe="100kg") .
 _:stand <fall> _:full_guard (pull="full_guard") .
 _:stand <fall> _:half_guard (ogoshe="half_guard", todo="half_guard") .
