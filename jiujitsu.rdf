@@ -92,8 +92,13 @@ _:montada <dgraph.type> "Position" .
 _:montada <description> ""@pt .
 _:montada <type> _:mount .
 
-_:quatro_apoios <name> "quatro_apoios"@pt .
+_:quatro_apoios <name> "quatro apoios"@pt .
 _:quatro_apoios <alternative_name> "Guarda tartaruga" .
 _:quatro_apoios <dgraph.type> "Position" .
 _:quatro_apoios <description> ""@pt .
 _:quatro_apoios <type> _:back .
+
+_:side_mount <name> "montada com oponente de lado"@pt .
+_:side_mount <dgraph.type> "Position" .
+_:side_mount <description> ""@pt .
+_:side_mount <type> _:mount .

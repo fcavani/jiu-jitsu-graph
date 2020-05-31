@@ -15,7 +15,8 @@ MUTATION_FILES = [
     "movements - guarda.rdf",
     "movements - meia guarda.rdf",
     "movements - finalização.rdf",
-    "movements - passagem de guarda.rdf"
+    "movements - passagem de guarda.rdf",
+    "movements - transitions.rdf"
 ]
 
 

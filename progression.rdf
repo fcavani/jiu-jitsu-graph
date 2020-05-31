@@ -15,7 +15,7 @@ _:stand <fall> _:knee_on_belly (sotoogari="knee_on_belly", osotogari="knee_on_be
 
 _:100kg <submission> _:end (americana="end") .
 _:100kg <submission> _:end (arm_lock_reto="end") .
-_:100kg <transition> _:knee_on_belly .
+_:100kg <transition> _:knee_on_belly (100kg_knee_on_belly="knee_on_belly") .
 
 _:costas <submission> _:end (crucifixo="end", arco_e_flexa="end") .
 
@@ -30,6 +30,9 @@ _:half_guard <back> _:quatro_apoios (todo="quatro_apoios") .
 
 _:knee_on_belly <submission> _:end (arm_lock="end") .
 
-_:montada <submission> _:end (americana="end", chocke_antebraco="end", kimura="end") .
+_:montada <submission> _:end (americana="end", chocke_antebraco="end", kimura="end", arm_lock="end") .
+_:montada <transition> _:side_mount (amassa_pao="side_mount") .
 
 _:quatro_apoios <submission> _:end (crucifixo="end", arco_e_flexa="end") .
+
+_:side_mount <submission> _:end (arm_lock="end") .
