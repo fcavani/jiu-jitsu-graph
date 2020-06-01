@@ -1,3 +1,4 @@
 .vscode
 *code-workspace
 queries.1.cql
+.venv
