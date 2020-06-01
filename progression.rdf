@@ -1,0 +1,40 @@
+_:start <name> "início"@pt .
+_:start <name> "start"@en .
+_:start <dgraph.type> "Start" .
+_:start <begin> _:stand .
+
+_:end <name> "fim"@pt .
+_:end <name> "end"@en .
+_:end <dgraph.type> "Position" .
+_:end <description> ""@pt .
+
+_:stand <submission> _:end (arm_lock="end") . # Arm-lock voador.
+
+_:stand <fall> _:100kg (ogoshe="100kg") .
+_:stand <fall> _:full_guard (pull="full_guard") .
+_:stand <fall> _:half_guard (ogoshe="half_guard", todo="half_guard") .
+_:stand <fall> _:knee_on_belly (sotoogari="knee_on_belly", osotogari="knee_on_belly") .
+
+_:100kg <submission> _:end (americana="end") .
+_:100kg <submission> _:end (arm_lock_reto="end") .
+_:100kg <transition> _:knee_on_belly (100kg_knee_on_belly="knee_on_belly") .
+
+_:costas <submission> _:end (crucifixo="end", arco_e_flexa="end") .
+
+_:full_guard <pass> _:100kg (todo="100kg") .
+_:full_guard <sweep> _:montada (tesourinha="montada", papel_de_bala="montada", empurando_joelho="montada") .
+_:full_guard <submission> _:end (todo="end").
+
+_:half_guard <pass> _:100kg (mg_sweep_lapela="100kg") .
+_:half_guard <back> _:costas (todo="costas") .
+# _:half_guard <sweep> _:montada (todo="montada") .
+_:half_guard <back> _:quatro_apoios (todo="quatro_apoios") .
+
+_:knee_on_belly <submission> _:end (arm_lock="end") .
+
+_:montada <submission> _:end (americana="end", chocke_antebraco="end", kimura="end", arm_lock="end") .
+_:montada <transition> _:side_mount (amassa_pao="side_mount") .
+
+_:quatro_apoios <submission> _:end (crucifixo="end", arco_e_flexa="end") .
+
+_:side_mount <submission> _:end (arm_lock="end") .

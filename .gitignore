@@ -1,4 +1,8 @@
 .vscode
+.venv
 *code-workspace
 queries.1.cql
-.venv
+.dgraph
+*.txt
+notes_dgraph.md
+notes.md

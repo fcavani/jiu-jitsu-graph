@@ -1,0 +1,15 @@
+_:rgodoy <name> "Roberto Godoy"@pt .
+_:rgodoy <dgraph.type> "Person" .
+_:rgodoy <country> "Brazil"@en .
+_:rgodoy <country> "Brasil"@pt .
+
+_:mkimura <name> "Masahiko Kimura"@pt .
+_:mkimura <dgraph.type> "Person" .
+_:mkimura <country> "Japan"@en .
+_:mkimura <country> "Japão"@pt .
+
+_:none <name> "desconhecido"@pt .
+_:none <name> "unknow"@en .
+_:none <dgraph.type> "Person" .
+_:none <country> "unknow"@en .
+_:none <country> "desconhecido"@pt .

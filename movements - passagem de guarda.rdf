@@ -1,0 +1,43 @@
+_:bjj <movements> _:on_knees_guard_pass_01 .
+_:on_knees_guard_pass_01 <id> "on_knees_guard_pass_01" .
+_:on_knees_guard_pass_01 <dgraph.type> "Move" .
+_:on_knees_guard_pass_01 <name> "Passagem de guarda 1"@pt .
+_:on_knees_guard_pass_01 <name> ""@en .
+_:on_knees_guard_pass_01 <description> "Empura quadril do adverário em direção ao chão e segura ele lá, estica perna esquerda (longe das mão do adverário), mão esquerda empura joelho direito dele, joelho direito vai no chão do lado direto dele com canela apoiada na perna dele e pé fazendo gancho, passa perna esquerda e braço esquerdo por baixo do pescoço, faz 100kg"@pt .
+_:on_knees_guard_pass_01 <class> _:pass .
+_:on_knees_guard_pass_01 <points> "3" .
+_:on_knees_guard_pass_01 <author> _:none .
+_:on_knees_guard_pass_01 <situation> ""@pt .
+
+_:bjj <movements> _:on_knees_guard_walking_back .
+_:on_knees_guard_walking_back <id> "on_knees_guard_walking_back" .
+_:on_knees_guard_walking_back <dgraph.type> "Move" .
+_:on_knees_guard_walking_back <name> "Passagem de guarda andando para trás"@pt .
+_:on_knees_guard_walking_back <name> ""@en .
+_:on_knees_guard_walking_back <description> "Empura o quadril no chão com as duas mão e coloca os ante-braços nas cochas dele, dá uma passo para trás e passa sem tirar as mãos."@pt .
+_:on_knees_guard_walking_back <class> _:pass .
+_:on_knees_guard_walking_back <points> "3" .
+_:on_knees_guard_walking_back <author> _:none .
+_:on_knees_guard_walking_back <situation> ""@pt .
+
+_:bjj <movements> _:brake .
+_:brake <id> "brake" .
+_:brake <dgraph.type> "Move" .
+_:brake <name> "Brake"@pt .
+_:brake <name> "Brake"@en .
+_:brake <description> "Domina pé com mão oposta e a outra mão domina o braço do oponente, gira o oponente."@pt .
+_:brake <class> _:pass .
+_:brake <points> "3" .
+_:brake <author> _:none .
+_:brake <situation> ""@pt .
+
+_:bjj <movements> _:godoi_guard_pass .
+_:godoi_guard_pass <id> "godoi_guard_pass" .
+_:godoi_guard_pass <dgraph.type> "Move" .
+_:godoi_guard_pass <name> "Passagem de guarda Godoi"@pt .
+_:godoi_guard_pass <name> ""@en .
+_:godoi_guard_pass <description> ""@pt .
+_:godoi_guard_pass <class> _:pass .
+_:godoi_guard_pass <points> "3" .
+_:godoi_guard_pass <author> _:none .
+_:godoi_guard_pass <situation> ""@pt .

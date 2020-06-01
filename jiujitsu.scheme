@@ -1,0 +1,83 @@
+type Person {
+    name: string
+    country: string
+}
+
+type Link {
+    url: string
+    last_seen: dateTime
+    last_modification: dateTime
+    created_at: dateTime
+    mime: string
+}
+
+type Move {
+    id: string
+    name: [string]
+    description: string
+    class: Basics
+    points: int
+    author: Person
+    situation: string
+    variations: [Move]
+    medias: [Link]
+}
+
+type Basics {
+    name: string
+    is: Basics
+    description: string
+    movement: [Move]
+}
+
+type Position {
+    name: string
+    alternative_name: [string]
+    description: string
+    type: Basics
+    fall: [Position]
+    guard: [Position]
+    pass: [Position]
+    sweep: [Position]
+    side_control: [Position]
+    back: [Position]
+    mount: [Position]
+    transition: [Position]
+    submission: Position
+}
+
+type Start {
+    name: string
+    begin: [Position]
+}
+
+id: string @index(term) .
+name: string @index(term) @lang .
+alternative_name: [string] @index(fulltext) .
+description: string @index(fulltext) @lang .
+country: string @index(term) @lang .
+situation: string @index(fulltext) @lang .
+points: int .
+lapela: bool .
+author: uid .
+is: uid .
+movements: uid .
+type: uid .
+fall: [uid] .
+guard: [uid] .
+pass: [uid] .
+sweep: [uid] .
+side_control: [uid] .
+back: [uid] .
+mount: [uid] .
+submission: [uid] .
+begin: [uid] .
+class: uid .
+url: string @index(fulltext) .
+last_seen: dateTime .
+last_modification: dateTime .
+created_at: dateTime .
+mime: string @index(term) .
+variations: [uid] .
+medias: [uid] .
+transition: [uid] .
