@@ -4,17 +4,17 @@
 
 Jiu-jitsu positions, sequences, scores and descriptions graph database.
 
-It's a simple way to view and understand some aspects of a complex art by someone with a blue belt. I'm really don't want to simplify Jiu-jitsu to some computational model, it's not possible, but it's fun to document it.
+It's a simple way to view and understand some aspects of a complex art by someone with a blue belt. I'm really don't want to simplify Jiu-jitsu to a computational model, it's not possible, but it's fun to document it.
 
 **This isn't a form of replacement to the normal train in a properly school with a good master.**
 
-## dgraph
+## Dgraph
 
-I'm migrating from neo4j to dgraph (simple licensing, fast, easy to use and good query language). Then I will need a new model, a better one to describe the data. Expect a lot of changes before I reach a stable model and start to fill in the data from the old model to here.
+I'm migrating it from neo4j to [Dgraph](https://dgraph.io) (simple licensing, fast, easy to use and good query language). I will need a new model, a better one to describe the data (I work on it in the develop branch). Expect a lot of changes before I reach a stable model and start to fill in the data from the [old model](https://github.com/fcavani/jiu-jitsu-graph/tree/neo4j-final).
 
 ## How to test it
 
-Install docker and docker compose.
+Install [docker](https://www.docker.com/) and [docker compose](https://docs.docker.com/compose/).
 
 Just run it:
 
@@ -24,8 +24,8 @@ docker-compose up
 
 Now point your browser to http://localhost:8000.
 
-In the console, query tab enter with one query and hit run.
-There are some queries in the file `queries.dgraph`.
+In the console, query tab enter the query and hit run.
+There are some queries in the file [queries.dgraph](https://github.com/fcavani/jiu-jitsu-graph/blob/master/queries.dgraph).
 
 ``` graphql
 {
@@ -52,11 +52,7 @@ that you take a look in
 
 ## Contributions
 
-Contributions must be made only by a Github pull request. Will be a review before merge it.
-
-## Contact
-
-Try to reach me at Twitter (@fcavani) or send a message to fcavani@gmail.com.
+Contributions must be made only with a pull request. It will be a review before I merge it.
 
 ## Contact the developer
 
@@ -65,7 +61,7 @@ Try to reach me at Twitter (@fcavani) or send a message to fcavani@gmail.com.
 
 ## LICENSE
 
-Jiu-jitsu graph (c) by Felipe Cavani <fcavani@gmail.com>
+Jiu-jitsu graph (c) by Felipe Cavani \<fcavani@gmail.com\>
 
 Jiu-jitsu graph is licensed under a
 Creative Commons Attribution-NonCommercial 4.0 International License.
