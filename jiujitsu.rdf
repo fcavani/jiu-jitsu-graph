@@ -6,6 +6,18 @@ _:fall <name> "takedown"@en .
 _:fall <dgraph.type> "Basics" .
 _:fall <description> "Fazendo queda"@pt .
 _:fall <is> _:bjj .
+_:fall <movement> _:pull
+_:fall <movement> _:ogoshe
+_:fall <movement> _:osotogari
+_:fall <movement> _:sotoogari
+_:fall <movement> _:seoinage
+_:fall <movement> _:ipponseoinage
+_:fall <movement> _:koshigoruma
+_:fall <movement> _:maroteseionage
+_:fall <movement> _:singleleg
+_:fall <movement> _:singleleg_heel
+_:fall <movement> _:doubleleg
+_:fall <movement> _:balao
 
 _:guard <name> "guarda"@pt .
 _:guard <dgraph.type> "Basics" .
@@ -54,8 +66,12 @@ _:submission <is> _:bjj .
 _:transition <name> "transição"@pt .
 _:transition <name> "transition"@en .
 _:transition <dgraph.type> "Basics" .
-_:transition <description> "Fez a transição de uma posição a outra"@pt .
+_:transition <description> "Faz a transição de uma posição a outra"@pt .
 _:transition <is> _:bjj .
+
+
+
+
 
 _:stand <name> "em pé"@pt .
 _:stand <name> "stand up"@en .

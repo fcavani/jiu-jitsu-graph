@@ -1,7 +1,3 @@
-type End {
-    name: string
-}
-
 type Person {
     name: string
     country: string
@@ -23,7 +19,6 @@ type Move {
     points: int
     author: Person
     situation: string
-    lapela: bool
     variations: [Move]
     medias: [Link]
 }
@@ -32,7 +27,7 @@ type Basics {
     name: string
     is: Basics
     description: string
-    movements: Move
+    movement: [Move]
 }
 
 type Position {
@@ -47,6 +42,7 @@ type Position {
     side_control: [Position]
     back: [Position]
     mount: [Position]
+    transition: [Position]
     submission: Position
 }
 
@@ -84,3 +80,4 @@ created_at: dateTime .
 mime: string @index(term) .
 variations: [uid] .
 medias: [uid] .
+transition: [uid] .
