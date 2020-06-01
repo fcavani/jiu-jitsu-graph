@@ -1,7 +1,5 @@
 # The Jiu-jitsu graph database
 
-![Graph - 2019-09-03](https://raw.githubusercontent.com/fcavani/jiu-jitsu-graph/master/graph.png)
-
 Jiu-jitsu positions, sequences, scores and descriptions graph database.
 
 It's a simple way to view and understand some aspects of a complex art by someone with a blue belt. I'm really don't want to simplify Jiu-jitsu to some computational model, it's not possible, but it's fun to document it.
