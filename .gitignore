@@ -3,6 +3,5 @@
 *code-workspace
 queries.1.cql
 .dgraph
-*.txt
 notes_dgraph.md
 notes.md

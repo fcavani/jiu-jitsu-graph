@@ -20,6 +20,8 @@ Just run it:
 
 ``` bash
 docker-compose up
+pip install -r requirements.txt
+python3 bootstrap_database.py
 ```
 
 Now point your browser to http://localhost:8000.
