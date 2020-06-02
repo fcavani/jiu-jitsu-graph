@@ -1,7 +1,5 @@
 .vscode
 .venv
 *code-workspace
-queries.1.cql
 .dgraph
-notes_dgraph.md
-notes.md
+.graphqlconfig.yml
