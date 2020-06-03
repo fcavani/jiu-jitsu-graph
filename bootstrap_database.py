@@ -4,7 +4,7 @@ import pydgraph
 HOST = "localhost:9080"
 
 
-SCHEME_FILE = "jiujitsu.scheme"
+SCHEME_FILE = "scheme.graphql"
 
 
 MUTATION_FILES = [
