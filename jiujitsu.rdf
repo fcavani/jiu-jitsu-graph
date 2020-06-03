@@ -6,18 +6,6 @@ _:fall <name> "takedown"@en .
 _:fall <dgraph.type> "Basics" .
 _:fall <description> "Fazendo queda"@pt .
 _:fall <is> _:bjj .
-_:fall <movement> _:pull
-_:fall <movement> _:ogoshe
-_:fall <movement> _:osotogari
-_:fall <movement> _:sotoogari
-_:fall <movement> _:seoinage
-_:fall <movement> _:ipponseoinage
-_:fall <movement> _:koshigoruma
-_:fall <movement> _:maroteseionage
-_:fall <movement> _:singleleg
-_:fall <movement> _:singleleg_heel
-_:fall <movement> _:doubleleg
-_:fall <movement> _:balao
 
 _:guard <name> "guarda"@pt .
 _:guard <dgraph.type> "Basics" .
@@ -69,8 +57,11 @@ _:transition <dgraph.type> "Basics" .
 _:transition <description> "Faz a transição de uma posição a outra"@pt .
 _:transition <is> _:bjj .
 
-
-
+_:end_game <name> "fim da luta"@pt .
+_:end_game <name> "fight ended"@en .
+_:end_game <dgraph.type> "Basics" .
+_:end_game <description> "fim"@pt .
+_:end_game <is> _:bjj .
 
 
 _:stand <name> "em pé"@pt .
@@ -102,19 +93,27 @@ _:costas <name> "costas"@pt .
 _:costas <dgraph.type> "Position" .
 _:costas <description> ""@pt .
 _:costas <type> _:back .
+_:costas <points> "4" .
 
 _:montada <name> "montada"@pt .
 _:montada <dgraph.type> "Position" .
 _:montada <description> ""@pt .
 _:montada <type> _:mount .
+_:montada <points> "4" .
 
 _:quatro_apoios <name> "quatro apoios"@pt .
 _:quatro_apoios <alternative_name> "Guarda tartaruga" .
 _:quatro_apoios <dgraph.type> "Position" .
 _:quatro_apoios <description> ""@pt .
 _:quatro_apoios <type> _:back .
+_:quatro_apoios <points> "4" .
 
 _:side_mount <name> "montada com oponente de lado"@pt .
 _:side_mount <dgraph.type> "Position" .
 _:side_mount <description> ""@pt .
 _:side_mount <type> _:mount .
+
+_:submited <name> "finalizado"@pt .
+_:submited <dgraph.type> "Position" .
+_:submited <description> ""@pt .
+_:submited <type> _:end_game .

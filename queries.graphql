@@ -1,33 +1,8 @@
 {
-  jiu_from_begin(func: eq(name@en, "start")) @recurse(depth: 50, loop: true) {
-    name@pt
-    description@pt
-    type
-    begin @facets
-    fall @facets
-    guard @facets
-    pass @facets
-    sweep @facets
-    side_control @facets
-    back @facets
-    mount @facets
-    submission @facets
-  }
-}
-
-{
   jiu_from_begin(func: eq(name@en, "start")) @recurse(depth: 10, loop: true) {
     name@pt
-    description@pt
-    begin @facets
-    fall @facets
-    guard @facets
-    pass @facets
-    sweep @facets
-    side_control @facets
-    back @facets
-    mount @facets
-    submission @facets(eq(americana, true))
+    to
+    points
   }
 }
 
@@ -46,38 +21,26 @@
 }
 
 {
-  mg(func: eq(name@pt, "meia guarda")) {
-    uid
-    name@pt
-    passador {
-      name@pt
-    }
-    guardeiro {
-      expand(_all_)
-    }
+  var(func: eq(name@en, "start")) @recurse(depth: 10, loop: true) {
+    to
+    p as points
+  }
+  j() {
+    sum(val(p))
   }
 }
 
 {
-  jiu_from_begin(func: eq(name@en, "start")) {
+  a as var(func: eq(name@pt, "início")) {
     uid
+  }
+  b as var(func: eq(name@pt, "finalizado")) {
+    uid
+  }
+  path as shortest(from: uid(a), to: uid(b)) {
+    to
+  }
+  path(func: uid(path)) {
     name@pt
-    passador {
-      name@pt
-      passador {
-      	name@pt
-   	 	}
-    	guardeiro {
-      	name@pt
-    	}
-    }
-    guardeiro {
-      passador {
-      	name@pt
-   	 	}
-    	guardeiro {
-      	name@pt
-    	}
-    }
   }
 }
