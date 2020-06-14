@@ -16,12 +16,20 @@ I'm migrating it from neo4j to [Dgraph](https://dgraph.io) (simple licensing, fa
 
 Install [docker](https://www.docker.com/) and [docker compose](https://docs.docker.com/compose/).
 
-Just run it:
+Consider using a virtual environment before install the requirements.
+Same thing like that:
+
+``` bash
+python3 -m venv .venv
+source .venv/bin/active
+```
+
+Finally, just run it:
 
 ``` bash
 docker-compose up
 pip install -r requirements.txt
-python3 bootstrap_database.py
+python3 bootstrap_database.py # All your db will be erased. Make a backup or edit the script.
 ```
 
 Now point your browser to http://localhost:8000.
