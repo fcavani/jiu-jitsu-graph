@@ -31,19 +31,10 @@ There are some queries in the file [queries.dgraph](https://github.com/fcavani/j
 
 ``` graphql
 {
-  jiu_from_begin(func: eq(name@en, "start")) @recurse(depth: 50, loop: true) {
-    uid
+  jiu_from_begin(func: eq(name@en, "start")) @recurse(depth: 10, loop: true) {
     name@pt
-    begin @facets
-    fall @facets
-    guard @facets
-    pass @facets
-    sweep @facets
-    side_control @facets
-    back @facets
-    mount @facets
-    submission @facets
-    transition @facets
+    to
+    points
   }
 }
 ```
