@@ -8,14 +8,8 @@ _:end <name> "end"@en .
 _:end <dgraph.type> "Position" .
 _:end <description> ""@pt .
 
-# _:stand <submission> _:end (arm_lock="end") . # Arm-lock voador.
 _:stand <to> _:arm_lock .
 _:arm_lock <to> _:submited .
-
-# _:stand <fall> _:100kg (ogoshe="100kg") .
-# _:stand <fall> _:full_guard (pull="full_guard") .
-# _:stand <fall> _:half_guard (ogoshe="half_guard", todo="half_guard") .
-# _:stand <fall> _:knee_on_belly (sotoogari="knee_on_belly", osotogari="knee_on_belly") .
 
 _:stand <to> _:ogoshe .
 _:ogoshe <to> _:100kg .
@@ -30,6 +24,28 @@ _:sweep_tesourinha <to> _:montada .
 _:sweep_tesourinha_empurando_joelho <to> _:montada .
 
 _:montada <to> _:americana .
+
+_:stand <to> _:ogoshe .
+_:ogoshe <to> _:half_guard .
+
+_:stand <to> _:half_guard .
+
+_:half_guard <to> _:mg_sweep_simple_with_lapela .
+_:mg_sweep_simple_with_lapela <to> _:100kg .
+_:half_guard <to> _:mg_sweep_feet .
+_:mg_sweep_feet <to> _:100kg .
+_:half_guard <to> _:mg_sweep_simple .
+_:mg_sweep_simple <to> _:100kg .
+_:half_guard <to> _:mg_sweep_simple_with_leg_defence .
+_:mg_sweep_simple_with_leg_defence <to> _:100kg .
+_:half_guard <to> _:mg_sweep_deep .
+_:mg_sweep_deep <to> _:100kg .
+_:half_guard <to> _:mg_sweep_one_two_three .
+_:mg_sweep_one_two_three <to> _:100kg .
+_:half_guard <to> _:mg_back_take .
+_:mg_back_take <to> _:costas .
+_:half_guard <to> _:mg_back_take_with_defence .
+_:mg_back_take_with_defence <to> _:costas .
 
 # _:100kg <submission> _:end (americana="end") .
 # _:100kg <submission> _:end (arm_lock_reto="end") .
