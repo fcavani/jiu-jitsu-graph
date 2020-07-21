@@ -4,20 +4,20 @@
 
 Jiu-jitsu positions, sequences, scores and descriptions graph database.
 
-It's a simple way to view and understand some aspects of a complex art by someone with a blue belt. I'm really don't want to simplify Jiu-jitsu to a computational model, it's not possible, but it's fun to document it.
+It's a simple way to view and understand some aspects of this complex art by someone with a blue belt. I'm really don't want to simplify Jiu-jitsu to a computational model, it's not possible, but it's fun to document it.
 
 **This isn't a form of replacement to the normal train in a properly school with a good master.**
 
 ## Dgraph
 
-I'm migrating it from neo4j to [Dgraph](https://dgraph.io) (simple licensing, fast, easy to use and good query language). I will need a new model, a better one to describe the data (I work on it in the develop branch). Expect a lot of changes before I reach a stable model and start to fill in the data from the [old model](https://github.com/fcavani/jiu-jitsu-graph/tree/neo4j-final).
+I'm migrating it from neo4j to [Dgraph](https://dgraph.io) (simple licensing, fast, easy to use and good query language). I will need a new model, a better one to describe the data (I work on it in the develop branch). Expect a lot of changes before I reach a stable model and start to fill it with the data from the [old model](https://github.com/fcavani/jiu-jitsu-graph/tree/neo4j-final).
 
 ## How to test it
 
 Install [docker](https://www.docker.com/) and [docker compose](https://docs.docker.com/compose/).
 
 Consider using a virtual environment before install the requirements.
-Same thing like that:
+Do something like that:
 
 ``` bash
 python3 -m venv .venv
@@ -53,7 +53,7 @@ that you take a look in
 
 ## Contributions
 
-Contributions must be made only with a pull request. It will be a review before I merge it.
+Contributions must only be made by pull request. It will be reviewed before I merge it.
 
 ## Contact the developer
 
