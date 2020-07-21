@@ -10,7 +10,7 @@ It's a simple way to view and understand some aspects of this complex art by som
 
 ## Dgraph
 
-I'm migrating it from neo4j to [Dgraph](https://dgraph.io) (simple licensing, fast, easy to use and good query language). I will need a new model, a better one to describe the data (I work on it in the develop branch). Expect a lot of changes before I reach a stable model and start to fill it with the data from the [old model](https://github.com/fcavani/jiu-jitsu-graph/tree/neo4j-final).
+I'm migrating it from neo4j to [Dgraph](https://dgraph.io) (simple licensing, fast, easy to use and good query language). I will need a new model, a better one to describe the data (I'm working on it on the develop branch). Expect a lot of changes before I reach a stable model and start to fill it with the data from the [old model](https://github.com/fcavani/jiu-jitsu-graph/tree/neo4j-final).
 
 ## How to test it
 
@@ -47,7 +47,7 @@ There are some queries in the file [queries.dgraph](https://github.com/fcavani/j
 }
 ```
 
-If you don't know nothing about graphs. I recommend
+If you don't know nothing about graphs, I recommend
 that you take a look in
 [the dgraph web site](https://dgraph.io/).
 
