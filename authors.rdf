@@ -8,8 +8,8 @@ _:mkimura <dgraph.type> "Person" .
 _:mkimura <country> "Japan"@en .
 _:mkimura <country> "Japão"@pt .
 
-_:none <name> "desconhecido"@pt .
-_:none <name> "unknow"@en .
-_:none <dgraph.type> "Person" .
-_:none <country> "unknow"@en .
-_:none <country> "desconhecido"@pt .
+_:unknow <name> "desconhecido"@pt .
+_:unknow <name> "unknow"@en .
+_:unknow <dgraph.type> "Person" .
+_:unknow <country> "unknow"@en .
+_:unknow <country> "desconhecido"@pt .
