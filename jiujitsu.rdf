@@ -84,6 +84,11 @@ _:100kg <dgraph.type> "Position" .
 _:100kg <description> "Mão esquerda por baixo do pescoço, direita segurando na calça para não fugir (pode segurá-lo pelo outro lado, evitando a fuga), perna direita com o joelho grudado nele e esquerda esticada."@pt .
 _:100kg <type> _:side_control .
 
+_:hon_kesa_gatame <name> "Hon kesa gatame"@pt .
+_:hon_kesa_gatame <dgraph.type> "Position" .
+_:hon_kesa_gatame <description> "Perna direita para frente, esquerda esticada para trás para ele não fugir, braço esquerdo segurando o braço direito dele e o esquerdo segurando para ele não subir."@pt .
+_:hon_kesa_gatame <type> _:side_control .
+
 _:knee_on_belly <name> "joelho na barriga"@pt .
 _:knee_on_belly <dgraph.type> "Position" .
 _:knee_on_belly <description> "Apoia o joelho na barriga logo abaixo do final do esterno. Perna que sobra deve ser esticada de modo a ficar longe do alcance da mão do adversário."@pt .
