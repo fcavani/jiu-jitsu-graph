@@ -1,0 +1,29 @@
+_:bjj <movements> _:mount_sweep_upa .
+_:mount_sweep_upa <id> "mount_sweep_upa" .
+_:mount_sweep_upa <dgraph.type> "Move" .
+_:mount_sweep_upa <name> "Raspagem da montada para o lado"@pt .
+_:mount_sweep_upa <name> "Mount upa escape"@en . 
+_:mount_sweep_upa <description> "Domina braço e perna de um lado, dá uma barrigada para este lado. Cai na guarda. Faz passagem de guarda."@pt .
+_:mount_sweep_upa <class> _:sweep .
+_:mount_sweep_upa <points> "2" .
+_:mount_sweep_upa <author> _:unknow .
+_:mount_sweep_upa <situation> ""@pt .
+_:mount_escape_supino <medias> :_the_essential_mount_escapes .
+
+_:bjj <movements> _:mount_escape_supino.
+_:mount_escape_supino <id> "mount_escape_supino" .
+_:mount_escape_supino <dgraph.type> "Move" .
+_:mount_escape_supino <name> "Saída da montada supinando"@pt .
+_:mount_escape_supino <description> "Barrigada, mãos no quadril do oponente, supina ele, pé de baixo da coxa (?), empura para frente. Cai na guarda borboleta."@pt .
+_:mount_escape_supino <class> _:sweep .
+_:mount_escape_supino <points> "0" .
+_:mount_escape_supino <author> _:unknow .
+_:mount_escape_supino <situation> ""@pt .
+_:mount_escape_supino <medias> :_the_essential_mount_escapes .
+
+_:the_essential_mount_escapes <name> "The Essential Mount Escapes"@en .
+_:the_essential_mount_escapes <dgraph.type> "Link" .
+_:the_essential_mount_escapes <url> "https://bjjfanatics.com/blogs/news/the-essential-mount-escapes" .
+_:the_essential_mount_escapes <mime> "text/html" .
+_:the_essential_mount_escapes <created_at> "2020-09-06T15:55:00-03:00" .
+_:the_essential_mount_escapes <last_seen> "2020-09-06T15:55:00-03:00" .
