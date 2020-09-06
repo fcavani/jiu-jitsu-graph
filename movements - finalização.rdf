@@ -57,3 +57,24 @@ _:chocke_antebraco <description> "Usa o antebraço no estrangulamento"@pt .
 _:chocke_antebraco <class> _:submission .
 _:chocke_antebraco <author> _:none .
 _:chocke_antebraco <situation> ""@pt .
+
+_:bjj <movements> _:reloginho_quatro_apoios .
+_:reloginho_quatro_apoios <id> "reloginho_quatro_apoios" .
+_:reloginho_quatro_apoios <dgraph.type> "Move" .
+_:reloginho_quatro_apoios <name> "Relóginho no quatro apoios"@pt .
+_:reloginho_quatro_apoios <name> ""@en .
+_:reloginho_quatro_apoios <description> "Oponente no 4 apoios. Entra com o braço direito por baixo do braço esquerdo dele e pega na gola dele. Seu peito sobre as costas dele mais para o lado do pescoço. Põe a testa no chão deixando o quadril paralelo ao chão. Se não pegar gira como o ponteiro de um relógio."@pt .
+_:reloginho_quatro_apoios <class> _:submission .
+_:reloginho_quatro_apoios <author> _:none .
+_:reloginho_quatro_apoios <situation> ""@pt .
+
+_:bjj <movements> _:godoi_choke .
+_:godoi_choke <id> "godoi_choke" .
+_:godoi_choke <dgraph.type> "Move" .
+_:godoi_choke <name> "Godoi Chock"@pt .
+_:godoi_choke <name> "Godoi Chock"@en .
+_:godoi_choke <description> "Oponente no 4 apoios, você no norte-sul. Mão direita entra junto ao pescoço e pega na gola direita dele com 4 dedos para dentro. Põem a cabeça entre a perna e o braço dele no lado direito dele. Empurra e agara a perda direita dele. Vira colocando-o de barriga para cima. Se não pegou, puxa a gola (ou mexe o pulso???)."@pt .
+_:godoi_choke <class> _:submission .
+_:godoi_choke <author> _:rgodoy .
+_:godoi_choke <situation> ""@pt .
+
