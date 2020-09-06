@@ -62,7 +62,7 @@ _:bjj <movements> _:mg_back_take .
 _:mg_back_take <id> "mg_back_take" .
 _:mg_back_take <dgraph.type> "Move" .
 _:mg_back_take <name> "ida para as costas a partir da meia guarda"@pt .
-_:mg_back_take <description> "fuga para a direita, estica os dois braços dele para atrás da sua cabeça, pega no pano dele (punho) direito, puxa este braço para a direita, fuga para a esquerda, poem ganchos."@pt .
+_:mg_back_take <description> "Fuga para a direita, estica os dois braços dele para atrás da sua cabeça, pega no pano dele (punho) direito, puxa este braço para a direita, fuga para a esquerda, coloca ganchos."@pt .
 _:mg_back_take <class> _:sweep .
 _:mg_back_take <points> "2" .
 _:mg_back_take <author> _:unknow .
