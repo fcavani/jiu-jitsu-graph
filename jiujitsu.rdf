@@ -68,10 +68,10 @@ _:stand <name> "em pé"@pt .
 _:stand <name> "stand up"@en .
 _:stand <dgraph.type> "Position" .
 
-_:full_guard <name> "guarda"@pt .
-_:full_guard <name> "guard"@en .
+_:full_guard <name> "guarda fechada"@pt .
+_:full_guard <name> "closed guard"@en .
 _:full_guard <dgraph.type> "Position" .
-_:full_guard <description> ""@pt .
+_:full_guard <description> "'Abraçando' oponente com as duas pernas. Normalmente ele ficará de joelhos e você deitado."@pt .
 _:full_guard <type> _:guard .
 
 _:half_guard <name> "meia guarda"@pt .
@@ -81,7 +81,7 @@ _:half_guard <type> _:guard .
 
 _:100kg <name> "100kg"@pt .
 _:100kg <dgraph.type> "Position" .
-_:100kg <description> ""@pt .
+_:100kg <description> "Mão esquerda por baixo do pescoço, direita segurando na calça para não fugir (pode segurá-lo pelo outro lado, evitando a fuga), perna direita com o joelho grudado nele e esquerda esticada."@pt .
 _:100kg <type> _:side_control .
 
 _:knee_on_belly <name> "joelho na barriga"@pt .
@@ -91,29 +91,29 @@ _:knee_on_belly <type> _:side_control . # side control???
 
 _:costas <name> "costas"@pt .
 _:costas <dgraph.type> "Position" .
-_:costas <description> ""@pt .
+_:costas <description> "Oponente de costas para você e ganchos colocados (pés por cima das cochas do oponente de modo que ele não saia). Não cruzar pernas."@pt .
 _:costas <type> _:back .
 _:costas <points> "4" .
 
 _:montada <name> "montada"@pt .
 _:montada <dgraph.type> "Position" .
-_:montada <description> ""@pt .
+_:montada <description> "Monta em cima da barriga dele com as suas pernas em cada lateral, avança até chegar perto do pescoço e os braços dele ficarem esticados acima da cabeça do oponente. Pode encostar a sua barriga sobre a face dele e apartir dai continuar com outro golpe."@pt .
 _:montada <type> _:mount .
 _:montada <points> "4" .
 
 _:quatro_apoios <name> "quatro apoios"@pt .
 _:quatro_apoios <alternative_name> "Guarda tartaruga" .
 _:quatro_apoios <dgraph.type> "Position" .
-_:quatro_apoios <description> ""@pt .
+_:quatro_apoios <description> "Ajoelhado e com os cotovelos no chão, então temos quatro pontos de apoio."@pt .
 _:quatro_apoios <type> _:back .
 _:quatro_apoios <points> "4" .
 
 _:side_mount <name> "montada com oponente de lado"@pt .
 _:side_mount <dgraph.type> "Position" .
-_:side_mount <description> ""@pt .
+_:side_mount <description> "Mesma coisa que a montada mas com o oponente deitado de lado."@pt .
 _:side_mount <type> _:mount .
 
 _:submited <name> "finalizado"@pt .
 _:submited <dgraph.type> "Position" .
-_:submited <description> ""@pt .
+_:submited <description> "Sobreu alguma finalização."@pt .
 _:submited <type> _:end_game .
