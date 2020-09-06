@@ -16,6 +16,10 @@ _:ogoshe <to> _:100kg .
 _:100kg <to> _:americana .
 _:americana <to> _:submited .
 
+_:100kg <to> _:montada .
+_:montada <to> _:americana .
+_:montada <to> _:arm_lock .
+
 _:stand <to> _:full_guard .
 _:full_guard <to> _:sweep_tesourinha .
 _:full_guard <to> _:sweep_tesourinha_empurando_joelho .
