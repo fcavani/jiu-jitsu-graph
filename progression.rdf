@@ -51,5 +51,5 @@ _:mg_back_take <to> _:costas .
 _:half_guard <to> _:mg_back_take_with_defence .
 _:mg_back_take_with_defence <to> _:costas .
 
-_:100kg <to> _:hon_kesa_gatame .
-_:hon_kesa_gatame <to> _:100kg .
+_:100kg <movement> _:hon_kesa_gatame .
+_:hon_kesa_gatame <movement> _:100kg .

@@ -36,6 +36,7 @@ type Position {
     description: string
     type: Basics
     to: [Move]
+    movement: [Position]
     points: int
 }
 
@@ -75,3 +76,4 @@ variations: [uid] .
 medias: [uid] .
 transition: [uid] .
 to: [uid] .
+movement: [uid] .

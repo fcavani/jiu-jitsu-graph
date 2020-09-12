@@ -2,6 +2,7 @@
   jiu_from_begin(func: eq(name@en, "start")) @recurse(depth: 10, loop: true) {
     name@pt
     to
+    movement
     points
   }
 }
