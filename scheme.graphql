@@ -22,6 +22,7 @@ type Move {
     variations: [Move]
     medias: [Link]
     to: [Position]
+    comment: string
 }
 
 type Basics {
@@ -38,6 +39,7 @@ type Position {
     to: [Move]
     movement: [Position]
     points: int
+    comment: string
 }
 
 type Start {
@@ -77,3 +79,4 @@ medias: [uid] .
 transition: [uid] .
 to: [uid] .
 movement: [uid] .
+comment: string @index(fulltext) @lang .
