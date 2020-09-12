@@ -1,9 +1,9 @@
-_:bjj <movements> _:mg_back_take_with_defence .
-_:mg_back_take_with_defence <id> "mg_back_take_with_defence" .
-_:mg_back_take_with_defence <dgraph.type> "Move" .
-_:mg_back_take_with_defence <name> "passagem da meia guarda"@pt .
-_:mg_back_take_with_defence <description> "Colocando a cabeça oposta à esgrima com a testa no chão, planta (apóia o pé com sola totalmente no chão) o pé que está na guarda, levanta o quadril, tenta mover a perna que está presa, se não tirar ajudar com o outro pé."@pt .
-_:mg_back_take_with_defence <class> _:sweep .
-_:mg_back_take_with_defence <points> "2" .
-_:mg_back_take_with_defence <author> _:unknow .
-_:mg_back_take_with_defence <situation> ""@pt .
+_:bjj <movements> _: .
+_: <id> "" .
+_: <dgraph.type> "Move" .
+_: <name> ""@pt .
+_: <description> ""@pt .
+_: <class> _: .
+_: <points> "2" .
+_: <author> _:unknow .
+_: <situation> ""@pt .
