@@ -58,7 +58,7 @@ _:transition <description> "Faz a transição de uma posição a outra"@pt .
 _:transition <is> _:bjj .
 
 _:end_game <name> "fim da luta"@pt .
-_:end_game <name> "fight ended"@en .
+_:end_game <name> "end fight"@en .
 _:end_game <dgraph.type> "Basics" .
 _:end_game <description> "fim"@pt .
 _:end_game <is> _:bjj .
