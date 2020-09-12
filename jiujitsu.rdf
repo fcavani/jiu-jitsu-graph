@@ -75,6 +75,7 @@ _:full_guard <description> "'Abraçando' oponente com as duas pernas. Normalment
 _:full_guard <type> _:guard .
 
 _:half_guard <name> "meia guarda"@pt .
+_:half_guard <name> "half guard"@en .
 _:half_guard <dgraph.type> "Position" .
 _:half_guard <description> ""@pt .
 _:half_guard <type> _:guard .
@@ -85,22 +86,26 @@ _:100kg <description> "Mão esquerda por baixo do pescoço, direita segurando na
 _:100kg <type> _:side_control .
 
 _:hon_kesa_gatame <name> "Hon kesa gatame"@pt .
+_:hon_kesa_gatame <name> "Hon kesa gatame"@jp .
 _:hon_kesa_gatame <dgraph.type> "Position" .
 _:hon_kesa_gatame <description> "Perna direita para frente, esquerda esticada para trás para ele não fugir, braço esquerdo segurando o braço direito dele e o esquerdo segurando para ele não subir."@pt .
 _:hon_kesa_gatame <type> _:side_control .
 
 _:knee_on_belly <name> "joelho na barriga"@pt .
+_:knee_on_belly <name> "knee on belly"@en .
 _:knee_on_belly <dgraph.type> "Position" .
 _:knee_on_belly <description> "Apoia o joelho na barriga logo abaixo do final do esterno. Perna que sobra deve ser esticada de modo a ficar longe do alcance da mão do adversário."@pt .
 _:knee_on_belly <type> _:side_control . # side control???
 
 _:costas <name> "costas"@pt .
+_:costas <name> "back"@en .
 _:costas <dgraph.type> "Position" .
 _:costas <description> "Oponente de costas para você e ganchos colocados (pés por cima das cochas do oponente de modo que ele não saia). Não cruzar pernas."@pt .
 _:costas <type> _:back .
 _:costas <points> "4" .
 
 _:montada <name> "montada"@pt .
+_:montada <name> "mont"@en .
 _:montada <dgraph.type> "Position" .
 _:montada <description> "Monta em cima da barriga dele com as suas pernas em cada lateral, avança até chegar perto do pescoço e os braços dele ficarem esticados acima da cabeça do oponente. Pode encostar a sua barriga sobre a face dele e apartir dai continuar com outro golpe."@pt .
 _:montada <type> _:mount .
@@ -119,6 +124,7 @@ _:side_mount <description> "Mesma coisa que a montada mas com o oponente deitado
 _:side_mount <type> _:mount .
 
 _:submited <name> "finalizado"@pt .
+_:submited <name> "submit"@en .
 _:submited <dgraph.type> "Position" .
 _:submited <description> "Sobreu alguma finalização."@pt .
 _:submited <type> _:end_game .
