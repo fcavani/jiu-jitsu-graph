@@ -53,6 +53,6 @@ _:mg_back_take_with_defence <to> _:costas .
 
 _:100kg <movement> _:hon_kesa_gatame .
 _:hon_kesa_gatame <movement> _:100kg .
-_:hon_kesa_gatame <comment> "Arm-lock: Passa perna esqueda pela cabeça dele. Arm-lock reto: no braço direito dele quando este está no seu ombro esquerdo."
+_:hon_kesa_gatame <comment> "Arm-lock: Passa perna esqueda pela cabeça dele. Arm-lock reto: no braço direito dele quando este está no seu ombro esquerdo."@pt .
 _:hon_kesa_gatame <to> _:arm_lock .
 _:hon_kesa_gatame <to> _:arm_lock_reto .
