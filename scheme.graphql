@@ -21,13 +21,14 @@ type Move {
     situation: string
     variations: [Move]
     medias: [Link]
+    to: [Position]
+    comment: string
 }
 
 type Basics {
     name: string
     is: Basics
     description: string
-    movement: [Move]
 }
 
 type Position {
@@ -35,15 +36,10 @@ type Position {
     alternative_name: [string]
     description: string
     type: Basics
-    fall: [Position]
-    guard: [Position]
-    pass: [Position]
-    sweep: [Position]
-    side_control: [Position]
-    back: [Position]
-    mount: [Position]
-    transition: [Position]
-    submission: Position
+    to: [Move]
+    movement: [Position]
+    points: int
+    comment: string
 }
 
 type Start {
@@ -81,3 +77,6 @@ mime: string @index(term) .
 variations: [uid] .
 medias: [uid] .
 transition: [uid] .
+to: [uid] .
+movement: [uid] .
+comment: string @index(fulltext) @lang .

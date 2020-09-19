@@ -5,7 +5,7 @@ _:amassa_pao <name> ""@pt .
 _:amassa_pao <description> ""@pt .
 _:amassa_pao <class> _:transition .
 _:amassa_pao <points> "0" .
-_:amassa_pao <author> _:none .
+_:amassa_pao <author> _:unknow .
 _:amassa_pao <situation> ""@pt .
 _:amassa_pao <lapela> "true" .
 
@@ -16,6 +16,6 @@ _:100kg_knee_on_belly <name> ""@pt .
 _:100kg_knee_on_belly <description> ""@pt .
 _:100kg_knee_on_belly <class> _:transition .
 _:100kg_knee_on_belly <points> "0" .
-_:100kg_knee_on_belly <author> _:none .
+_:100kg_knee_on_belly <author> _:unknow .
 _:100kg_knee_on_belly <situation> ""@pt .
 _:100kg_knee_on_belly <lapela> "true" .

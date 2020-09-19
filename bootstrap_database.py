@@ -1,3 +1,4 @@
+#! env python3
 import pydgraph
 
 
@@ -11,11 +12,12 @@ MUTATION_FILES = [
     "jiujitsu.rdf",
     "authors.rdf",
     "progression.rdf",
-    "movements - quedas.rdf",
+    "movements - 100kg.rdf",
+    "movements - finalização.rdf",
     "movements - guarda.rdf",
     "movements - meia guarda.rdf",
-    "movements - finalização.rdf",
     "movements - passagem de guarda.rdf",
+    "movements - quedas.rdf",
     "movements - transitions.rdf"
 ]
 
