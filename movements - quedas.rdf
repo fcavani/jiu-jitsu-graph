@@ -14,7 +14,7 @@ _:ogoshe <id> "ogoshe" .
 _:ogoshe <dgraph.type> "Move" .
 _:ogoshe <name> "O-goshe"@pt .
 _:ogoshe <name> "O-goshe"@en .
-_:ogoshe <description> "Entrada normal (fazend a chaleira - pé dirrito na frente do esquerdo e coloca pé esquerdo na frente do direito, ficando de costas para o adversário, centro da lombar deve estar apondando para perna direita dele...), abraça a cintura..."@pt .
+_:ogoshe <description> "Entrada normal (fazend a chaleira - pé direito na frente do esquerdo e coloca pé esquerdo na frente do direito, ficando de costas para o adversário, centro da lombar deve estar apondando para perna direita dele...), abraça a cintura..."@pt .
 _:ogoshe <class> _:fall .
 _:ogoshe <points> "2" .
 _:ogoshe <author> _:unknow .
