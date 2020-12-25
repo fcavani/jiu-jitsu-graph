@@ -5,7 +5,7 @@ _:arm_lock <name> "Chave de braço"@pt .
 _:arm_lock <name> "Arm lock"@en .
 _:arm_lock <description> "Perna esquerda sobre a cabeça do adverário, perna direita pode estar encolhida com o pé sob ele ou esticada com o pé no chão no lado oposto do adversário, força a junta do cotovelo para o lado contrário, se não der certo levantar o quadril, se necessários colocar o braço dele para o lado."@pt .
 _:arm_lock <class> _:submission .
-_:arm_lock <author> _:unknow .
+_:arm_lock <author> _:unknown .
 _:arm_lock <situation> ""@pt .
 
 _:bjj <movements> _:arm_lock_reto .
@@ -15,7 +15,7 @@ _:arm_lock_reto <name> "Chave de braço reta"@pt .
 _:arm_lock_reto <name> "Arm lock"@en .
 _:arm_lock_reto <description> "Com o braço estendido força o cotovelo para o lado contrário."@pt .
 _:arm_lock_reto <class> _:submission .
-_:arm_lock_reto <author> _:unknow .
+_:arm_lock_reto <author> _:unknown .
 _:arm_lock_reto <situation> ""@pt .
 
 _:bjj <movements> _:kimura .
@@ -35,7 +35,7 @@ _:americana <name> "americana"@pt .
 _:americana <name> ""@en .
 _:americana <description> ""@pt .
 _:americana <class> _:submission .
-_:americana <author> _:unknow .
+_:americana <author> _:unknown .
 _:americana <situation> ""@pt .
 
 _:bjj <movements> _:chocke_lapela .
@@ -45,7 +45,7 @@ _:chocke_lapela <name> "Estrangulamento"@pt .
 _:chocke_lapela <name> "Chocke"@en .
 _:chocke_lapela <description> "Usa a lapela no estrangulamento"@pt .
 _:chocke_lapela <class> _:submission .
-_:chocke_lapela <author> _:unknow .
+_:chocke_lapela <author> _:unknown .
 _:chocke_lapela <situation> ""@pt .
 
 _:bjj <movements> _:chocke_antebraco .
@@ -55,7 +55,7 @@ _:chocke_antebraco <name> "Estrangulamento"@pt .
 _:chocke_antebraco <name> "Chocke"@en .
 _:chocke_antebraco <description> "Usa o antebraço no estrangulamento"@pt .
 _:chocke_antebraco <class> _:submission .
-_:chocke_antebraco <author> _:unknow .
+_:chocke_antebraco <author> _:unknown .
 _:chocke_antebraco <situation> ""@pt .
 
 _:bjj <movements> _:reloginho_quatro_apoios .
@@ -65,7 +65,7 @@ _:reloginho_quatro_apoios <name> "Relóginho no quatro apoios"@pt .
 _:reloginho_quatro_apoios <name> ""@en .
 _:reloginho_quatro_apoios <description> "Oponente no 4 apoios. Entra com o braço direito por baixo do braço esquerdo dele e pega na gola dele. Seu peito sobre as costas dele mais para o lado do pescoço. Põe a testa no chão deixando o quadril paralelo ao chão. Se não pegar gira como o ponteiro de um relógio."@pt .
 _:reloginho_quatro_apoios <class> _:submission .
-_:reloginho_quatro_apoios <author> _:unknow .
+_:reloginho_quatro_apoios <author> _:unknown .
 _:reloginho_quatro_apoios <situation> ""@pt .
 
 _:bjj <movements> _:godoi_choke .

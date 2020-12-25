@@ -6,7 +6,7 @@ _:sweep_tesourinha <name> "raspagem número um"@pt .
 _:sweep_tesourinha <description> ""@pt .
 _:sweep_tesourinha <class> _:sweep .
 _:sweep_tesourinha <points> "2" .
-_:sweep_tesourinha <author> _:unknow .
+_:sweep_tesourinha <author> _:unknown .
 _:sweep_tesourinha <situation> ""@pt .
 _:sweep_tesourinha <lapela> "false" .
 _:sweep_tesourinha <variation> _:sweep_tesourinha_empurando_joelho .
@@ -19,6 +19,6 @@ _:sweep_tesourinha_empurando_joelho <name> "raspagem número um empurrando o joe
 _:sweep_tesourinha_empurando_joelho <description> "como na raspagem número um mas empurra o joelho com a parna que não está na barriga dele"@pt .
 _:sweep_tesourinha_empurando_joelho <class> _:sweep .
 _:sweep_tesourinha_empurando_joelho <points> "2" .
-_:sweep_tesourinha_empurando_joelho <author> _:unknow .
+_:sweep_tesourinha_empurando_joelho <author> _:unknown .
 _:sweep_tesourinha_empurando_joelho <situation> ""@pt .
 _:sweep_tesourinha_empurando_joelho <lapela> "false" .

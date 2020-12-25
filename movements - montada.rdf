@@ -6,7 +6,7 @@ _:mount_sweep_upa <name> "Mount upa escape"@en .
 _:mount_sweep_upa <description> "Domina braço e perna de um lado, dá uma barrigada para este lado. Cai na guarda. Faz passagem de guarda."@pt .
 _:mount_sweep_upa <class> _:sweep .
 _:mount_sweep_upa <points> "2" .
-_:mount_sweep_upa <author> _:unknow .
+_:mount_sweep_upa <author> _:unknown .
 _:mount_sweep_upa <situation> ""@pt .
 _:mount_escape_supino <medias> :_the_essential_mount_escapes .
 
@@ -17,7 +17,7 @@ _:mount_escape_supino <name> "Saída da montada supinando"@pt .
 _:mount_escape_supino <description> "Barrigada, mãos no quadril do oponente, supina ele, pé de baixo da coxa (?), empura para frente. Cai na guarda borboleta."@pt .
 _:mount_escape_supino <class> _:sweep .
 _:mount_escape_supino <points> "0" .
-_:mount_escape_supino <author> _:unknow .
+_:mount_escape_supino <author> _:unknown .
 _:mount_escape_supino <situation> ""@pt .
 _:mount_escape_supino <medias> :_the_essential_mount_escapes .
 

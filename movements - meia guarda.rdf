@@ -5,7 +5,7 @@ _:mg_sweep_simple_with_lapela <name> "raspagem na meia guarda com lapela"@pt .
 _:mg_sweep_simple_with_lapela <description> "Passa a lapela direita dele de fora para dentro passando pela virilha... (TODO), "@pt .
 _:mg_sweep_simple_with_lapela <class> _:sweep .
 _:mg_sweep_simple_with_lapela <points> "2" .
-_:mg_sweep_simple_with_lapela <author> _:unknow .
+_:mg_sweep_simple_with_lapela <author> _:unknown .
 _:mg_sweep_simple_with_lapela <situation> ""@pt .
 
 _:bjj <movements> _:mg_sweep_feet .
@@ -15,7 +15,7 @@ _:mg_sweep_feet <name> "raspagem na meia guarda pegando o pé"@pt .
 _:mg_sweep_feet <description> "Desce o máximo que puder, apoiando um ombro no chão e o outro no peito do oponente. Pega o pé do lado direito e entrega para sua mão esquerda que virá pela lateral dele. Apóia, a mão direita e levanta."@pt .
 _:mg_sweep_feet <class> _:sweep .
 _:mg_sweep_feet <points> "2" .
-_:mg_sweep_feet <author> _:unknow .
+_:mg_sweep_feet <author> _:unknown .
 _:mg_sweep_feet <situation> ""@pt .
 
 _:bjj <movements> _:mg_sweep_simple .
@@ -25,7 +25,7 @@ _:mg_sweep_simple <name> "raspagem um na meia guarda com lapela"@pt .
 _:mg_sweep_simple <description> "Lapela direita para mão esquerda por cima, pega calça do lado direito, junta braço esquerdo travando esgrima dele, inverte guarda e raspa."@pt .
 _:mg_sweep_simple <class> _:sweep .
 _:mg_sweep_simple <points> "2" .
-_:mg_sweep_simple <author> _:unknow .
+_:mg_sweep_simple <author> _:unknown .
 _:mg_sweep_simple <situation> ""@pt .
 
 _:bjj <movements> _:mg_sweep_simple_with_leg_defence .
@@ -35,7 +35,7 @@ _:mg_sweep_simple_with_leg_defence <name> "raspagem um na meia guarda com lapela
 _:mg_sweep_simple_with_leg_defence <description> "Lapela direita para mão esquerda por cima, pega calça do lado direito, junta braço esquerdo travando esgrima dele, mas ele estica a perna direita dele, sua perna direita vai em gancho perto do joelho, perna esquerda protege lá perto do pé dele, raspa para a sua direita."@pt .
 _:mg_sweep_simple_with_leg_defence <class> _:sweep .
 _:mg_sweep_simple_with_leg_defence <points> "2" .
-_:mg_sweep_simple_with_leg_defence <author> _:unknow .
+_:mg_sweep_simple_with_leg_defence <author> _:unknown .
 _:mg_sweep_simple_with_leg_defence <situation> ""@pt .
 
 _:bjj <movements> _:mg_sweep_deep .
@@ -45,7 +45,7 @@ _:mg_sweep_deep <name> "raspagem um na meia guarda em guarda profunda"@pt .
 _:mg_sweep_deep <description> "Ganha espaço para colocar a esgrima no lado esquerdo, entra com a perna colocando a parte da canela na bariga dele, perna dobrada, entra para baixo dele e abraça a coxa direita dele passando em diagonal pelo gluteo dele, empura ele para frente, empura o pé dele com a direita e pega ele com a mão esquerda, levanta com o ombro no peito dele e raspa-o para a direita, vai para o 100kg."@pt .
 _:mg_sweep_deep <class> _:sweep .
 _:mg_sweep_deep <points> "2" .
-_:mg_sweep_deep <author> _:unknow .
+_:mg_sweep_deep <author> _:unknown .
 _:mg_sweep_deep <situation> ""@pt .
 
 _:bjj <movements> _:mg_sweep_one_two_three .
@@ -55,7 +55,7 @@ _:mg_sweep_one_two_three <name> "raspagem 1, 2, 3 na meia guarda"@pt .
 _:mg_sweep_one_two_three <description> "Passa a lapela por entre as pernas dele, manda ele para a frente, na meia guarda vira o corpo com os joelhos apontando para o lado oposto da guarda, mão direita no joelho dele e mão esquerda segurando a calça abaixo do joelho, com ajuda da perna vai com a perna dele três vezes para o lado esquerdo e com isso ele virará, sobe e faz 100kg."@pt .
 _:mg_sweep_one_two_three <class> _:sweep .
 _:mg_sweep_one_two_three <points> "2" .
-_:mg_sweep_one_two_three <author> _:unknow .
+_:mg_sweep_one_two_three <author> _:unknown .
 _:mg_sweep_one_two_three <situation> ""@pt .
 
 _:bjj <movements> _:mg_back_take .
@@ -65,7 +65,7 @@ _:mg_back_take <name> "ida para as costas a partir da meia guarda"@pt .
 _:mg_back_take <description> "Fuga para a direita, estica os dois braços dele para atrás da sua cabeça, pega no pano dele (punho) direito, puxa este braço para a direita, fuga para a esquerda, coloca ganchos."@pt .
 _:mg_back_take <class> _:sweep .
 _:mg_back_take <points> "2" .
-_:mg_back_take <author> _:unknow .
+_:mg_back_take <author> _:unknown .
 _:mg_back_take <situation> ""@pt .
 
 _:bjj <movements> _:mg_back_take_with_defence .
@@ -75,5 +75,5 @@ _:mg_back_take_with_defence <name> "passagem da meia guarda"@pt .
 _:mg_back_take_with_defence <description> "Colocando a cabeça oposta à esgrima com a testa no chão, planta (apóia o pé com sola totalmente no chão) o pé que está na guarda, levanta o quadril, tenta mover a perna que está presa, se não tirar ajudar com o outro pé."@pt .
 _:mg_back_take_with_defence <class> _:sweep .
 _:mg_back_take_with_defence <points> "2" .
-_:mg_back_take_with_defence <author> _:unknow .
+_:mg_back_take_with_defence <author> _:unknown .
 _:mg_back_take_with_defence <situation> ""@pt .
